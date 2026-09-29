@@ -250,7 +250,6 @@ html{scroll-padding-top:70px}
     <button id="btnFc">🃏 카드로 보기</button>
   </div>
 
-  <a href="#concept">📋 개념 요약 (한 장)</a>
   <div class="ch">Chapter 3 · Differentiation Rules</div>
   <a href="#s310">3.10 선형근사와 미분</a>
   <a class="sm" href="#s310-1">Linearization &amp; Approximation</a>
@@ -288,6 +287,7 @@ html{scroll-padding-top:70px}
   <a href="#pr4">🧪 Chapter 4 연습문제</a>
 
   <div class="ch">Final</div>
+  <a href="#concept">📋 개념 요약 (한 장)</a>
   <a href="#cheat">📌 공식 치트시트</a>
   <a href="#quiz">❓ 셀프 퀴즈</a>
   <a href="#check">✅ 시험 직전 체크리스트</a>
@@ -307,26 +307,6 @@ html{scroll-padding-top:70px}
 </div>
 
 <!-- ============================================================ -->
-<section class="sec" id="concept">
-<h2>📋 개념 요약 <span class="pg">3.10 – 4.5 · 한 장으로 끝내는 핵심 개념</span></h2>
-<p class="mini">예제·풀이는 빼고 <b>정의 · 정리 · 판정법</b>만 모았습니다. 세부 설명은 각 절 탭에서 확인하세요.</p>
-<div class="cs-grid">
-<div class="cs-card"><div class="cs-h"><span class="cs-no">3.10</span>선형근사 · 미분소</div><ul><li><b>선형화</b> $L(x)=f(a)+f'(a)(x-a)$ &nbsp;⇒ &nbsp;$x\approx a$ 일 때 $f(x)\approx L(x)$ (= 접선)</li><li>접선이 곡선 <u>위</u> ⇒ 과대추정 ($f''&lt;0$), <u>아래</u> ⇒ 과소추정 ($f''>0$)</li><li><b>미분소</b> $dy=f'(x)\,dx$, &nbsp;$\Delta y\approx dy$ ($dx$ 작을수록 정확)</li><li>오차 전파: 상대오차 $\approx\dfrac{dy}{y}$ ; $y=x^n$ 이면 $\dfrac{dy}{y}=n\dfrac{dx}{x}$</li><li>$x=0$ 근처: $\sin x\approx x,\ \cos x\approx1,\ e^x\approx1+x,\ \ln(1+x)\approx x,\ (1+x)^k\approx1+kx$</li></ul></div>
-<div class="cs-card"><div class="cs-h"><span class="cs-no">3.11</span>쌍곡함수</div><ul><li>$\sinh x=\dfrac{e^x-e^{-x}}2,\ \cosh x=\dfrac{e^x+e^{-x}}2,\ \tanh x=\dfrac{\sinh x}{\cosh x}$ &nbsp;($\cosh\ge1$, $|\tanh|&lt;1$)</li><li>$\cosh^2x-\sinh^2x=1$ ,&nbsp; $1-\tanh^2x=\operatorname{sech}^2x$ (삼각함수와 부호 반대)</li><li>$(\sinh)'=\cosh,\ (\cosh)'=\sinh,\ (\tanh)'=\operatorname{sech}^2$ &nbsp;/ &nbsp;sech·csch·coth 쪽에 마이너스</li><li>$\sinh^{-1}x=\ln(x+\sqrt{x^2+1}),\ \cosh^{-1}x=\ln(x+\sqrt{x^2-1})\,(x\ge1),\ \tanh^{-1}x=\tfrac12\ln\tfrac{1+x}{1-x}$</li><li>$(\sinh^{-1})'=\dfrac1{\sqrt{x^2+1}},\ (\cosh^{-1})'=\dfrac1{\sqrt{x^2-1}},\ (\tanh^{-1})'=\dfrac1{1-x^2}$</li></ul></div>
-<div class="cs-card"><div class="cs-h"><span class="cs-no">4.1</span>최댓값 · 최솟값</div><ul><li><b>극값 정리(EVT)</b>: $f$ 가 <u>연속</u> + <u>닫힌구간</u> $[a,b]$ ⇒ 절대최댓값·최솟값 존재</li><li><b>페르마 정리</b>: 국소 극값 & $f'(c)$ 존재 ⇒ $f'(c)=0$ &nbsp;(역은 거짓: $x^3$, $|x|$)</li><li><b>임계수</b>: 정의역 안에서 $f'(c)=0$ 이거나 $f'(c)$ 가 존재하지 않는 $c$</li><li><b>닫힌구간법</b>: 임계수 값 + 끝점 값을 모두 비교 → 최대 = 절대최댓값, 최소 = 절대최솟값</li></ul></div>
-<div class="cs-card"><div class="cs-h"><span class="cs-no">4.2</span>평균값 정리</div><ul><li><b>롤</b>: 연속 on $[a,b]$, 미분가능 on $(a,b)$, $f(a)=f(b)$ ⇒ $f'(c)=0$ 인 $c\in(a,b)$</li><li><b>MVT</b>: 연속 + 미분가능 ⇒ $f'(c)=\dfrac{f(b)-f(a)}{b-a}$ (평균변화율 = 순간변화율 = 시컨트와 평행한 접선)</li><li>$f'\equiv0$ ⇒ 상수 &nbsp;/&nbsp; $f'=g'$ ⇒ $f=g+C$ (구간에서)</li><li>근의 개수 증명: <u>IVT(존재)</u> + <u>롤(유일, 귀류법)</u></li></ul></div>
-<div class="cs-card"><div class="cs-h"><span class="cs-no">4.3</span>그래프의 모양</div><ul><li><b>I/D Test</b>: $f'>0$ ⇒ 증가, $f'&lt;0$ ⇒ 감소</li><li><b>1계 판정</b>: $f'$ 부호 + → − ⇒ 극대, − → + ⇒ 극소, 안 바뀌면 극값 아님</li><li><b>오목성</b>: $f''>0$ ⇒ CU(접선 위), $f''&lt;0$ ⇒ CD(접선 아래)</li><li><b>변곡점</b>: 연속인 점에서 오목성이 <u>바뀌는</u> 점 ($f''=0$ 만으론 부족)</li><li><b>2계 판정</b>: $f'(c)=0$ 이고 $f''(c)>0$ ⇒ 극소, $f''(c)&lt;0$ ⇒ 극대, $f''(c)=0$ ⇒ 판정 불가 → 1계 판정</li></ul></div>
-<div class="cs-card"><div class="cs-h"><span class="cs-no">4.4</span>부정형 · 로피탈</div><ul><li><b>로피탈</b>: $\dfrac00$ 또는 $\dfrac{\pm\infty}{\pm\infty}$ 일 때 $\displaystyle\lim\frac fg=\lim\frac{f'}{g'}$ (분자·분모 <u>각각</u> 미분, 반복 가능)</li><li>적용 전 <u>반드시</u> 부정형인지 확인 (아니면 그냥 대입)</li><li>$0\cdot\infty$ → 분수로: $fg=\dfrac f{1/g}$ &nbsp;/&nbsp; $\infty-\infty$ → 통분·유리화·인수묶기</li><li>$0^0,\ \infty^0,\ 1^\infty$ → $\ln y=g\ln f$ 의 극한 $L$ 을 구하고 $y\to e^{L}$</li><li>부정형이 <u>아닌</u> 것: $0^\infty,\ \infty+\infty,\ \infty\cdot\infty$ &nbsp;/ 성장 서열 $\ln x\ll x^p\ll e^x$</li></ul></div>
-<div class="cs-card"><div class="cs-h"><span class="cs-no">4.5</span>곡선 그리기</div><ul><li><b>A–H</b>: Domain → Intercepts → Symmetry → Asymptotes → $f'$(증감) → 극값 → $f''$(오목·변곡) → Sketch</li><li>대칭: 짝함수 $f(-x)=f(x)$ ($y$축), 홀함수 $f(-x)=-f(x)$ (원점), 주기 $f(x+p)=f(x)$</li><li>점근선: 수평 $\lim_{x\to\pm\infty}f=L$ / 수직 $\lim_{x\to a^\pm}f=\pm\infty$ (좌·우 각각) / <b>사선</b> $\lim[f-(mx+b)]=0$</li><li>유리함수: (분자 차수) = (분모 차수)+1 ⇒ 장제법의 몫이 사선점근선</li></ul></div>
-</div>
-<div class="cs-tip"><b>⚠ 시험에서 가장 많이 틀리는 것</b>
-<ul>
-<li>페르마 정리·2계 판정의 <b>역</b>을 그대로 쓰는 것 ($f'(c)=0$ ≠ 극값, $f''(c)=0$ ≠ 변곡점)</li>
-<li>로피탈을 <b>부정형이 아닌데</b> 쓰거나, 몫의 미분법을 쓰는 것 / $\ln y$ 극한에서 $e^{L}$ 로 되돌리기 누락</li>
-<li>MVT·롤 적용 시 <b>연속·미분가능·구간 조건</b> 검증 누락 / 임계수 중 $f'$ 미존재 점 누락</li>
-</ul></div>
-</section>
-
 <section class="chap">
 <h2 class="chap-h"><span class="no">3</span> Differentiation Rules <span class="pg" style="font-size:13px;font-weight:400">(3.10 – 3.11)</span></h2>
 
@@ -1220,6 +1200,26 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 </section>
 
 <!-- ============================ CHEAT SHEET ============================ -->
+<section class="sec" id="concept">
+<h2>📋 개념 요약 <span class="pg">3.10 – 4.5 · 한 장으로 끝내는 핵심 개념</span></h2>
+<p class="mini">예제·풀이는 빼고 <b>정의 · 정리 · 판정법</b>만 모았습니다. 세부 설명은 각 절 탭에서 확인하세요.</p>
+<div class="cs-grid">
+<div class="cs-card"><div class="cs-h"><span class="cs-no">3.10</span>선형근사 · 미분소</div><ul><li><b>선형화</b> $L(x)=f(a)+f'(a)(x-a)$ &nbsp;⇒ &nbsp;$x\approx a$ 일 때 $f(x)\approx L(x)$ (= 접선)</li><li>접선이 곡선 <u>위</u> ⇒ 과대추정 ($f''&lt;0$), <u>아래</u> ⇒ 과소추정 ($f''>0$)</li><li><b>미분소</b> $dy=f'(x)\,dx$, &nbsp;$\Delta y\approx dy$ ($dx$ 작을수록 정확)</li><li>오차 전파: 상대오차 $\approx\dfrac{dy}{y}$ ; $y=x^n$ 이면 $\dfrac{dy}{y}=n\dfrac{dx}{x}$</li><li>$x=0$ 근처: $\sin x\approx x,\ \cos x\approx1,\ e^x\approx1+x,\ \ln(1+x)\approx x,\ (1+x)^k\approx1+kx$</li></ul></div>
+<div class="cs-card"><div class="cs-h"><span class="cs-no">3.11</span>쌍곡함수</div><ul><li>$\sinh x=\dfrac{e^x-e^{-x}}2,\ \cosh x=\dfrac{e^x+e^{-x}}2,\ \tanh x=\dfrac{\sinh x}{\cosh x}$ &nbsp;($\cosh\ge1$, $|\tanh|&lt;1$)</li><li>$\cosh^2x-\sinh^2x=1$ ,&nbsp; $1-\tanh^2x=\operatorname{sech}^2x$ (삼각함수와 부호 반대)</li><li>$(\sinh)'=\cosh,\ (\cosh)'=\sinh,\ (\tanh)'=\operatorname{sech}^2$ &nbsp;/ &nbsp;sech·csch·coth 쪽에 마이너스</li><li>$\sinh^{-1}x=\ln(x+\sqrt{x^2+1}),\ \cosh^{-1}x=\ln(x+\sqrt{x^2-1})\,(x\ge1),\ \tanh^{-1}x=\tfrac12\ln\tfrac{1+x}{1-x}$</li><li>$(\sinh^{-1})'=\dfrac1{\sqrt{x^2+1}},\ (\cosh^{-1})'=\dfrac1{\sqrt{x^2-1}},\ (\tanh^{-1})'=\dfrac1{1-x^2}$</li></ul></div>
+<div class="cs-card"><div class="cs-h"><span class="cs-no">4.1</span>최댓값 · 최솟값</div><ul><li><b>극값 정리(EVT)</b>: $f$ 가 <u>연속</u> + <u>닫힌구간</u> $[a,b]$ ⇒ 절대최댓값·최솟값 존재</li><li><b>페르마 정리</b>: 국소 극값 & $f'(c)$ 존재 ⇒ $f'(c)=0$ &nbsp;(역은 거짓: $x^3$, $|x|$)</li><li><b>임계수</b>: 정의역 안에서 $f'(c)=0$ 이거나 $f'(c)$ 가 존재하지 않는 $c$</li><li><b>닫힌구간법</b>: 임계수 값 + 끝점 값을 모두 비교 → 최대 = 절대최댓값, 최소 = 절대최솟값</li></ul></div>
+<div class="cs-card"><div class="cs-h"><span class="cs-no">4.2</span>평균값 정리</div><ul><li><b>롤</b>: 연속 on $[a,b]$, 미분가능 on $(a,b)$, $f(a)=f(b)$ ⇒ $f'(c)=0$ 인 $c\in(a,b)$</li><li><b>MVT</b>: 연속 + 미분가능 ⇒ $f'(c)=\dfrac{f(b)-f(a)}{b-a}$ (평균변화율 = 순간변화율 = 시컨트와 평행한 접선)</li><li>$f'\equiv0$ ⇒ 상수 &nbsp;/&nbsp; $f'=g'$ ⇒ $f=g+C$ (구간에서)</li><li>근의 개수 증명: <u>IVT(존재)</u> + <u>롤(유일, 귀류법)</u></li></ul></div>
+<div class="cs-card"><div class="cs-h"><span class="cs-no">4.3</span>그래프의 모양</div><ul><li><b>I/D Test</b>: $f'>0$ ⇒ 증가, $f'&lt;0$ ⇒ 감소</li><li><b>1계 판정</b>: $f'$ 부호 + → − ⇒ 극대, − → + ⇒ 극소, 안 바뀌면 극값 아님</li><li><b>오목성</b>: $f''>0$ ⇒ CU(접선 위), $f''&lt;0$ ⇒ CD(접선 아래)</li><li><b>변곡점</b>: 연속인 점에서 오목성이 <u>바뀌는</u> 점 ($f''=0$ 만으론 부족)</li><li><b>2계 판정</b>: $f'(c)=0$ 이고 $f''(c)>0$ ⇒ 극소, $f''(c)&lt;0$ ⇒ 극대, $f''(c)=0$ ⇒ 판정 불가 → 1계 판정</li></ul></div>
+<div class="cs-card"><div class="cs-h"><span class="cs-no">4.4</span>부정형 · 로피탈</div><ul><li><b>로피탈</b>: $\dfrac00$ 또는 $\dfrac{\pm\infty}{\pm\infty}$ 일 때 $\displaystyle\lim\frac fg=\lim\frac{f'}{g'}$ (분자·분모 <u>각각</u> 미분, 반복 가능)</li><li>적용 전 <u>반드시</u> 부정형인지 확인 (아니면 그냥 대입)</li><li>$0\cdot\infty$ → 분수로: $fg=\dfrac f{1/g}$ &nbsp;/&nbsp; $\infty-\infty$ → 통분·유리화·인수묶기</li><li>$0^0,\ \infty^0,\ 1^\infty$ → $\ln y=g\ln f$ 의 극한 $L$ 을 구하고 $y\to e^{L}$</li><li>부정형이 <u>아닌</u> 것: $0^\infty,\ \infty+\infty,\ \infty\cdot\infty$ &nbsp;/ 성장 서열 $\ln x\ll x^p\ll e^x$</li></ul></div>
+<div class="cs-card"><div class="cs-h"><span class="cs-no">4.5</span>곡선 그리기</div><ul><li><b>A–H</b>: Domain → Intercepts → Symmetry → Asymptotes → $f'$(증감) → 극값 → $f''$(오목·변곡) → Sketch</li><li>대칭: 짝함수 $f(-x)=f(x)$ ($y$축), 홀함수 $f(-x)=-f(x)$ (원점), 주기 $f(x+p)=f(x)$</li><li>점근선: 수평 $\lim_{x\to\pm\infty}f=L$ / 수직 $\lim_{x\to a^\pm}f=\pm\infty$ (좌·우 각각) / <b>사선</b> $\lim[f-(mx+b)]=0$</li><li>유리함수: (분자 차수) = (분모 차수)+1 ⇒ 장제법의 몫이 사선점근선</li></ul></div>
+</div>
+<div class="cs-tip"><b>⚠ 시험에서 가장 많이 틀리는 것</b>
+<ul>
+<li>페르마 정리·2계 판정의 <b>역</b>을 그대로 쓰는 것 ($f'(c)=0$ ≠ 극값, $f''(c)=0$ ≠ 변곡점)</li>
+<li>로피탈을 <b>부정형이 아닌데</b> 쓰거나, 몫의 미분법을 쓰는 것 / $\ln y$ 극한에서 $e^{L}$ 로 되돌리기 누락</li>
+<li>MVT·롤 적용 시 <b>연속·미분가능·구간 조건</b> 검증 누락 / 임계수 중 $f'$ 미존재 점 누락</li>
+</ul></div>
+</section>
+
 <section class="sec" id="cheat" style="border:2px solid var(--brand)">
 <h2>📌 공식 치트시트 <span class="pg">시험장 들어가기 5분 전에</span></h2>
 <div class="grid2">
