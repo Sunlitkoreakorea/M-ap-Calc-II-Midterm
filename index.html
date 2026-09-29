@@ -209,6 +209,26 @@ html{scroll-padding-top:70px}
 .cs-card li{margin:5px 0;font-size:14.5px;line-height:1.65}
 .cs-tip{border:1px solid color-mix(in srgb,var(--warn) 35%,transparent);background:var(--warn-bg);border-radius:14px;padding:12px 16px}
 .cs-tip ul{margin:4px 0 0;padding-left:20px}
+
+.pf-flow{background:var(--brand-soft);border-radius:12px;padding:10px 14px;margin:12px 0;font-size:14px;line-height:2}
+.pf-flow span{display:inline-block;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:0 9px;margin:0 2px}
+.pf-tools{display:flex;gap:8px;margin:8px 0 14px;position:sticky;top:56px;z-index:6;background:var(--panel);padding:6px 0}
+.pf-tools button{font:inherit;font-size:13px;padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.pf-tools button:hover{border-color:var(--brand)}
+.pf-tools button.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+.pf-card{border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:14px 0;background:var(--bg)}
+.pf-h{font-weight:800;font-size:17px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pf-h small{font-weight:400;color:var(--muted);font-size:13px}
+.pf-no{background:var(--ex);color:#fff;border-radius:50%;width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex:none;align-self:center}
+.pf-stmt{margin:8px 0 6px;padding:8px 14px;border-left:4px solid var(--thm);background:var(--thm-bg);border-radius:6px}
+ol.pf{list-style:none;counter-reset:pf;padding:0;margin:8px 0}
+ol.pf li{counter-increment:pf;padding:6px 10px 6px 34px;position:relative;border-radius:8px;transition:filter .15s}
+ol.pf li::before{content:counter(pf);position:absolute;left:8px;top:8px;width:20px;height:20px;border-radius:50%;background:var(--brand-soft);color:var(--brand);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+ol.pf li:nth-child(odd){background:color-mix(in srgb,var(--brand-soft) 45%,transparent)}
+.pf-key{background:var(--tip-bg);color:var(--ink);border-radius:10px;padding:6px 12px;font-size:14px}
+#proofs.hide ol.pf li:not(.rev){filter:blur(8px);cursor:pointer;user-select:none}
+#proofs.hide ol.pf li:not(.rev):hover{filter:blur(5px)}
+@media print{#proofs.hide ol.pf li{filter:none!important}}
 </style>
 </head>
 <body>
@@ -288,6 +308,7 @@ html{scroll-padding-top:70px}
 
   <div class="ch">Final</div>
   <a href="#concept">📋 개념 요약 (한 장)</a>
+  <a href="#proofs">🧾 증명 8선</a>
   <a href="#cheat">📌 공식 치트시트</a>
   <a href="#quiz">❓ 셀프 퀴즈</a>
   <a href="#check">✅ 시험 직전 체크리스트</a>
@@ -1220,6 +1241,22 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 </ul></div>
 </section>
 
+<section class="sec" id="proofs">
+<h2>🧾 증명 8선 <span class="pg">식만 딱 · 외우기용</span></h2>
+<p class="mini">번호는 시험 준비 목록 순서입니다. 각 증명은 <b>한 줄 핵심</b> + <b>식 전개</b>만 적었습니다. 위의 <b>“식 가리기”</b>를 켜고 줄을 눌러 하나씩 떠올리며 외우세요.</p>
+<div class="pf-flow"><b>의존 관계</b> &nbsp;<span>EVT</span>→<span>Fermat</span>→<span>Rolle</span>→<span>MVT</span>→<span>I/D · 1계 판정</span> &nbsp;|&nbsp; <span>MVT</span>→<span>Thm(4)</span>→<span>Cor 7</span> &nbsp;|&nbsp; <span>Rolle</span>→<span>Cauchy</span>→<span>L'Hospital</span></div>
+<div class="pf-tools"><button id="pfHide">👁 식 가리기 OFF</button><button id="pfAll">모두 보이기</button></div>
+<div class="pf-card"><div class="pf-h"><span class="pf-no">1</span>1계 도함수 판정법 <small>First Derivative Test</small></div><div class="pf-stmt">$c$ 가 임계수, $f'$ 이 $c$ 에서 $+\to-$ ⇒ $f(c)$ 는 국소최댓값</div><ol class="pf"><li><b>(I/D)</b> $x_1\lt x_2$ ⇒ MVT: $\;f(x_2)-f(x_1)=f'(c)(x_2-x_1)$</li><li>$f'\gt0\Rightarrow f(x_2)-f(x_1)\gt0\Rightarrow f\uparrow$ &nbsp;($f'\lt0\Rightarrow f\downarrow$)</li><li>$f'\gt0$ on $(c-\delta,c)$ ⇒ $f\uparrow$ ⇒ $f(x)\le f(c)$ &nbsp;($x\lt c$)</li><li>$f'\lt0$ on $(c,c+\delta)$ ⇒ $f\downarrow$ ⇒ $f(x)\le f(c)$ &nbsp;($x\gt c$)</li><li>∴ $f(c)\ge f(x)$ near $c$ ⇒ 국소최대 ∎ &nbsp;($-\to+$ 는 부등호 반대 ⇒ 국소최소)</li></ol><div class="pf-key">🔑 MVT로 증감 → 왼쪽 ↑ 오른쪽 ↓ ⇒ 꼭대기</div></div>
+<div class="pf-card"><div class="pf-h"><span class="pf-no">2</span>평균값 정리 <small>Mean Value Theorem</small></div><div class="pf-stmt">$f$ 연속 on $[a,b]$, 미분가능 on $(a,b)$ ⇒ $\exists c:\ f'(c)=\dfrac{f(b)-f(a)}{b-a}$</div><ol class="pf"><li>$h(x)=f(x)-f(a)-\dfrac{f(b)-f(a)}{b-a}\,(x-a)$ &nbsp;<span class='mini'>(= f − 시컨트)</span></li><li>$h(a)=0=h(b)$, &nbsp;$h$ 연속·미분가능</li><li>Rolle ⇒ $h'(c)=0$</li><li>$h'(x)=f'(x)-\dfrac{f(b)-f(a)}{b-a}$ ⇒ $\;f'(c)=\dfrac{f(b)-f(a)}{b-a}$ ∎</li></ol><div class="pf-key">🔑 h = f − 시컨트 → 롤</div></div>
+<div class="pf-card"><div class="pf-h"><span class="pf-no">3</span>롤의 정리 <small>Rolle's Theorem</small></div><div class="pf-stmt">$f$ 연속 on $[a,b]$, 미분가능 on $(a,b)$, $f(a)=f(b)$ ⇒ $\exists c:\ f'(c)=0$</div><ol class="pf"><li><b>Case I</b> $f\equiv k$ ⇒ $f'\equiv0$</li><li><b>Case II</b> $f(x)\gt f(a)$ 인 $x$ 존재 ⇒ (EVT) 최댓값 존재, $f(a)=f(b)$ ⇒ 최댓값은 <u>내부점</u> $c\in(a,b)$</li><li>$c$ 에서 국소최대 &amp; 미분가능 ⇒ (Fermat) $f'(c)=0$</li><li><b>Case III</b> $f(x)\lt f(a)$ 인 $x$ 존재 ⇒ 최솟값으로 똑같이 ∎</li></ol><div class="pf-key">🔑 상수 / 최대 / 최소 → Fermat (끝점이 같아서 극값은 안쪽)</div></div>
+<div class="pf-card"><div class="pf-h"><span class="pf-no">4</span>Theorem: 도함수 0 ⇒ 상수 <small>Theorem 5</small></div><div class="pf-stmt">$f'(x)=0$ on $(a,b)$ ⇒ $f$ 는 $(a,b)$ 에서 상수</div><ol class="pf"><li>$x_1\lt x_2$ 임의 ⇒ MVT: $\;f(x_2)-f(x_1)=f'(c)(x_2-x_1)$</li><li>$f'(c)=0$ ⇒ $\;f(x_2)-f(x_1)=0$</li><li>∴ $f(x_1)=f(x_2)$ ∎</li></ol><div class="pf-key">🔑 MVT에 f'=0 대입 → 두 점 값이 같다</div></div>
+<div class="pf-card"><div class="pf-h"><span class="pf-no">5</span>Corollary 7: 도함수 같으면 상수 차이 <small>Corollary 7</small></div><div class="pf-stmt">$f'=g'$ on $(a,b)$ ⇒ $f(x)=g(x)+C$</div><ol class="pf"><li>$F(x)=f(x)-g(x)$</li><li>$F'(x)=f'(x)-g'(x)=0$</li><li>Thm(4) ⇒ $F\equiv C$ ⇒ $f=g+C$ ∎</li></ol><div class="pf-key">🔑 F = f − g → 미분하면 0 → 상수</div></div>
+<div class="pf-card"><div class="pf-h"><span class="pf-no">6</span>코시 평균값 정리 <small>Cauchy's MVT</small></div><div class="pf-stmt">$f,g$ 연속 on $[a,b]$, 미분가능 on $(a,b)$, $g'\ne0$ ⇒ $\exists c:\ \dfrac{f'(c)}{g'(c)}=\dfrac{f(b)-f(a)}{g(b)-g(a)}$</div><ol class="pf"><li>$g(a)\ne g(b)$ (같으면 Rolle ⇒ $g'(c)=0$ 모순)</li><li>$K=\dfrac{f(b)-f(a)}{g(b)-g(a)}$</li><li>$h(x)=f(x)-f(a)-K\,[\,g(x)-g(a)\,]$</li><li>$h(a)=0$, &nbsp;$h(b)=f(b)-f(a)-K[g(b)-g(a)]=0$</li><li>Rolle ⇒ $h'(c)=f'(c)-K\,g'(c)=0$ ⇒ $\;\dfrac{f'(c)}{g'(c)}=K$ ∎</li></ol><div class="pf-key">🔑 MVT의 h 에 g 를 끼운 것 ($g(x)=x$ 이면 MVT)</div></div>
+<div class="pf-card"><div class="pf-h"><span class="pf-no">7</span>로피탈의 정리 <small>L'Hospital's Rule</small></div><div class="pf-stmt">$\dfrac00$ 꼴 ($x\to a^+$): $\displaystyle\lim\frac{f}{g}=\lim\frac{f'}{g'}$</div><ol class="pf"><li>$f(a)=g(a)=0$ (연속 확장)</li><li>Cauchy on $[a,x]$: &nbsp;$\dfrac{f(x)}{g(x)}=\dfrac{f(x)-f(a)}{g(x)-g(a)}=\dfrac{f'(c)}{g'(c)}$, &nbsp;$a\lt c\lt x$</li><li>$x\to a^+$ ⇒ $c\to a^+$</li><li>∴ $\displaystyle\lim_{x\to a^+}\frac{f(x)}{g(x)}=\lim_{c\to a^+}\frac{f'(c)}{g'(c)}$ ∎</li><li><span class='mini'>(간단 버전: $f',g'$ 연속, $g'(a)\ne0$ ⇒ $\dfrac{f'(a)}{g'(a)}=\dfrac{\lim\frac{f(x)-f(a)}{x-a}}{\lim\frac{g(x)-g(a)}{x-a}}=\lim\dfrac{f(x)}{g(x)}$)</span></li></ol><div class="pf-key">🔑 몫 = 코시 MVT 한 방 (f(a)=g(a)=0 이라 f(x)/g(x) 가 그대로 코시의 좌변)</div></div>
+<div class="pf-card"><div class="pf-h"><span class="pf-no">8</span>페르마 정리 <small>Fermat's Theorem</small></div><div class="pf-stmt">$f$ 가 $c$ 에서 국소극값, $f'(c)$ 존재 ⇒ $f'(c)=0$</div><ol class="pf"><li>(국소최대) $f(c+h)-f(c)\le0$ &nbsp;($|h|$ 작을 때)</li><li>$h\gt0$: $\dfrac{f(c+h)-f(c)}{h}\le0$ ⇒ $f'(c)=\lim_{h\to0^+}\ \le0$</li><li>$h\lt0$: $\dfrac{f(c+h)-f(c)}{h}\ge0$ (÷음수) ⇒ $f'(c)=\lim_{h\to0^-}\ \ge0$</li><li>∴ $f'(c)=0$ ∎ &nbsp;(국소최소는 부등호 반대)</li></ol><div class="pf-key">🔑 오른쪽 극한 ≤ 0, 왼쪽 극한 ≥ 0 ⇒ 0</div></div>
+<p class="mini">※ 목록의 4번 “Thm”은 4.2의 Theorem 5(도함수가 0이면 상수)로 정리했습니다. L'Hospital 의 $\infty/\infty$ 형 증명은 더 복잡해 교재 Appendix F 에 있으며, 시험에서는 $0/0$ 증명을 기준으로 정리했습니다.</p>
+</section>
+
 <section class="sec" id="cheat" style="border:2px solid var(--brand)">
 <h2>📌 공식 치트시트 <span class="pg">시험장 들어가기 5분 전에</span></h2>
 <div class="grid2">
@@ -1354,8 +1391,8 @@ $$('.qa>button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open
 /* ---------- paged (book) mode ---------- */
 (function(){
   const pages=$$('main section.sec');
-  const short={concept:'📋 개념요약',s310:'3.10',s311:'3.11',pr3:'Ch3 연습문제',s41:'4.1',s42:'4.2',s43:'4.3',s44:'4.4',s45:'4.5',pr4:'Ch4 연습문제',cheat:'📌 치트시트',quiz:'❓ 퀴즈',check:'✅ 체크리스트'};
-  const full={concept:'개념 요약',s310:'3.10 선형근사·미분소',s311:'3.11 쌍곡함수',pr3:'Chapter 3 연습문제',s41:'4.1 최댓값·최솟값',s42:'4.2 평균값 정리',s43:'4.3 그래프의 모양',s44:'4.4 로피탈',s45:'4.5 곡선 그리기',pr4:'Chapter 4 연습문제',cheat:'공식 치트시트',quiz:'셀프 퀴즈',check:'시험 직전 체크리스트'};
+  const short={concept:'📋 개념요약',proofs:'🧾 증명',s310:'3.10',s311:'3.11',pr3:'Ch3 연습문제',s41:'4.1',s42:'4.2',s43:'4.3',s44:'4.4',s45:'4.5',pr4:'Ch4 연습문제',cheat:'📌 치트시트',quiz:'❓ 퀴즈',check:'✅ 체크리스트'};
+  const full={concept:'개념 요약',proofs:'증명 8선',s310:'3.10 선형근사·미분소',s311:'3.11 쌍곡함수',pr3:'Chapter 3 연습문제',s41:'4.1 최댓값·최솟값',s42:'4.2 평균값 정리',s43:'4.3 그래프의 모양',s44:'4.4 로피탈',s45:'4.5 곡선 그리기',pr4:'Chapter 4 연습문제',cheat:'공식 치트시트',quiz:'셀프 퀴즈',check:'시험 직전 체크리스트'};
   let cur=0;
   const tl=$('#tabList');
   pages.forEach((p,i)=>{const b=document.createElement('button');b.textContent=short[p.id]||p.id;b.dataset.i=i;b.onclick=()=>show(i,true);tl.appendChild(b)});
@@ -1590,6 +1627,14 @@ plot($('#figHyp'),{x:[-3,3],y:[-4,4],items:[
   let sx=null;
   card.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
   card.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>60){go(dx<0?1:-1);e.preventDefault()}});
+})();
+
+/* ---------- proofs: hide/reveal ---------- */
+(function(){
+  const sec=$('#proofs'),btn=$('#pfHide');
+  btn.onclick=()=>{const on=sec.classList.toggle('hide');btn.classList.toggle('on',on);btn.textContent=on?'👁 식 가리기 ON (줄을 눌러 보기)':'👁 식 가리기 OFF';if(!on)$$('ol.pf li',sec).forEach(l=>l.classList.remove('rev'))};
+  $('#pfAll').onclick=()=>$$('ol.pf li',sec).forEach(l=>l.classList.add('rev'));
+  $$('ol.pf li',sec).forEach(l=>l.onclick=()=>{if(sec.classList.contains('hide'))l.classList.toggle('rev')});
 })();
 
 /* ---------- KaTeX ---------- */
