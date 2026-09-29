@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AP 미적분 II · 3.10 – 4.5 시험 직전 정리</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<style>
+:root{
+  --bg:#f6f7fb; --panel:#ffffff; --ink:#1c2030; --muted:#5d6580; --line:#e2e5ef;
+  --brand:#3a4fd7; --brand-soft:#e8ebff;
+  --def:#1f7a5a; --def-bg:#e6f6ef;
+  --thm:#3a4fd7; --thm-bg:#eaedff;
+  --warn:#b4471b; --warn-bg:#fdeee6;
+  --tip:#8a6d00; --tip-bg:#fff6d6;
+  --ex:#5b3fb5; --ex-bg:#f0ebfc;
+  --shadow:0 1px 2px rgba(20,25,60,.06),0 4px 14px rgba(20,25,60,.05);
+}
+:root[data-theme="dark"]{
+  --bg:#12141c; --panel:#1b1e2a; --ink:#e7e9f3; --muted:#9aa1bb; --line:#2b3042;
+  --brand:#8fa0ff; --brand-soft:#262c52;
+  --def:#5fd1a4; --def-bg:#173229;
+  --thm:#8fa0ff; --thm-bg:#212750;
+  --warn:#ff9a70; --warn-bg:#3a2218;
+  --tip:#f0cd5a; --tip-bg:#352d10;
+  --ex:#b9a2ff; --ex-bg:#2a2247;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 "Pretendard","Noto Sans KR","Malgun Gothic",system-ui,sans-serif}
+.layout{display:flex;max-width:1280px;margin:0 auto}
+nav.side{position:sticky;top:0;align-self:flex-start;height:100vh;overflow-y:auto;width:285px;flex:none;padding:22px 16px 40px;border-right:1px solid var(--line);background:var(--panel)}
+nav.side h1{font-size:15px;margin:0 0 4px;line-height:1.4}
+nav.side .sub{font-size:12px;color:var(--muted);margin-bottom:14px}
+nav.side .ch{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:18px 0 6px;font-weight:700}
+nav.side a{display:block;padding:5px 10px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:14px;line-height:1.4}
+nav.side a:hover{background:var(--brand-soft)}
+nav.side a.on{background:var(--brand);color:#fff}
+nav.side a.sm{font-size:12.5px;color:var(--muted);padding:2px 10px 2px 24px}
+nav.side a.on.sm{color:#fff}
+.tools{display:flex;gap:6px;margin:10px 0 0}
+.tools button{flex:1;font:inherit;font-size:12px;padding:6px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.tools button:hover{border-color:var(--brand)}
+main{flex:1;min-width:0;padding:28px 34px 100px}
+.hero{background:linear-gradient(135deg,#3a4fd7,#6b4fd7);color:#fff;border-radius:18px;padding:28px 30px;box-shadow:var(--shadow)}
+.hero h1{margin:0 0 6px;font-size:26px;line-height:1.3}
+.hero p{margin:4px 0;opacity:.92;font-size:14.5px}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pill{background:rgba(255,255,255,.18);border-radius:99px;padding:3px 12px;font-size:12.5px}
+section.chap{margin-top:46px}
+.chap-h{display:flex;align-items:center;gap:12px;font-size:22px;margin:0 0 6px;padding-bottom:10px;border-bottom:3px solid var(--brand)}
+.chap-h .no{background:var(--brand);color:#fff;border-radius:10px;padding:2px 12px;font-size:18px}
+section.sec{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin:22px 0;box-shadow:var(--shadow)}
+.sec>h2{margin:0 0 4px;font-size:21px;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+.sec>h2 .n{color:var(--brand)}
+.sec .pg{font-size:12px;color:var(--muted);font-weight:400}
+.sec h3{margin:30px 0 8px;font-size:17.5px;padding-left:12px;border-left:5px solid var(--brand)}
+.sec h3 .sq{color:var(--brand);margin-right:4px}
+.sec h4{margin:18px 0 6px;font-size:15px;color:var(--muted)}
+p{margin:8px 0}
+ul,ol{margin:8px 0;padding-left:22px}
+li{margin:4px 0}
+.box{border-radius:12px;padding:12px 16px;margin:14px 0;border:1px solid transparent}
+.box>b.lab{display:inline-block;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:1px 9px;border-radius:6px;margin-bottom:6px;color:#fff}
+.def{background:var(--def-bg);border-color:color-mix(in srgb,var(--def) 35%,transparent)}.def>b.lab{background:var(--def)}
+.thm{background:var(--thm-bg);border-color:color-mix(in srgb,var(--thm) 35%,transparent)}.thm>b.lab{background:var(--thm)}
+.warn{background:var(--warn-bg);border-color:color-mix(in srgb,var(--warn) 35%,transparent)}.warn>b.lab{background:var(--warn)}
+.tip{background:var(--tip-bg);border-color:color-mix(in srgb,var(--tip) 35%,transparent)}.tip>b.lab{background:var(--tip)}
+.formula{background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:8px 14px;margin:12px 0;overflow-x:auto}
+details.ex{background:var(--ex-bg);border:1px solid color-mix(in srgb,var(--ex) 30%,transparent);border-radius:12px;margin:14px 0}
+details.ex>summary{cursor:pointer;padding:11px 16px;font-weight:600;color:var(--ex);list-style:none}
+details.ex>summary::-webkit-details-marker{display:none}
+details.ex>summary::before{content:"▶ ";font-size:11px}
+details.ex[open]>summary::before{content:"▼ "}
+details.ex .body{padding:0 18px 14px}
+details.ex .body .q{font-weight:600}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:7px 11px;text-align:center;vertical-align:middle}
+th{background:var(--brand-soft);font-weight:700}
+td.l,th.l{text-align:left}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:800px){.grid2{grid-template-columns:1fr}}
+svg.fig{width:100%;max-width:440px;height:auto;background:var(--panel);border:1px solid var(--line);border-radius:12px;display:block;margin:10px auto}
+svg.fig text{fill:var(--ink);font:12px sans-serif}
+figcaption{text-align:center;color:var(--muted);font-size:13px;margin-top:-2px}
+figure{margin:12px 0}
+.qa{border:1px solid var(--line);border-radius:12px;margin:8px 0;overflow:hidden}
+.qa>button{all:unset;display:block;width:100%;box-sizing:border-box;padding:10px 14px;cursor:pointer;font-weight:600}
+.qa>button:hover{background:var(--brand-soft)}
+.qa .a{display:none;padding:8px 14px 12px;border-top:1px solid var(--line);background:var(--bg)}
+.qa.open .a{display:block}
+.chk{list-style:none;padding:0}
+.chk li{display:flex;gap:10px;align-items:flex-start;padding:7px 10px;border-radius:8px}
+.chk li:hover{background:var(--brand-soft)}
+.chk input{margin-top:6px;transform:scale(1.2)}
+.chk input:checked+span{text-decoration:line-through;color:var(--muted)}
+.progress{position:fixed;left:0;top:0;height:4px;background:var(--brand);width:0;z-index:99}
+.mini{font-size:13px;color:var(--muted)}
+kbd{background:var(--brand-soft);border-radius:5px;padding:0 6px;font-size:.9em}
+.katex-display{margin:.6em 0;overflow-x:auto;overflow-y:hidden}
+@media(max-width:980px){
+  .layout{display:block}
+  nav.side{position:static;height:auto;width:auto;border-right:0;border-bottom:1px solid var(--line)}
+  main{padding:18px 14px 80px}
+  section.sec{padding:18px 16px}
+}
+@media print{
+  nav.side,.progress,.tools{display:none}
+  details.ex .body{display:block}
+  .qa .a{display:block}
+  body{background:#fff}
+}
+
+.practice{border:2px solid var(--ex)}
+.practice{counter-reset:pn}
+.prob{counter-increment:pn;border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:12px 0;background:var(--bg)}
+.prob .pq{display:flex;gap:12px;align-items:flex-start}
+.prob .pn::before{content:counter(pn);display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;border-radius:50%;background:var(--ex);color:#fff;font-weight:700;font-size:13px}
+.prob .pbtns{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0 40px}
+.prob button,.score button{font:inherit;font-size:13px;padding:4px 12px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.prob button:hover,.score button:hover{border-color:var(--brand)}
+.prob .ans{display:none;margin:10px 0 0 40px;padding:10px 14px;background:var(--panel);border-left:4px solid var(--def);border-radius:8px}
+.prob.show .ans{display:block}
+.prob.right{border-color:var(--def);background:var(--def-bg)}
+.prob.wrong{border-color:var(--warn);background:var(--warn-bg)}
+.prob.right .ok,.prob.wrong .no{background:var(--brand);color:#fff;border-color:var(--brand)}
+.score{display:flex;flex-wrap:wrap;gap:10px;align-items:center;position:sticky;top:0;z-index:5;background:var(--panel);padding:8px 0;border-bottom:1px solid var(--line)}
+.score .sc{font-weight:700;color:var(--ex)}
+.practice.filter .prob:not(.wrong){display:none}
+@media print{.prob .ans{display:block}}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<div class="layout">
+
+<!-- ===================== SIDEBAR ===================== -->
+<nav class="side" id="nav">
+  <h1>AP 미적분 II<br>3.10 – 4.5 시험 직전 정리</h1>
+  <div class="sub">Stewart, <i>Calculus: Early Transcendentals</i> 9e</div>
+  <div class="tools">
+    <button id="btnTheme">🌓 다크모드</button>
+    <button id="btnOpen">예제 모두 펼치기</button>
+  </div>
+
+  <div class="ch">Chapter 3 · Differentiation Rules</div>
+  <a href="#s310">3.10 선형근사와 미분</a>
+  <a class="sm" href="#s310-1">Linearization &amp; Approximation</a>
+  <a class="sm" href="#s310-2">Applications to Physics</a>
+  <a class="sm" href="#s310-3">Differentials</a>
+  <a href="#s311">3.11 쌍곡함수</a>
+  <a class="sm" href="#s311-1">Hyperbolic Functions &amp; Derivatives</a>
+  <a class="sm" href="#s311-2">Inverse Hyperbolic Functions</a>
+
+  <a href="#pr3">🧪 Chapter 3 연습문제</a>
+
+  <div class="ch">Chapter 4 · Applications of Differentiation</div>
+  <a href="#s41">4.1 최댓값과 최솟값</a>
+  <a class="sm" href="#s41-1">Absolute &amp; Local Extreme Values</a>
+  <a class="sm" href="#s41-2">Critical Numbers &amp; Closed Interval</a>
+  <a href="#s42">4.2 평균값 정리</a>
+  <a class="sm" href="#s42-1">Rolle's Theorem</a>
+  <a class="sm" href="#s42-2">The Mean Value Theorem</a>
+  <a href="#s43">4.3 도함수와 그래프의 모양</a>
+  <a class="sm" href="#s43-1">What does f′ say about f?</a>
+  <a class="sm" href="#s43-2">The First Derivative Test</a>
+  <a class="sm" href="#s43-3">What does f″ say about f?</a>
+  <a class="sm" href="#s43-4">The Second Derivative Test</a>
+  <a class="sm" href="#s43-5">Curve Sketching</a>
+  <a href="#s44">4.4 부정형과 로피탈</a>
+  <a class="sm" href="#s44-1">Indeterminate Forms (0/0, ∞/∞)</a>
+  <a class="sm" href="#s44-2">L'Hospital's Rule</a>
+  <a class="sm" href="#s44-3">Indeterminate Products (0·∞)</a>
+  <a class="sm" href="#s44-4">Indeterminate Differences (∞−∞)</a>
+  <a class="sm" href="#s44-5">Indeterminate Powers (0⁰, ∞⁰, 1^∞)</a>
+  <a href="#s45">4.5 곡선 그리기 총정리</a>
+  <a class="sm" href="#s45-1">Guidelines for Sketching</a>
+  <a class="sm" href="#s45-2">Slant Asymptotes</a>
+
+  <a href="#pr4">🧪 Chapter 4 연습문제</a>
+
+  <div class="ch">Final</div>
+  <a href="#cheat">📌 공식 치트시트</a>
+  <a href="#quiz">❓ 셀프 퀴즈</a>
+  <a href="#check">✅ 시험 직전 체크리스트</a>
+</nav>
+
+<!-- ===================== MAIN ===================== -->
+<main>
+<div class="hero">
+  <h1>3.10 – 4.5 시험 직전 학습 노트</h1>
+  <p>단원 → 소제목(교재 ■ 표시) → 개념 순서로 정리했습니다. 정의·정리는 색 박스, 예제는 클릭해서 풀이를 펼쳐 보세요.</p>
+  <div class="pillrow">
+    <span class="pill">3.10 Linear Approx.</span><span class="pill">3.11 Hyperbolic</span>
+    <span class="pill">4.1 Max/Min</span><span class="pill">4.2 MVT</span>
+    <span class="pill">4.3 Shape of Graph</span><span class="pill">4.4 L'Hospital</span><span class="pill">4.5 Curve Sketching</span>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<section class="chap">
+<h2 class="chap-h"><span class="no">3</span> Differentiation Rules <span class="pg" style="font-size:13px;font-weight:400">(3.10 – 3.11)</span></h2>
+
+<!-- ============================ 3.10 ============================ -->
+<section class="sec" id="s310">
+<h2><span class="n">3.10</span> Linear Approximations and Differentials <span class="pg">교재 p.254–260</span></h2>
+<p class="mini">핵심 아이디어: 접점 근처에서 곡선은 접선과 거의 같다 → 계산이 어려운 값을 접선으로 근사.</p>
+
+<h3 id="s310-1"><span class="sq">■</span>Linearization and Approximation (선형화와 근사)</h3>
+<div class="box def"><b class="lab">Definition</b>
+<p>$x=a$에서 $f$의 <b>선형화(linearization)</b>:</p>
+<div class="formula">$$L(x)=f(a)+f'(a)(x-a)$$</div>
+<p><b>선형근사(tangent line approximation)</b>: $\;f(x)\approx f(a)+f'(a)(x-a)\;$ ($x$가 $a$ 근처일 때)</p></div>
+<ul>
+<li>$L(x)$ = 점 $(a,f(a))$에서의 <b>접선의 방정식</b> 그 자체.</li>
+<li>$a$에서 멀어질수록 오차가 커진다 (예: $\sqrt{x+3}$의 선형화는 $x=1$ 근처에서만 정확).</li>
+<li><b>과대/과소 추정 판정</b>: 접선이 곡선 <u>위</u>에 있으면 과대추정(overestimate) → $f''<0$(위로 볼록·CD)일 때. 접선이 곡선 <u>아래</u>이면 과소추정 → $f''>0$(CU)일 때.</li>
+<li><b>오차 범위 문제</b> ("accurate to within 0.1"): $|f(x)-L(x)|<0.1$, 즉 $L(x)-0.1<f(x)<L(x)+0.1$을 만족하는 $x$ 구간을 그래프의 교점으로 찾는다.</li>
+</ul>
+
+<div class="box tip"><b class="lab">외워둘 것 · $x=0$에서의 선형화</b>
+<div class="formula">$$\sin x\approx x,\quad \cos x\approx 1,\quad \tan x\approx x,\quad e^x\approx 1+x,\quad \ln(1+x)\approx x,\quad (1+x)^k\approx 1+kx$$</div>
+<p class="mini">예: $\ln 1.04\approx 0.04$, $\;1/9.98=(10-0.02)^{-1}\approx 0.1002$, $\;\sqrt{4.02}\approx2+\tfrac{0.02}{4}=2.005$.</p></div>
+
+<details class="ex"><summary>예제 1 · $f(x)=\sqrt{x+3}$, $a=1$ 에서 선형화 → $\sqrt{3.98},\sqrt{4.05}$ 근사</summary>
+<div class="body">
+<p>$f'(x)=\dfrac{1}{2\sqrt{x+3}}$, $f(1)=2$, $f'(1)=\dfrac14$.</p>
+<p>$L(x)=2+\dfrac14(x-1)=\dfrac74+\dfrac x4$.</p>
+<p>$\sqrt{3.98}=f(0.98)\approx \dfrac74+\dfrac{0.98}{4}=1.995$, $\;\sqrt{4.05}=f(1.05)\approx\dfrac74+\dfrac{1.05}{4}=2.0125$.</p>
+<p>접선이 곡선 위에 있으므로 <b>과대추정</b> (실제: 1.99499…, 2.01246…).</p>
+</div></details>
+<figure><svg class="fig" id="figLin" viewBox="0 0 440 280"></svg><figcaption>$y=\sqrt{x+3}$ 와 그 접선 $L(x)=\frac74+\frac x4$ (a=1) — 접점 근처에서 거의 일치</figcaption></figure>
+
+<h3 id="s310-2"><span class="sq">■</span>Applications to Physics (물리에서의 응용)</h3>
+<ul>
+<li><b>진자(pendulum)</b>: $a_T=-g\sin\theta$ 에서 $\sin\theta\approx\theta$ 로 바꿔 주기 $T\approx 2\pi\sqrt{L/g}$ 를 유도 → 이것이 곧 $x=0$ 에서 사인함수의 선형근사.</li>
+<li><b>근축광학(paraxial optics)</b>: 작은 각 $\theta$에 대해 $\sin\theta\approx\theta$, $\cos\theta\approx1$ → 렌즈 설계의 기본 이론.</li>
+<li>$\theta=\pi/18$ (10°)에서 $\sin\theta\approx\theta$ 를 쓰면 오차는 약 0.5% 수준으로 매우 작다 (교재 연습문제 50).</li>
+</ul>
+<div class="box tip"><b class="lab">Tip</b> "작은 각(small angle)"이라는 말이 나오면 $\sin\theta\approx\theta,\ \tan\theta\approx\theta,\ \cos\theta\approx1$ 을 쓰라는 신호.</div>
+
+<h3 id="s310-3"><span class="sq">■</span>Differentials (미분소)</h3>
+<div class="box def"><b class="lab">Definition</b>
+<p>$y=f(x)$ 일 때, $dx$는 <b>독립변수</b>(임의의 실수), $dy$는 <b>종속변수</b>:</p>
+<div class="formula">$$dy=f'(x)\,dx\qquad\Longleftrightarrow\qquad \frac{dy}{dx}=f'(x)\ \ (dx\ne0)$$</div></div>
+<div class="grid2">
+<div class="box thm"><b class="lab">기하학적 의미</b>
+<ul>
+<li>$\Delta y=f(x+\Delta x)-f(x)$ : <b>곡선</b>이 실제로 변한 양</li>
+<li>$dy=f'(x)\,dx$ : <b>접선</b>이 변한 양 (선형화의 변화량)</li>
+<li>$dx=\Delta x$ 가 작을수록 $\Delta y\approx dy$ 가 정확 (그리고 $dy$가 계산하기 훨씬 쉽다).</li>
+</ul></div>
+<div class="box thm"><b class="lab">근사식 (미분소 표기)</b>
+<div class="formula">$$f(a+dx)\approx f(a)+dy$$</div>
+<p class="mini">$dx=x-a$ 로 두면 선형근사 $f(x)\approx f(a)+f'(a)(x-a)$ 와 동일.</p></div>
+</div>
+
+<div class="box thm"><b class="lab">미분소 계산 법칙</b>
+$$dc=0,\quad d(cu)=c\,du,\quad d(u\pm v)=du\pm dv,\quad d(uv)=u\,dv+v\,du,\quad d\!\left(\tfrac uv\right)=\frac{v\,du-u\,dv}{v^2},\quad d(x^n)=nx^{n-1}dx$$</div>
+
+<div class="box def"><b class="lab">오차 추정 (Error propagation)</b>
+<p>측정값의 오차 $dx=\Delta x$ → 계산값의 오차 $\Delta y\approx dy=f'(x)\,dx$.</p>
+<div class="formula">$$\text{상대오차}=\frac{\Delta y}{y}\approx\frac{dy}{y},\qquad \text{백분율 오차}=\text{상대오차}\times100\%$$</div>
+<p>멱함수 $y=x^n$ 이면 $\dfrac{dy}{y}=n\,\dfrac{dx}{x}$ : <b>상대오차는 지수 배</b>가 된다. (구의 부피 $V=\frac43\pi r^3$ → $\dfrac{dV}{V}=3\dfrac{dr}{r}$, 혈류 $F=kR^4$ → $\dfrac{dF}{F}=4\dfrac{dR}{R}$: 반지름이 5% 증가하면 혈류는 약 20% 증가.)</p></div>
+
+<details class="ex"><summary>예제 3 · $\Delta y$ 와 $dy$ 비교: $y=x^3+x^2-2x+1$, $x=2$, (a) $dx=0.05$ (b) $dx=0.01$</summary>
+<div class="body">
+<p>$f(2)=9$, $dy=(3x^2+2x-2)\,dx=(12+4-2)\,dx=14\,dx$.</p>
+<p>(a) $\Delta y=f(2.05)-f(2)=9.717625-9=0.717625$, $\;dy=14(0.05)=0.7$.</p>
+<p>(b) $\Delta y=9.140701-9=0.140701$, $\;dy=14(0.01)=0.14$.</p>
+<p>→ $\Delta x$ 가 작아질수록 $\Delta y\approx dy$ 가 더 정확해진다.</p>
+</div></details>
+
+<details class="ex"><summary>예제 4 · 구의 반지름 $r=21$ cm, 오차 $\le0.05$ cm. 부피의 최대 오차는?</summary>
+<div class="body">
+<p>$V=\frac43\pi r^3\Rightarrow dV=4\pi r^2\,dr=4\pi(21)^2(0.05)\approx 277\ \text{cm}^3$.</p>
+<p>상대오차: $\dfrac{dV}{V}=3\dfrac{dr}{r}=3\cdot\dfrac{0.05}{21}\approx0.007$ → 약 <b>0.7%</b> (반지름 자체의 상대오차는 약 0.24%).</p>
+</div></details>
+
+<div class="box tip"><b class="lab">Discovery Project · 2차 근사(Taylor 맛보기)</b>
+<p>접선(1차)보다 더 나은 근사: $\;P(x)=f(a)+f'(a)(x-a)+\dfrac{f''(a)}{2}(x-a)^2$ &nbsp;(값·1계·2계 도함수가 $a$에서 모두 일치).<br>
+$n$차로 확장: $\;T_n(x)=\sum_{k=0}^{n}\dfrac{f^{(k)}(a)}{k!}(x-a)^k$ (Taylor 다항식, 11장에서 본격적으로). 예) $\cos x\approx 1-\dfrac{x^2}{2}$.</p></div>
+
+<div class="box warn"><b class="lab">시험 함정</b>
+<ul>
+<li>선형화 계산 시 $a$는 <u>함수값·도함수값을 정확히 알 수 있는 가까운 점</u>으로 고른다 ($\sqrt{4.05}\to a=4$).</li>
+<li>$dy$ 와 $\Delta y$ 를 혼동 금지. 문제에서 "differentials를 이용해"라고 하면 $dy=f'(x)dx$ 를 쓴다.</li>
+<li>각도 문제는 반드시 <b>라디안</b>으로 변환 ($30^\circ=\pi/6$, 오차 $1^\circ=\pi/180$).</li>
+</ul></div>
+</section>
+
+<!-- ============================ 3.11 ============================ -->
+<section class="sec" id="s311">
+<h2><span class="n">3.11</span> Hyperbolic Functions <span class="pg">교재 p.261–266</span></h2>
+<p class="mini">$e^x$ 와 $e^{-x}$ 의 조합. 삼각함수가 <u>단위원</u> $x^2+y^2=1$ 과 연결되듯, 쌍곡함수는 <u>쌍곡선</u> $x^2-y^2=1$ 과 연결된다.</p>
+
+<h3 id="s311-1"><span class="sq">■</span>Hyperbolic Functions and Their Derivatives (쌍곡함수와 그 도함수)</h3>
+<div class="box def"><b class="lab">Definition of the Hyperbolic Functions</b>
+<div class="formula">$$\sinh x=\frac{e^x-e^{-x}}2\qquad \cosh x=\frac{e^x+e^{-x}}2\qquad \tanh x=\frac{\sinh x}{\cosh x}$$
+$$\operatorname{csch}x=\frac1{\sinh x}\qquad \operatorname{sech}x=\frac1{\cosh x}\qquad \coth x=\frac{\cosh x}{\sinh x}$$</div></div>
+
+<div class="grid2">
+<div>
+<h4>그래프 성질</h4>
+<table>
+<tr><th>함수</th><th>정의역</th><th>치역</th><th>대칭</th></tr>
+<tr><td>$\sinh x$</td><td>$\mathbb R$</td><td>$\mathbb R$</td><td>홀함수(odd)</td></tr>
+<tr><td>$\cosh x$</td><td>$\mathbb R$</td><td>$[1,\infty)$</td><td>짝함수(even)</td></tr>
+<tr><td>$\tanh x$</td><td>$\mathbb R$</td><td>$(-1,1)$</td><td>홀함수</td></tr>
+</table>
+<p class="mini">$\tanh$ 의 수평점근선: $y=\pm1$. $\cosh 0=1,\ \sinh0=0,\ \tanh 0=0$.</p>
+</div>
+<figure style="margin:0"><svg class="fig" id="figHyp" viewBox="0 0 440 280"></svg><figcaption>sinh, cosh, tanh 그래프</figcaption></figure>
+</div>
+
+<div class="box thm"><b class="lab">Hyperbolic Identities (쌍곡항등식)</b>
+$$\cosh^2x-\sinh^2x=1\qquad 1-\tanh^2x=\operatorname{sech}^2x\qquad \cosh x+\sinh x=e^x\qquad \cosh x-\sinh x=e^{-x}$$
+$$\sinh(-x)=-\sinh x\qquad\cosh(-x)=\cosh x$$
+$$\sinh(x+y)=\sinh x\cosh y+\cosh x\sinh y\qquad \cosh(x+y)=\cosh x\cosh y+\sinh x\sinh y$$
+<p class="mini">→ 배각: $\sinh2x=2\sinh x\cosh x$, $\ \cosh2x=\cosh^2x+\sinh^2x$. &nbsp; 삼각항등식 $\cos^2+\sin^2=1$ 과 <u>부호가 다르다</u>(빼기!)는 점이 이름 “hyperbolic”의 유래.</p></div>
+
+<div class="box thm"><b class="lab">Derivatives of Hyperbolic Functions</b>
+<table>
+<tr><th>$\dfrac{d}{dx}\sinh x=\cosh x$</th><th>$\dfrac{d}{dx}\operatorname{csch}x=-\operatorname{csch}x\coth x$</th></tr>
+<tr><th>$\dfrac{d}{dx}\cosh x=\sinh x$</th><th>$\dfrac{d}{dx}\operatorname{sech}x=-\operatorname{sech}x\tanh x$</th></tr>
+<tr><th>$\dfrac{d}{dx}\tanh x=\operatorname{sech}^2x$</th><th>$\dfrac{d}{dx}\coth x=-\operatorname{csch}^2x$</th></tr>
+</table>
+<p class="mini">삼각함수 도함수와 비교: $\sinh\to\cosh$, $\cosh\to\sinh$ 에서는 <b>마이너스가 없다</b>(cos의 도함수는 $-\sin$ 이었음!). "co-" 가 붙은 <u>csch, sech, coth</u> 쪽에 마이너스가 붙는다.</p></div>
+
+<div class="box tip"><b class="lab">응용</b>
+<ul>
+<li><b>현수선(catenary)</b>: 양 끝을 같은 높이에 매단 무거운 유연한 줄(전선, 사슬)의 모양 $\;y=c+a\cosh\!\left(\dfrac xa\right)$. (세인트루이스 게이트웨이 아치도 cosh 기반)</li>
+<li><b>물결(ocean wave)</b>: 파장 $L$, 수심 $d$ 인 파도의 속도 $v=\sqrt{\dfrac{gL}{2\pi}\tanh\dfrac{2\pi d}{L}}$.</li>
+<li>기하적 의미: 점 $(\cosh t,\sinh t)$ 는 쌍곡선 $x^2-y^2=1$ 의 오른쪽 가지 위에 있으며, $t$ = 쌍곡선 부채꼴 넓이의 2배 (각도가 아님).</li>
+</ul></div>
+
+<details class="ex"><summary>예제 1 · 증명: (a) $\cosh^2x-\sinh^2x=1$ (b) $1-\tanh^2x=\operatorname{sech}^2x$</summary>
+<div class="body">
+<p>(a) $\left(\dfrac{e^x+e^{-x}}2\right)^2-\left(\dfrac{e^x-e^{-x}}2\right)^2=\dfrac{e^{2x}+2+e^{-2x}}4-\dfrac{e^{2x}-2+e^{-2x}}4=\dfrac44=1$.</p>
+<p>(b) (a)의 양변을 $\cosh^2x$ 로 나눈다: $1-\tanh^2x=\dfrac1{\cosh^2x}=\operatorname{sech}^2x$.</p>
+</div></details>
+<details class="ex"><summary>예제 2 · $y=\cosh\sqrt x$ 의 도함수 (연쇄법칙)</summary>
+<div class="body">
+$$\frac{dy}{dx}=\sinh\sqrt x\cdot\frac{d}{dx}\sqrt x=\frac{\sinh\sqrt x}{2\sqrt x}$$
+</div></details>
+
+<h3 id="s311-2"><span class="sq">■</span>Inverse Hyperbolic Functions and Their Derivatives (역쌍곡함수와 도함수)</h3>
+<ul>
+<li>$\sinh,\tanh$ 는 일대일(one-to-one) → 역함수 $\sinh^{-1},\tanh^{-1}$ 존재.</li>
+<li>$\cosh$ 는 일대일이 아니므로 <b>정의역을 $[0,\infty)$ 로 제한</b>해서 역함수를 정의.</li>
+</ul>
+<div class="box def"><b class="lab">Definition</b>
+$$y=\sinh^{-1}x\iff\sinh y=x\qquad y=\cosh^{-1}x\iff \cosh y=x\ \text{and}\ y\ge0\qquad y=\tanh^{-1}x\iff\tanh y=x$$
+<table>
+<tr><th>함수</th><th>정의역</th><th>치역</th></tr>
+<tr><td>$\sinh^{-1}x$</td><td>$\mathbb R$</td><td>$\mathbb R$</td></tr>
+<tr><td>$\cosh^{-1}x$</td><td>$[1,\infty)$</td><td>$[0,\infty)$</td></tr>
+<tr><td>$\tanh^{-1}x$</td><td>$(-1,1)$</td><td>$\mathbb R$</td></tr>
+</table></div>
+
+<div class="box thm"><b class="lab">로그 표현 (Logarithmic forms)</b>
+$$\sinh^{-1}x=\ln\!\left(x+\sqrt{x^2+1}\right)\ (x\in\mathbb R)\qquad \cosh^{-1}x=\ln\!\left(x+\sqrt{x^2-1}\right)\ (x\ge1)$$
+$$\tanh^{-1}x=\tfrac12\ln\frac{1+x}{1-x}\ (-1<x<1)$$</div>
+
+<div class="box thm"><b class="lab">Derivatives of Inverse Hyperbolic Functions</b>
+<table>
+<tr><th>$\dfrac{d}{dx}\sinh^{-1}x=\dfrac1{\sqrt{1+x^2}}$</th><th>$\dfrac{d}{dx}\operatorname{csch}^{-1}x=-\dfrac1{|x|\sqrt{x^2+1}}$</th></tr>
+<tr><th>$\dfrac{d}{dx}\cosh^{-1}x=\dfrac1{\sqrt{x^2-1}}$</th><th>$\dfrac{d}{dx}\operatorname{sech}^{-1}x=-\dfrac1{x\sqrt{1-x^2}}$</th></tr>
+<tr><th>$\dfrac{d}{dx}\tanh^{-1}x=\dfrac1{1-x^2}$</th><th>$\dfrac{d}{dx}\coth^{-1}x=\dfrac1{1-x^2}$</th></tr>
+</table>
+<p class="mini">$\tanh^{-1}$ 와 $\coth^{-1}$ 의 도함수는 식이 같지만 정의역이 다르다: $|x|<1$ vs $|x|>1$.</p></div>
+
+<details class="ex"><summary>예제 3 · $\sinh^{-1}x=\ln\!\big(x+\sqrt{x^2+1}\big)$ 증명</summary>
+<div class="body">
+<p>$y=\sinh^{-1}x$ 라 하면 $x=\sinh y=\dfrac{e^y-e^{-y}}2$. 양변에 $2e^y$ 를 곱해 $e^{2y}-2xe^y-1=0$.</p>
+<p>$e^y$ 에 대한 이차방정식: $e^y=x\pm\sqrt{x^2+1}$. $e^y>0$ 이고 $x-\sqrt{x^2+1}<0$ 이므로 <b>플러스만 가능</b>.</p>
+<p>따라서 $y=\ln\!\big(x+\sqrt{x^2+1}\big)$.</p>
+</div></details>
+<details class="ex"><summary>예제 4 · $\dfrac d{dx}\sinh^{-1}x=\dfrac1{\sqrt{1+x^2}}$ 증명 (역함수/음함수 미분)</summary>
+<div class="body">
+<p>$\sinh y=x$ 를 음함수 미분: $\cosh y\,\dfrac{dy}{dx}=1$. $\cosh y>0$ 이고 $\cosh^2y=1+\sinh^2y=1+x^2$ 이므로</p>
+$$\frac{dy}{dx}=\frac1{\cosh y}=\frac1{\sqrt{1+x^2}}.$$
+</div></details>
+<details class="ex"><summary>예제 5 · $\dfrac d{dx}\big[\tanh^{-1}(\sin x)\big]$</summary>
+<div class="body">
+$$\frac1{1-\sin^2x}\cdot\cos x=\frac{\cos x}{\cos^2x}=\sec x$$
+</div></details>
+
+<div class="box warn"><b class="lab">시험 함정</b>
+<ul>
+<li>$\cosh^2x-\sinh^2x=1$ (빼기). $\cos^2+\sin^2=1$ 과 헷갈리지 말 것.</li>
+<li>$\dfrac d{dx}\cosh x=+\sinh x$ (마이너스 없음).</li>
+<li>$\cosh^{-1}$ 의 정의역은 $x\ge1$, $\tanh^{-1}$ 는 $|x|<1$ — 로그 표현식의 근호/분모가 정의되는 범위와 같다.</li>
+<li>역쌍곡함수의 도함수는 <u>삼각 역함수와 비슷하지만</u> $\sinh^{-1}$ : $\sqrt{1+x^2}$, $\cosh^{-1}$ : $\sqrt{x^2-1}$ (부호 주의).</li>
+</ul></div>
+</section>
+<section class="sec practice" id="pr3">
+<h2>🧪 Chapter 3 연습문제 (3.10 – 3.11) <span class="pg">풀고 나서 정답 확인 → 채점</span></h2>
+<p class="mini">교재 연습문제(Exercises)를 바탕으로 골랐습니다. <b>먼저 종이에 풀고</b> → “정답·풀이 보기” → 채점(✔/✘). ✘ 표시한 문제는 “복습 문제만 보기”로 다시 모아 볼 수 있어요.</p>
+<div class="score" data-scope="pr3"><span class="sc">0 / 0 정답</span><button class="onlyno">✘ 복습 문제만 보기</button><button class="reset">기록 초기화</button></div>
+<h3><span class="sq">▸</span>3.10 선형근사 · 미분소</h3>
+<div class="prob" data-id="c3-1"><div class="pq"><span class="pn"></span><div>$f(x)=x^3-x^2+3$ 의 $a=-2$ 에서의 선형화 $L(x)$ 를 구하시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f(-2)=-9$, $f'(x)=3x^2-2x\Rightarrow f'(-2)=16$.<br>$L(x)=-9+16(x+2)=\boxed{16x+23}$</div></div>
+<div class="prob" data-id="c3-2"><div class="pq"><span class="pn"></span><div>$f(x)=\cos 2x$ 의 $a=\pi/6$ 에서의 선형화를 구하시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f(\pi/6)=\cos\frac\pi3=\frac12$, $f'(x)=-2\sin2x\Rightarrow f'(\pi/6)=-2\cdot\frac{\sqrt3}{2}=-\sqrt3$.<br>$L(x)=\boxed{\tfrac12-\sqrt3\left(x-\tfrac\pi6\right)}$</div></div>
+<div class="prob" data-id="c3-3"><div class="pq"><span class="pn"></span><div>선형근사(또는 미분소)로 $\sqrt[3]{1001}$ 과 $\cos29^\circ$ 를 추정하시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f=\sqrt[3]x,\ a=1000$: $f'=\frac13x^{-2/3}=\frac1{300}$ ⇒ $\sqrt[3]{1001}\approx10+\frac1{300}\approx\boxed{10.0033}$.<br>$\cos29^\circ$: $a=30^\circ=\frac\pi6$, $dx=-1^\circ=-\frac\pi{180}$. $\cos x\approx\frac{\sqrt3}2-\frac12\left(-\frac\pi{180}\right)=\frac{\sqrt3}2+\frac\pi{360}\approx\boxed{0.8748}$ (실제 0.87462)</div></div>
+<div class="prob" data-id="c3-4"><div class="pq"><span class="pn"></span><div>$y=\dfrac{1+2u}{1+3u}$ 의 미분소 $dy$ 를 구하시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$\dfrac{dy}{du}=\dfrac{2(1+3u)-3(1+2u)}{(1+3u)^2}=\dfrac{-1}{(1+3u)^2}$ ⇒ $dy=\boxed{-\dfrac{du}{(1+3u)^2}}$</div></div>
+<div class="prob" data-id="c3-5"><div class="pq"><span class="pn"></span><div>정육면체의 모서리가 $30$ cm, 측정오차가 $0.1$ cm 이다. 미분소로 (a) 부피 (b) 겉넓이의 최대오차, 상대오차, 백분율오차를 추정하시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">(a) $V=x^3$, $dV=3x^2dx=3(900)(0.1)=\boxed{270\ \text{cm}^3}$, 상대오차 $\frac{dV}{V}=\frac{270}{27000}=0.01$ → <b>1%</b>.<br>(b) $S=6x^2$, $dS=12x\,dx=12(30)(0.1)=\boxed{36\ \text{cm}^2}$, 상대오차 $\frac{36}{5400}\approx0.0067$ → <b>약 0.67%</b>.<br><span class='mini'>(검산: 상대오차 = 지수 × $dx/x$ → $3\times0.33\%=1\%$, $2\times0.33\%=0.67\%$)</span></div></div>
+<div class="prob" data-id="c3-6"><div class="pq"><span class="pn"></span><div>혈류 $F=kR^4$ 에서 반지름 $R$ 이 5% 증가하면 혈류는 대략 몇 % 증가하는가?</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$dF=4kR^3dR\Rightarrow\dfrac{dF}F=4\dfrac{dR}R=4(5\%)=\boxed{\text{약 }20\%}$</div></div>
+<h3><span class="sq">▸</span>3.11 쌍곡함수</h3>
+<div class="prob" data-id="c3-7"><div class="pq"><span class="pn"></span><div>값을 구하시오: (a) $\cosh(\ln5)$ (b) $\sinh(\ln4)$ (c) $\tanh(\ln2)$</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$e^{\ln a}=a$, $e^{-\ln a}=1/a$.<br>(a) $\frac{5+1/5}2=\boxed{\frac{13}5}$ (b) $\frac{4-1/4}2=\boxed{\frac{15}8}$ (c) $\frac{2-1/2}{2+1/2}=\boxed{\frac35}$</div></div>
+<div class="prob" data-id="c3-8"><div class="pq"><span class="pn"></span><div>$\sinh(\ln x)$ 를 $x$ 의 유리함수로 나타내시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$\sinh(\ln x)=\dfrac{x-x^{-1}}2=\boxed{\dfrac{x^2-1}{2x}}$</div></div>
+<div class="prob" data-id="c3-9"><div class="pq"><span class="pn"></span><div>$\cosh 2x=\cosh^2x+\sinh^2x$ 임을 증명하시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$\cosh(x+x)=\cosh x\cosh x+\sinh x\sinh x$ (덧셈공식에 $y=x$ 대입) ∎</div></div>
+<div class="prob" data-id="c3-10"><div class="pq"><span class="pn"></span><div>다음을 미분하시오. (a) $y=e^{\cosh3x}$ (b) $y=\tanh(1+e^{2x})$ (c) $y=\sinh^{-1}(\tan x)$</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">(a) $e^{\cosh3x}\cdot\sinh3x\cdot3=\boxed{3\sinh(3x)\,e^{\cosh3x}}$<br>(b) $\boxed{2e^{2x}\operatorname{sech}^2(1+e^{2x})}$<br>(c) $\dfrac{1}{\sqrt{1+\tan^2x}}\sec^2x=\dfrac{\sec^2x}{|\sec x|}=\boxed{|\sec x|}$</div></div>
+<div class="prob" data-id="c3-11"><div class="pq"><span class="pn"></span><div>$y=x\tanh^{-1}x+\ln\sqrt{1-x^2}$ 를 미분하시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$y'=\tanh^{-1}x+\dfrac{x}{1-x^2}+\dfrac12\cdot\dfrac{-2x}{1-x^2}=\boxed{\tanh^{-1}x}$ (뒤의 두 항이 상쇄)</div></div>
+<div class="prob" data-id="c3-12"><div class="pq"><span class="pn"></span><div>극한: (a) $\displaystyle\lim_{x\to\infty}\tanh x$ (b) $\displaystyle\lim_{x\to\infty}e^{-x}\cosh x$</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">(a) $\boxed{1}$ &nbsp;(b) $e^{-x}\frac{e^x+e^{-x}}2=\frac{1+e^{-2x}}2\to\boxed{\frac12}$</div></div>
+</section>
+</section>
+
+<!-- ============================================================ -->
+<section class="chap">
+<h2 class="chap-h"><span class="no">4</span> Applications of Differentiation <span class="pg" style="font-size:13px;font-weight:400">(4.1 – 4.5)</span></h2>
+
+<!-- ============================ 4.1 ============================ -->
+<section class="sec" id="s41">
+<h2><span class="n">4.1</span> Maximum and Minimum Values <span class="pg">교재 p.280–289</span></h2>
+<p class="mini">최적화(optimization)의 출발점: 함수의 최댓값·최솟값을 어떻게 찾는가.</p>
+
+<h3 id="s41-1"><span class="sq">■</span>Absolute and Local Extreme Values (절대·국소 극값)</h3>
+<div class="grid2">
+<div class="box def"><b class="lab">Absolute (Global)</b>
+<p>$c\in D$ 일 때</p>
+<ul>
+<li><b>절대최댓값</b> $f(c)$ : 모든 $x\in D$ 에서 $f(c)\ge f(x)$</li>
+<li><b>절대최솟값</b> $f(c)$ : 모든 $x\in D$ 에서 $f(c)\le f(x)$</li>
+</ul></div>
+<div class="box def"><b class="lab">Local (Relative)</b>
+<ul>
+<li><b>국소최댓값</b> $f(c)$ : $x$ 가 $c$ 근처일 때 $f(c)\ge f(x)$</li>
+<li><b>국소최솟값</b> $f(c)$ : $x$ 가 $c$ 근처일 때 $f(c)\le f(x)$</li>
+</ul>
+<p class="mini">"근처" = $c$ 를 포함하는 <u>열린구간</u> → 국소 극값은 <b>끝점에서 생길 수 없다</b>.</p></div>
+</div>
+<p>최댓값·최솟값을 통틀어 <b>극값(extreme values)</b>이라 한다.</p>
+
+<div class="box thm"><b class="lab">The Extreme Value Theorem (최대·최소 정리)</b>
+<p>$f$ 가 <b>닫힌구간 $[a,b]$ 에서 연속</b>이면, $f$ 는 $[a,b]$ 안의 어떤 $c,d$ 에서 절대최댓값 $f(c)$ 와 절대최솟값 $f(d)$ 를 갖는다.</p></div>
+<ul>
+<li>두 가정(<b>연속</b>, <b>닫힌구간</b>) 중 하나라도 빠지면 극값이 없을 수 있다.
+  <ul><li>불연속 예: $[0,2]$ 에서 정의되었지만 값이 3에 한없이 가까워질 뿐 도달 못 하는 함수 → 최댓값 없음.</li>
+      <li>열린구간 예: $(0,2)$ 에서 연속인 $g$ 가 발산 → 최댓값·최솟값 없음.</li></ul></li>
+<li>극값은 여러 번 나타날 수 있다 (예: $\cos x$ 의 최댓값 1은 무한히 많은 점에서).</li>
+<li>예시 모음: $x^2$ → 최솟값 0, 최댓값 없음 / $x^3$ → 절대·국소 극값 모두 없음.</li>
+</ul>
+
+<details class="ex"><summary>예제 1 · $f(x)=3x^4-16x^3+18x^2,\ -1\le x\le4$ 의 극값 파악</summary>
+<div class="body">
+<ul>
+<li>$f(1)=5$ : 국소 최댓값</li>
+<li>$f(-1)=37$ : <b>절대</b> 최댓값이지만 끝점이므로 국소 최댓값은 아님</li>
+<li>$f(0)=0$ : 국소 최솟값</li>
+<li>$f(3)=-27$ : 국소이자 절대 최솟값</li>
+<li>$x=4$ 에서는 국소 극값도 절대 극값도 아님</li>
+</ul></div></details>
+
+<h3 id="s41-2"><span class="sq">■</span>Critical Numbers and the Closed Interval Method (임계수와 닫힌구간법)</h3>
+<div class="box thm"><b class="lab">Fermat's Theorem (페르마 정리)</b>
+<p>$f$ 가 $c$ 에서 <b>국소 극값</b>을 갖고 $f'(c)$ 가 <b>존재</b>하면 $f'(c)=0$.</p></div>
+<div class="box warn"><b class="lab">역은 거짓!</b>
+<ul>
+<li>$f(x)=x^3$: $f'(0)=0$ 이지만 극값 없음 (수평접선을 <u>가로지름</u>).</li>
+<li>$f(x)=|x|$: $x=0$ 에서 극솟값이지만 $f'(0)$ <u>존재하지 않음</u>.</li>
+</ul></div>
+<div class="box def"><b class="lab">Critical Number (임계수)</b>
+<p>$f$ 의 정의역에 속하는 수 $c$ 중 <b>$f'(c)=0$ 이거나 $f'(c)$ 가 존재하지 않는</b> 수.</p>
+<p class="mini">Fermat 재서술: <b>$f$ 가 $c$ 에서 국소 극값을 가지면 $c$ 는 임계수</b>. (임계수 ⇏ 극값)</p></div>
+
+<div class="box thm"><b class="lab">The Closed Interval Method (닫힌구간법)</b>
+<p>연속함수 $f$ 의 $[a,b]$ 에서의 절대최댓값/최솟값 구하기:</p>
+<ol>
+<li>$(a,b)$ 안에 있는 $f$ 의 <b>임계수에서의 함숫값</b>을 구한다.</li>
+<li><b>끝점 $f(a),f(b)$</b> 를 구한다.</li>
+<li>1, 2단계의 값 중 <b>가장 큰 것 = 절대최댓값, 가장 작은 것 = 절대최솟값</b>.</li>
+</ol></div>
+
+<details class="ex"><summary>예제 7 · 임계수 구하기: (a) $f=x^3-3x^2+1$ (b) $f=x^{3/5}(4-x)$</summary>
+<div class="body">
+<p>(a) $f'=3x^2-6x=3x(x-2)$, 모든 $x$ 에서 존재 → 임계수 $x=0,\,2$.</p>
+<p>(b) $f'=x^{3/5}(-1)+(4-x)\tfrac35x^{-2/5}=\dfrac{-5x+3(4-x)}{5x^{2/5}}=\dfrac{12-8x}{5x^{2/5}}$.<br>
+$f'=0\Rightarrow x=\tfrac32$, $f'$ 존재하지 않음 $\Rightarrow x=0$ (정의역에 속함). 임계수: $\tfrac32,\ 0$.</p>
+</div></details>
+<details class="ex"><summary>예제 8 · $f(x)=x^3-3x^2+1$, $\ -\tfrac12\le x\le4$ 의 절대 최대·최소</summary>
+<div class="body">
+<p>임계수 $0,2$ 모두 구간 안. $f(0)=1,\ f(2)=-3$. 끝점: $f(-\tfrac12)=\tfrac18,\ f(4)=17$.</p>
+<p><b>절대최댓값 $f(4)=17$ (끝점), 절대최솟값 $f(2)=-3$ (임계수)</b>.</p>
+</div></details>
+<details class="ex"><summary>예제 9 · $f(x)=x-2\sin x,\ 0\le x\le2\pi$ 의 정확한 최대·최소</summary>
+<div class="body">
+<p>$f'=1-2\cos x=0\Rightarrow \cos x=\tfrac12\Rightarrow x=\tfrac\pi3,\ \tfrac{5\pi}3$.</p>
+<p>$f(\tfrac\pi3)=\tfrac\pi3-\sqrt3\approx-0.685$, $\ f(\tfrac{5\pi}3)=\tfrac{5\pi}3+\sqrt3\approx6.968$, 끝점 $f(0)=0$, $f(2\pi)=2\pi\approx6.28$.</p>
+<p>∴ 절대최솟값 $\tfrac\pi3-\sqrt3$, 절대최댓값 $\tfrac{5\pi}3+\sqrt3$.</p>
+</div></details>
+<details class="ex"><summary>예제 10 · 허블 우주망원경: 속도함수 $v(t)$ 로부터 <u>가속도</u>의 극값</summary>
+<div class="body">
+<p>극값을 구할 대상은 <b>가속도 $a(t)=v'(t)$</b> 임에 주의. $v=0.000397t^3-0.02752t^2+7.196t-0.9397$ 이면
+$a(t)=0.001191t^2-0.05504t+7.196$ 을 $[0,126]$ 에서 닫힌구간법으로 최적화 (임계수 $t\approx23.1$).</p>
+</div></details>
+
+<div class="box warn"><b class="lab">시험 함정</b>
+<ul>
+<li>임계수를 찾을 때 <b>$f'$ 가 존재하지 않는 점</b>(뾰족점, 수직접선, 분모=0이면서 $f$ 정의역에 속함)도 빠뜨리지 말 것.</li>
+<li>임계수가 구간 밖이면 버린다. 끝점 값 비교를 잊지 말 것.</li>
+<li>"Extreme Value Theorem 적용 가능?" → <b>연속 + 닫힌구간</b>을 반드시 언급.</li>
+</ul></div>
+</section>
+
+<!-- ============================ 4.2 ============================ -->
+<section class="sec" id="s42">
+<h2><span class="n">4.2</span> The Mean Value Theorem <span class="pg">교재 p.290–295</span></h2>
+<p class="mini">4장의 거의 모든 결과가 이 정리 하나에서 나온다. "존재 정리(existence theorem)": $c$ 가 <u>있다</u>는 것만 보장하고 어디인지는 알려주지 않는다.</p>
+
+<h3 id="s42-1"><span class="sq">■</span>Rolle's Theorem (롤의 정리)</h3>
+<div class="box thm"><b class="lab">Rolle's Theorem</b>
+<p>$f$ 가 다음 세 조건을 만족하면</p>
+<ol><li>$[a,b]$ 에서 <b>연속</b></li><li>$(a,b)$ 에서 <b>미분가능</b></li><li>$f(a)=f(b)$</li></ol>
+<p>$f'(c)=0$ 인 $c\in(a,b)$ 가 존재한다.</p></div>
+<h4>증명 아이디어 (3가지 경우)</h4>
+<ul>
+<li><b>Case I</b>: $f$ 가 상수 → $f'\equiv0$.</li>
+<li><b>Case II</b>: 어떤 $x$ 에서 $f(x)>f(a)$ → EVT로 최댓값 존재, $f(a)=f(b)$ 이므로 최댓값은 <u>내부점 $c$</u>에서 → Fermat 정리로 $f'(c)=0$.</li>
+<li><b>Case III</b>: $f(x)<f(a)$ 인 $x$ 존재 → 같은 논리로 최솟값 사용.</li>
+</ul>
+<p><b>물리 해석</b>: 같은 위치에서 출발해 다시 돌아오면(예: 위로 던진 공) 그 사이 속도가 0인 순간이 있다.</p>
+
+<details class="ex"><summary>예제 2 · $x^3+x-1=0$ 은 <u>정확히 하나</u>의 실근을 가짐을 증명</summary>
+<div class="body">
+<p><b>존재 (IVT)</b>: $f(x)=x^3+x-1$ 은 연속, $f(0)=-1<0$, $f(1)=1>0$ ⇒ $0<c<1$ 에서 $f(c)=0$.</p>
+<p><b>유일성 (Rolle + 귀류법)</b>: 실근이 두 개 $a<b$ 라 하면 $f(a)=f(b)=0$ 이므로 Rolle에 의해 $f'(c)=0$ 인 $c$ 가 존재. 그러나 $f'(x)=3x^2+1\ge1>0$ 이므로 모순. ∎</p>
+<p class="mini">※ 교재 예제 2는 $x^3+x-1=0$ 형태 (근이 정확히 1개). "근의 개수 상한" 문제의 표준 풀이: IVT(존재) + Rolle(유일).</p>
+</div></details>
+
+<h3 id="s42-2"><span class="sq">■</span>The Mean Value Theorem (평균값 정리)</h3>
+<div class="box thm"><b class="lab">The Mean Value Theorem (MVT)</b>
+<p>$f$ 가 (1) $[a,b]$ 에서 연속, (2) $(a,b)$ 에서 미분가능이면, 다음을 만족하는 $c\in(a,b)$ 가 존재한다.</p>
+<div class="formula">$$f'(c)=\frac{f(b)-f(a)}{b-a}\qquad\text{또는}\qquad f(b)-f(a)=f'(c)(b-a)$$</div></div>
+<ul>
+<li><b>기하</b>: 시컨트 $AB$ 의 기울기와 같은 기울기의 접선이 (평행한 접선이) 적어도 한 점에서 존재.</li>
+<li><b>물리</b>: 어떤 순간의 <u>순간 변화율 = 구간 전체의 평균 변화율</u>. (180 km를 2시간 주행 → 속도계가 정확히 90 km/h를 가리킨 순간이 있다.)</li>
+<li>Rolle의 정리는 MVT에서 $f(a)=f(b)$ 인 특수한 경우. MVT 증명: $h(x)=f(x)-f(a)-\dfrac{f(b)-f(a)}{b-a}(x-a)$ 에 Rolle 적용.</li>
+</ul>
+<figure><svg class="fig" id="figMVT" viewBox="0 0 440 280"></svg><figcaption>$f(x)=x^3-x$ on $[0,2]$ : 시컨트(빨강)와 평행한 접선(초록)이 $c=2/\sqrt3$ 에서 접한다</figcaption></figure>
+
+<details class="ex"><summary>예제 3 · $f(x)=x^3-x$, $[0,2]$ 에서 MVT의 $c$ 찾기</summary>
+<div class="body">
+<p>$\dfrac{f(2)-f(0)}{2-0}=\dfrac{6-0}2=3$. $f'(c)=3c^2-1=3\Rightarrow c^2=\tfrac43$, $c=\pm\tfrac2{\sqrt3}$. 구간 $(0,2)$ 에 속하는 것은 $c=\dfrac2{\sqrt3}$.</p>
+</div></details>
+<details class="ex"><summary>예제 5 · $f(0)=-3$, 모든 $x$ 에서 $f'(x)\le5$. $f(2)$ 의 최댓값?</summary>
+<div class="body">
+<p>MVT: $f(2)-f(0)=f'(c)(2-0)$ ⇒ $f(2)=-3+2f'(c)\le-3+2(5)=7$. <b>최댓값 7</b>.</p>
+<p class="mini">이런 문제는 "도함수의 상한/하한 → 함숫값의 상한/하한" 으로 푼다.</p>
+</div></details>
+
+<div class="box thm"><b class="lab">MVT의 귀결 (Consequences)</b>
+<ul>
+<li><b>Theorem 5</b>: 구간 $(a,b)$ 에서 $f'(x)=0$ 이면 $f$ 는 그 구간에서 <b>상수</b>.</li>
+<li><b>Corollary 7</b>: 구간에서 $f'(x)=g'(x)$ 이면 $f(x)=g(x)+C$ ( $C$ 는 상수 ) — 그래프가 위아래 평행이동 관계. (→ 부정적분의 “$+C$” 의 근거)</li>
+</ul></div>
+<div class="box warn"><b class="lab">주의 · '구간'이어야 한다</b>
+<p>$f(x)=\dfrac{x}{|x|}$ : 정의역 $\{x\neq0\}$ 에서 $f'=0$ 이지만 상수가 아님($\pm1$). 정의역이 <u>구간이 아니기</u> 때문이므로 Theorem 5와 모순 아님.</p></div>
+<details class="ex"><summary>예제 6 · 항등식 증명: $\tan^{-1}x+\cot^{-1}x=\dfrac\pi2$</summary>
+<div class="body">
+<p>$f(x)=\tan^{-1}x+\cot^{-1}x$ ⇒ $f'(x)=\dfrac1{1+x^2}-\dfrac1{1+x^2}=0$ ⇒ $f\equiv C$.<br>
+$x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
+<p class="mini">템플릿: “도함수가 0 → 상수 → 한 점에서 값을 확인해 상수 결정”.</p>
+</div></details>
+
+<div class="box warn"><b class="lab">시험 함정</b>
+<ul>
+<li>Rolle/MVT 적용 시 <b>조건 3개(연속·미분가능·$f(a)=f(b)$)를 먼저 검증</b>. 예: $f(x)=|x|$ on $[-1,1]$ 은 $x=0$ 에서 미분불가 → 결론 실패.</li>
+<li>"MVT를 만족하는 $c$" 는 <b>열린구간 $(a,b)$ 안</b>의 값만 답으로.</li>
+<li>‘증명’ 문제: "존재는 IVT, 유일성은 Rolle(귀류)" 세트.</li>
+</ul></div>
+</section>
+
+<!-- ============================ 4.3 ============================ -->
+<section class="sec" id="s43">
+<h2><span class="n">4.3</span> What Derivatives Tell Us about the Shape of a Graph <span class="pg">교재 p.296–308</span></h2>
+<p class="mini">$f'$ → 증가/감소·극값, $f''$ → 오목/볼록·변곡점. 이 절이 그래프 그리기의 엔진.</p>
+
+<h3 id="s43-1"><span class="sq">■</span>What Does f′ Say about f? (증가·감소 판정)</h3>
+<div class="box thm"><b class="lab">Increasing/Decreasing Test (I/D Test)</b>
+<ul>
+<li>(a) 구간에서 $f'(x)>0$ ⇒ $f$ 는 그 구간에서 <b>증가(increasing)</b></li>
+<li>(b) 구간에서 $f'(x)<0$ ⇒ $f$ 는 그 구간에서 <b>감소(decreasing)</b></li>
+</ul>
+<p class="mini">증명: MVT. $x_1<x_2$ 일 때 $f(x_2)-f(x_1)=f'(c)(x_2-x_1)$ 의 부호 = $f'(c)$ 의 부호.</p></div>
+<h4>풀이 절차 (부호표)</h4>
+<ol>
+<li>$f'(x)$ 를 구하고 <b>인수분해</b>.</li>
+<li>$f'=0$ 또는 $f'$ 미존재인 점(임계수)으로 정의역을 구간으로 분할.</li>
+<li>각 구간에서 $f'$ 의 각 인수 부호를 곱해 $f'$ 부호 결정.</li>
+</ol>
+<details class="ex"><summary>예제 1 · $f(x)=3x^4-4x^3-12x^2+5$ 의 증가/감소 구간</summary>
+<div class="body">
+<p>$f'(x)=12x^3-12x^2-24x=12x(x-2)(x+1)$. 임계수 $-1,0,2$.</p>
+<table>
+<tr><th>구간</th><th>$12x$</th><th>$x-2$</th><th>$x+1$</th><th>$f'$</th><th>$f$</th></tr>
+<tr><td>$x<-1$</td><td>−</td><td>−</td><td>−</td><td>−</td><td>감소</td></tr>
+<tr><td>$-1<x<0$</td><td>−</td><td>−</td><td>+</td><td>+</td><td>증가</td></tr>
+<tr><td>$0<x<2$</td><td>+</td><td>−</td><td>+</td><td>−</td><td>감소</td></tr>
+<tr><td>$x>2$</td><td>+</td><td>+</td><td>+</td><td>+</td><td>증가</td></tr>
+</table></div></details>
+
+<h3 id="s43-2"><span class="sq">■</span>The First Derivative Test (1계 도함수 판정법)</h3>
+<div class="box thm"><b class="lab">First Derivative Test</b>
+<p>$c$ 가 연속함수 $f$ 의 임계수일 때</p>
+<ul>
+<li>(a) $f'$ 가 $c$ 에서 <b>+ → −</b> 로 바뀜 ⇒ $f(c)$ 는 <b>국소최댓값</b></li>
+<li>(b) $f'$ 가 $c$ 에서 <b>− → +</b> 로 바뀜 ⇒ $f(c)$ 는 <b>국소최솟값</b></li>
+<li>(c) $f'$ 의 부호가 <b>바뀌지 않음</b> (양쪽 모두 + 또는 모두 −) ⇒ 극값 <b>아님</b></li>
+</ul>
+<p class="mini">기억법: 산봉우리 = 오르다(+)가 내리다(−), 골짜기 = 내리다(−)가 오르다(+).</p></div>
+
+<details class="ex"><summary>예제 2 · 예제 1의 함수의 국소 극값</summary>
+<div class="body">
+<p>$f'$ 가 $x=-1$ 에서 − → +: $f(-1)=0$ <b>국소최솟값</b>. $x=0$ 에서 + → −: $f(0)=5$ <b>국소최댓값</b>. $x=2$ 에서 − → +: $f(2)=-27$ <b>국소최솟값</b>.</p>
+</div></details>
+<details class="ex"><summary>예제 3 · $g(x)=x+2\sin x,\ 0\le x\le2\pi$ 의 국소 극값</summary>
+<div class="body">
+<p>$g'=1+2\cos x=0\Rightarrow \cos x=-\tfrac12\Rightarrow x=\tfrac{2\pi}3,\tfrac{4\pi}3$.</p>
+<p>$g'>0$ on $(0,\tfrac{2\pi}3)$, $g'<0$ on $(\tfrac{2\pi}3,\tfrac{4\pi}3)$, $g'>0$ on $(\tfrac{4\pi}3,2\pi)$.</p>
+<p>국소최댓값 $g(\tfrac{2\pi}3)=\tfrac{2\pi}3+\sqrt3\approx3.83$, 국소최솟값 $g(\tfrac{4\pi}3)=\tfrac{4\pi}3-\sqrt3\approx2.46$.</p>
+</div></details>
+
+<h3 id="s43-3"><span class="sq">■</span>What Does f″ Say about f? (오목·볼록과 변곡점)</h3>
+<div class="box def"><b class="lab">Concavity (오목성)</b>
+<ul>
+<li>그래프가 구간 $I$ 에서 <b>모든 접선의 위</b>에 있으면 <b>concave upward (CU, 아래로 볼록)</b></li>
+<li>그래프가 구간 $I$ 에서 <b>모든 접선의 아래</b>에 있으면 <b>concave downward (CD, 위로 볼록)</b></li>
+</ul></div>
+<div class="box thm"><b class="lab">Concavity Test</b>
+<ul>
+<li>(a) $I$ 에서 $f''(x)>0$ ⇒ 그래프는 $I$ 에서 <b>CU</b> (기울기 $f'$ 가 증가)</li>
+<li>(b) $I$ 에서 $f''(x)<0$ ⇒ 그래프는 $I$ 에서 <b>CD</b> (기울기 $f'$ 가 감소)</li>
+</ul></div>
+<div class="box def"><b class="lab">Inflection Point (변곡점)</b>
+<p>$f$ 가 연속인 곡선 위의 점 $P$ 에서 <b>오목성이 바뀌는</b> 점 (CU ↔ CD).</p>
+<ul>
+<li>연속이고 $f''$ 의 <b>부호가 바뀌는</b> 점이 변곡점. ($f''=0$ 만으로는 부족!)</li>
+<li>변곡점에서 접선이 존재하면 곡선이 접선을 <u>가로지른다</u>.</li>
+<li>의미: 변곡점 = $f'$ 가 극값을 갖는 곳 = <b>변화율이 최대(또는 최소)</b>인 곳. (예: 인구 성장곡선에서 성장속도가 최대인 시점)</li>
+</ul></div>
+
+<div class="box tip"><b class="lab">부호 조합 한눈에 (외우기)</b>
+<table>
+<tr><th>$f'$</th><th>$f''$</th><th>모양</th></tr>
+<tr><td>+</td><td>+</td><td>증가, CU (↗ 가파르게)</td></tr>
+<tr><td>+</td><td>−</td><td>증가, CD (↗ 완만해짐)</td></tr>
+<tr><td>−</td><td>+</td><td>감소, CU (↘ 완만해짐)</td></tr>
+<tr><td>−</td><td>−</td><td>감소, CD (↘ 가파르게)</td></tr>
+</table></div>
+
+<details class="ex"><summary>예제 5 · 조건으로부터 그래프 개형 그리기</summary>
+<div class="body">
+<p>조건: (i) $f'>0$ on $(-\infty,1)$, $f'<0$ on $(1,\infty)$ (ii) $f''>0$ on $(-\infty,-2)\cup(2,\infty)$, $f''<0$ on $(-2,2)$ (iii) $\lim_{x\to-\infty}f=-2,\ \lim_{x\to\infty}f=0$.</p>
+<p>해석: 수평점근선 $y=-2$(왼쪽), $y=0$(오른쪽). $x=1$ 에서 극대(최대). 변곡점 $x=-2$ 와 $x=2$. 왼쪽 끝은 $y=-2$ 에서 위로 볼록하게 올라가며 (CU→CD, $x=-2$) 정점 $x=1$ 을 지나 내려오다 $x=2$ 에서 다시 CU 로 바뀌고 $y=0$ 에 접근.</p>
+</div></details>
+
+<h3 id="s43-4"><span class="sq">■</span>The Second Derivative Test (2계 도함수 판정법)</h3>
+<div class="box thm"><b class="lab">Second Derivative Test</b>
+<p>$f''$ 가 $c$ 근처에서 연속이라 하자.</p>
+<ul>
+<li>(a) $f'(c)=0$ 이고 $f''(c)>0$ ⇒ $f(c)$ 는 <b>국소최솟값</b></li>
+<li>(b) $f'(c)=0$ 이고 $f''(c)<0$ ⇒ $f(c)$ 는 <b>국소최댓값</b></li>
+</ul></div>
+<div class="box warn"><b class="lab">Inconclusive!</b>
+<p>$f''(c)=0$ 이거나 $f''(c)$ 가 존재하지 않으면 <b>판정 불가</b>(극대/극소/둘 다 아님 모두 가능) → <b>First Derivative Test</b> 로 돌아가라. 그리고 애초에 $f'(c)=0$ 인 임계수에만 적용 가능(뾰족점·수직접선인 임계수에는 X).</p></div>
+<details class="ex"><summary>예제 6 · $y=x^4-4x^3$ 의 오목성·변곡점·극값</summary>
+<div class="body">
+<p>$f'=4x^3-12x^2=4x^2(x-3)$, $\ f''=12x^2-24x=12x(x-2)$. 임계수 $x=0,3$.</p>
+<ul>
+<li>$f''(3)=36>0$ ⇒ $f(3)=-27$ <b>국소최솟값</b> (2계 판정).</li>
+<li>$f''(0)=0$ ⇒ 판정 불가. $f'<0$ 이 $x<0$ 과 $0<x<3$ 모두에서 성립 → 부호 변화 없음 → $x=0$ 에서 <b>극값 없음</b> (1계 판정).</li>
+<li>$f''$ 부호: $x<0$ : + (CU), $0<x<2$ : − (CD), $x>2$ : + (CU). ⇒ 변곡점 $(0,0)$, $(2,-16)$.</li>
+</ul></div></details>
+
+<h3 id="s43-5"><span class="sq">■</span>Curve Sketching (곡선 그리기)</h3>
+<p>$f'$, $f''$, 점근선 정보를 모아서 그래프를 그린다. (완전한 체크리스트는 4.5)</p>
+<details class="ex"><summary>예제 7 · $f(x)=x^{2/3}(6-x)^{1/3}$ 그래프 (수직접선 포함)</summary>
+<div class="body">
+<p>정의역 $\mathbb R$. $f'=\dfrac{4-x}{x^{1/3}(6-x)^{2/3}}$, $\ f''=\dfrac{-8}{x^{4/3}(6-x)^{5/3}}$. 임계수: $0,\ 4,\ 6$ ($f'$ 미존재: 0, 6).</p>
+<table>
+<tr><th>구간</th><th>$f'$</th><th>$f$</th></tr>
+<tr><td>$x<0$</td><td>−</td><td>감소</td></tr>
+<tr><td>$0<x<4$</td><td>+</td><td>증가</td></tr>
+<tr><td>$4<x<6$</td><td>−</td><td>감소</td></tr>
+<tr><td>$x>6$</td><td>−</td><td>감소</td></tr>
+</table>
+<ul>
+<li>$x=0$ : − → + ⇒ $f(0)=0$ 국소최솟값. $x=4$ : + → − ⇒ $f(4)=2^{5/3}\approx3.17$ 국소최댓값. $x=6$ : 부호 변화 없음 → 극값 아님.</li>
+<li>$f''<0$ on $(-\infty,0)$, $(0,6)$ → CD, $f''>0$ on $(6,\infty)$ → CU. 변곡점은 $(6,0)$ 하나.</li>
+<li>$|f'|\to\infty$ ($x\to0,\ x\to6$) ⇒ $(0,0)$, $(6,0)$ 에서 <b>수직접선</b>.</li>
+</ul></div></details>
+<details class="ex"><summary>예제 8 · $f(x)=e^{1/x}$ 그래프 (점근선 + 도함수)</summary>
+<div class="body">
+<p>정의역 $x\ne0$. $\;x\to0^+$: $e^{1/x}\to\infty$ ⇒ <b>$x=0$ 수직점근선</b>. $\;x\to0^-$: $e^{1/x}\to0$. $\;x\to\pm\infty$: $e^{1/x}\to1$ ⇒ <b>$y=1$ 수평점근선</b>.</p>
+<p>$f'=-\dfrac{e^{1/x}}{x^2}<0$ ⇒ 두 구간에서 모두 <b>감소</b>, 임계수 없음 ⇒ 극값 없음.</p>
+<p>$f''=\dfrac{e^{1/x}(2x+1)}{x^4}$ ⇒ $x<-\tfrac12$ 에서 CD, $x>-\tfrac12\,(x\ne0)$ 에서 CU. 변곡점 $\left(-\tfrac12,\ e^{-2}\right)$.</p>
+</div></details>
+
+<div class="box warn"><b class="lab">시험 함정</b>
+<ul>
+<li>$f'=0$ 에서 $f''=0$ 이면 <b>2계 판정 포기</b> → 1계 판정.</li>
+<li>$f''=0$ 인 점이라고 무조건 변곡점이 아니다 ($y=x^4$ 의 $x=0$). 부호 변화 확인!</li>
+<li>변곡점은 <b>$f$ 가 정의된(연속인) 점</b>이어야 한다. ($e^{1/x}$ 의 $x=0$ 은 정의역 밖.)</li>
+<li>증가/감소 구간 답안에서 정의역에서 빠진 점(점근선)을 <u>구간 경계</u>로 표기.</li>
+</ul></div>
+</section>
+
+<!-- ============================ 4.4 ============================ -->
+<section class="sec" id="s44">
+<h2><span class="n">4.4</span> Indeterminate Forms and l'Hospital's Rule <span class="pg">교재 p.309–319</span></h2>
+<p class="mini">극한을 그냥 대입하면 $\tfrac00$ 처럼 의미 없는 꼴이 될 때 → 로피탈.</p>
+
+<h3 id="s44-1"><span class="sq">■</span>Indeterminate Forms (Types 0/0, ∞/∞) (부정형)</h3>
+<div class="box def"><b class="lab">Definition</b>
+<ul>
+<li><b>$\dfrac00$ 형</b>: $\displaystyle\lim_{x\to a}\frac{f(x)}{g(x)}$ 에서 $f\to0$, $g\to0$</li>
+<li><b>$\dfrac\infty\infty$ 형</b>: $f\to\pm\infty$, $g\to\pm\infty$</li>
+</ul>
+<p>극한이 존재할 수도 있고 안 할 수도 있으며, 값은 <u>누가 더 빨리 가느냐</u>의 “힘겨루기”로 결정된다.</p></div>
+<p>예전 방법(약분, $\lim\frac{\sin x}{x}=1$, 최고차항으로 나누기 등)으로 안 풀리는 $\displaystyle\lim_{x\to1}\frac{\ln x}{x-1}$, $\displaystyle\lim_{x\to\infty}\frac{\ln x}{x-1}$ 같은 경우 로피탈을 쓴다.</p>
+
+<h3 id="s44-2"><span class="sq">■</span>L'Hospital's Rule (로피탈의 정리)</h3>
+<div class="box thm"><b class="lab">L'Hospital's Rule</b>
+<p>$f,g$ 가 $a$ 를 포함하는 열린구간 $I$ 에서 미분가능하고 $g'(x)\neq0$ ($a$ 제외 가능)이며
+$$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=\pm\infty,\ \lim_{x\to a}g(x)=\pm\infty$$
+이면
+<div class="formula">$$\lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}$$</div>
+(우변의 극한이 존재하거나 $\pm\infty$ 일 때)</p></div>
+<ul>
+<li>$x\to a^+,\ a^-,\ \infty,\ -\infty$ 모두 사용 가능.</li>
+<li><b>분자·분모를 각각 따로 미분</b> — 몫의 미분법이 아니다!</li>
+<li>한 번으로 안 끝나면 (여전히 부정형) <b>반복 적용</b>. 단, 중간에 식을 간단히 하면 반복이 필요 없어지기도 한다.</li>
+<li><b>먼저 $0/0$ 혹은 $\infty/\infty$ 조건을 확인</b>. 대입으로 풀리면 그냥 대입.</li>
+<li>성장 속도 서열: $\ln x\ \ll\ x^p\ \ll\ e^x$ ($x\to\infty$). $e^x$ 는 모든 거듭제곱보다 빠르고, $\ln x$ 는 모든 거듭제곱보다 느리다.</li>
+</ul>
+
+<details class="ex"><summary>예제 1 · $\displaystyle\lim_{x\to1}\frac{\ln x}{x-1}$</summary>
+<div class="body">$\tfrac00$ 형 → $\displaystyle\lim_{x\to1}\frac{1/x}{1}=1$.</div></details>
+<details class="ex"><summary>예제 2 · $\displaystyle\lim_{x\to\infty}\frac{e^x}{x^2}$</summary>
+<div class="body">$\tfrac\infty\infty$ → $\displaystyle\lim\frac{e^x}{2x}$ (또 $\tfrac\infty\infty$) → $\displaystyle\lim\frac{e^x}{2}=\infty$.</div></details>
+<details class="ex"><summary>예제 3 · $\displaystyle\lim_{x\to\infty}\frac{\ln x}{\sqrt x}$</summary>
+<div class="body">$\displaystyle\lim\frac{1/x}{\frac1{2\sqrt x}}=\lim\frac{2}{\sqrt x}=0$. (두 번째 적용 없이 식 정리로 마무리)</div></details>
+<details class="ex"><summary>예제 4 · $\displaystyle\lim_{x\to0}\frac{\tan x-x}{x^3}$</summary>
+<div class="body">$\tfrac00$ → $\displaystyle\lim\frac{\sec^2x-1}{3x^2}$ ($\tfrac00$) → $\displaystyle\lim\frac{2\sec^2x\tan x}{6x}=\frac13\lim\sec^2x\cdot\lim\frac{\tan x}{x}=\frac13$.</div></details>
+<details class="ex"><summary>예제 5 · ⚠ 로피탈 오용: $\displaystyle\lim_{x\to\pi^-}\frac{\sin x}{1-\cos x}$</summary>
+<div class="body">
+<p>분모 $1-\cos x\to1-(-1)=2\ne0$ 이므로 <b>부정형이 아님</b>. 그냥 대입: $\dfrac{\sin\pi}{1-\cos\pi}=\dfrac02=0$.</p>
+<p>(무턱대고 로피탈: $\dfrac{\cos x}{\sin x}\to-\infty$ — <b>틀림!</b>)</p></div></details>
+
+<h3 id="s44-3"><span class="sq">■</span>Indeterminate Products (Type 0·∞) (부정 곱)</h3>
+<p>$f\to0$, $g\to\pm\infty$ 이면 $\lim fg$ 는 부정형 $0\cdot\infty$. 곱을 <b>분수로 바꿔</b> $\tfrac00$ 또는 $\tfrac\infty\infty$ 로 만든다:</p>
+<div class="formula">$$fg=\frac{f}{1/g}\qquad\text{또는}\qquad fg=\frac{g}{1/f}$$</div>
+<p class="mini">두 방법 중 <u>더 간단한 결과</u>가 나오는 쪽을 택한다. (보통 로그·삼각함수를 분자에 두고, 다항식/지수를 분모로 내린다.)</p>
+<details class="ex"><summary>예제 6 · $\displaystyle\lim_{x\to0^+}x\ln x$</summary>
+<div class="body">$x\ln x=\dfrac{\ln x}{1/x}$ ($\tfrac{-\infty}{\infty}$) → $\displaystyle\lim\frac{1/x}{-1/x^2}=\lim(-x)=0$. <br>
+<span class="mini">(반대로 $\frac{x}{1/\ln x}$ 로 쓰면 오히려 복잡해진다.)</span></div></details>
+
+<h3 id="s44-4"><span class="sq">■</span>Indeterminate Differences (Type ∞−∞) (부정 차)</h3>
+<p>$f\to\infty$, $g\to\infty$ 일 때 $\lim(f-g)$. <b>통분, 유리화, 공통인수 묶기</b> 등으로 몫($\tfrac00$ 또는 $\tfrac\infty\infty$)으로 바꾼다.</p>
+<details class="ex"><summary>예제 7 · $\displaystyle\lim_{x\to1^+}\left(\frac1{\ln x}-\frac1{x-1}\right)$ (통분)</summary>
+<div class="body">
+<p>$=\displaystyle\lim\frac{x-1-\ln x}{(x-1)\ln x}$ ($\tfrac00$) $=\displaystyle\lim\frac{1-\frac1x}{(x-1)\frac1x+\ln x}=\lim\frac{x-1}{x-1+x\ln x}$ ($\tfrac00$)</p>
+<p>$=\displaystyle\lim\frac1{1+x\cdot\frac1x+\ln x}=\lim\frac1{2+\ln x}=\frac12$.</p></div></details>
+<details class="ex"><summary>예제 8 · $\displaystyle\lim_{x\to\infty}(e^x-x)$ (공통인수)</summary>
+<div class="body">$e^x-x=x\left(\dfrac{e^x}x-1\right)$. $\dfrac{e^x}{x}\to\infty$ (로피탈) 이므로 $(\infty)\cdot(\infty)=\infty$.</div></details>
+
+<h3 id="s44-5"><span class="sq">■</span>Indeterminate Powers (Types 0⁰, ∞⁰, 1^∞) (부정 거듭제곱)</h3>
+<p>$\displaystyle\lim_{x\to a}[f(x)]^{g(x)}$ 에서</p>
+<table>
+<tr><th>형</th><th>$f\to$</th><th>$g\to$</th></tr>
+<tr><td>$0^0$</td><td>0</td><td>0</td></tr>
+<tr><td>$\infty^0$</td><td>$\infty$</td><td>0</td></tr>
+<tr><td>$1^\infty$</td><td>1</td><td>$\pm\infty$</td></tr>
+</table>
+<div class="box thm"><b class="lab">해법: 지수/로그로 내린다</b>
+<p><b>방법 1</b> $y=[f]^g$ 로 두고 $\ln y=g\ln f$ 의 극한 $L$ 을 구한 뒤 $\ \lim y=e^{L}$.</p>
+<p><b>방법 2</b> $[f]^g=e^{\,g\ln f}$ 로 쓰고 지수 부분의 극한만 계산.</p>
+<p>두 경우 모두 $g\ln f$ 는 $0\cdot\infty$ 꼴 → 분수로 변환 → 로피탈.</p></div>
+<details class="ex"><summary>예제 9 · $\displaystyle\lim_{x\to0^+}(1+\sin4x)^{\cot x}$ ($1^\infty$)</summary>
+<div class="body">
+<p>$y=(1+\sin4x)^{\cot x}$, $\ln y=\dfrac{\ln(1+\sin4x)}{\tan x}$ ($\tfrac00$).</p>
+<p>로피탈: $\displaystyle\lim\frac{\frac{4\cos4x}{1+\sin4x}}{\sec^2x}=4$. 따라서 $\lim y=e^4$.</p></div></details>
+<details class="ex"><summary>예제 10 · $\displaystyle\lim_{x\to0^+}x^x$ ($0^0$)</summary>
+<div class="body">$x^x=e^{x\ln x}$, $\lim_{x\to0^+}x\ln x=0$ (예제 6) ⇒ $\lim x^x=e^0=1$.</div></details>
+
+<div class="box tip"><b class="lab">부정형 요약표</b>
+<table>
+<tr><th>형태</th><th>처리 방법</th></tr>
+<tr><td class="l">$\dfrac00,\ \dfrac\infty\infty$</td><td class="l">바로 로피탈 ($f'/g'$)</td></tr>
+<tr><td class="l">$0\cdot\infty$</td><td class="l">$fg=\dfrac f{1/g}$ 또는 $\dfrac g{1/f}$ → 몫으로</td></tr>
+<tr><td class="l">$\infty-\infty$</td><td class="l">통분 · 유리화 · 인수묶기 → 몫으로</td></tr>
+<tr><td class="l">$0^0,\ \infty^0,\ 1^\infty$</td><td class="l">$\ln$ 취하기(또는 $e^{g\ln f}$) → $0\cdot\infty$ → 몫으로 → 마지막에 $e^{L}$</td></tr>
+</table>
+<p class="mini"><b>부정형이 아닌 것</b>: $0^\infty$ (=0), $\infty^\infty$ (=∞), $\infty+\infty$ (=∞), $0\cdot0$ 등. $\infty-\infty$ 만 부정형이고 $\infty+\infty$ 는 아님.</p></div>
+
+<div class="box warn"><b class="lab">시험 함정</b>
+<ul>
+<li><b>조건 확인 없이 로피탈 금지</b> (예제 5). 분자·분모가 <u>모두</u> 0 (또는 ±∞)으로 가야 한다.</li>
+<li>분수 전체에 몫의 미분법을 쓰는 실수 — 분자, 분모를 <u>각각</u> 미분.</li>
+<li>$\ln y$ 의 극한을 구한 뒤 <b>$e^{L}$ 로 되돌리는 것</b>을 잊지 말 것 ($\ln y\to4$ ⇒ $y\to e^4$).</li>
+<li>로피탈 반복 시 <b>매 단계 다시 부정형인지 확인</b>. 부정형이 풀렸는데 계속 미분하면 오답.</li>
+</ul></div>
+</section>
+
+<!-- ============================ 4.5 ============================ -->
+<section class="sec" id="s45">
+<h2><span class="n">4.5</span> Summary of Curve Sketching <span class="pg">교재 p.320–328</span></h2>
+<p class="mini">지금까지 배운 모든 도구(정의역, 대칭, 극한/점근선, $f'$, $f''$)를 총동원하는 절.</p>
+
+<h3 id="s45-1"><span class="sq">■</span>Guidelines for Sketching a Curve (곡선 그리기 체크리스트 A–H)</h3>
+<div class="box thm"><b class="lab">A → H 순서</b>
+<table>
+<tr><th style="width:60px">단계</th><th class="l" style="width:170px">항목</th><th class="l">해야 할 일</th></tr>
+<tr><td><b>A</b></td><td class="l">Domain</td><td class="l">$f$ 가 정의되는 $x$ 의 집합 $D$</td></tr>
+<tr><td><b>B</b></td><td class="l">Intercepts</td><td class="l">$y$절편 $f(0)$, $x$절편 ($f(x)=0$; 어려우면 생략)</td></tr>
+<tr><td><b>C</b></td><td class="l">Symmetry</td><td class="l">(i) <b>짝함수</b> $f(-x)=f(x)$ → $y$축 대칭<br>(ii) <b>홀함수</b> $f(-x)=-f(x)$ → 원점 대칭<br>(iii) <b>주기함수</b> $f(x+p)=f(x)$ → 한 주기만 그리고 평행이동</td></tr>
+<tr><td><b>D</b></td><td class="l">Asymptotes</td><td class="l">(i) <b>수평</b>: $\lim_{x\to\pm\infty}f=L$ → $y=L$<br>(ii) <b>수직</b>: $\lim_{x\to a^\pm}f=\pm\infty$ → $x=a$ (좌·우극한 각각 확인)<br>(iii) <b>기울어진(slant)</b>: 아래 참조</td></tr>
+<tr><td><b>E</b></td><td class="l">Increase / Decrease</td><td class="l">$f'$ 의 부호 (I/D Test)</td></tr>
+<tr><td><b>F</b></td><td class="l">Local Max / Min</td><td class="l">임계수 + 1계 판정법 (필요 시 2계 판정법)</td></tr>
+<tr><td><b>G</b></td><td class="l">Concavity / Inflection</td><td class="l">$f''$ 의 부호 (Concavity Test), 변곡점</td></tr>
+<tr><td><b>H</b></td><td class="l">Sketch</td><td class="l">점근선을 <u>점선</u>으로 → 절편·극점·변곡점 표시 → E·G 에 맞게 연결</td></tr>
+</table>
+<p class="mini">모든 항목이 모든 함수에 필요한 것은 아니다(점근선이나 대칭이 없을 수 있음).</p></div>
+
+<div class="box tip"><b class="lab">시험 답안 템플릿</b>
+<p>서술형에서는 A~G 를 <b>소제목 순서대로</b> 적고 마지막에 그래프를 그리면 부분점수를 가장 많이 받는다. 미분은 <u>반드시 식으로</u> 보여주고, 부호표를 함께 제시.</p></div>
+
+<details class="ex"><summary>예제 1 · $y=\dfrac{2x^2}{x^2-1}$</summary>
+<div class="body">
+<p><b>A</b> $x\ne\pm1$. &nbsp;<b>B</b> 절편 (0,0). &nbsp;<b>C</b> 짝함수 → $y$축 대칭.</p>
+<p><b>D</b> $\lim_{x\to\pm\infty}=2$ ⇒ $y=2$. 수직: $x=\pm1$ ($\lim_{x\to1^+}=+\infty,\ \lim_{x\to1^-}=-\infty,\ \lim_{x\to-1^+}=-\infty,\ \lim_{x\to-1^-}=+\infty$).</p>
+<p><b>E</b> $f'=\dfrac{-4x}{(x^2-1)^2}$ ⇒ $x<0$ 증가, $x>0$ 감소 (정의역 내). <b>F</b> $f(0)=0$ 국소최댓값.</p>
+<p><b>G</b> $f''=\dfrac{12x^2+4}{(x^2-1)^3}$ ⇒ $|x|>1$ 이면 CU, $|x|<1$ 이면 CD. 변곡점 없음(±1 은 정의역 밖).</p></div></details>
+<details class="ex"><summary>예제 2 · $f(x)=\dfrac{x^2}{\sqrt{x+1}}$</summary>
+<div class="body">
+<p><b>A</b> $(-1,\infty)$. <b>B</b> (0,0). <b>C</b> 없음. <b>D</b> 수평점근선 없음($f\to\infty$); $x\to-1^+$ 에서 $f\to\infty$ ⇒ 수직점근선 $x=-1$.</p>
+<p><b>E</b> $f'=\dfrac{x(3x+4)}{2(x+1)^{3/2}}$ ⇒ $(-1,0)$ 감소, $(0,\infty)$ 증가. ($-\tfrac43$ 은 정의역 밖)</p>
+<p><b>F</b> $f(0)=0$ 국소(이자 절대)최솟값. <b>G</b> $f''=\dfrac{3x^2+8x+8}{4(x+1)^{5/2}}>0$ (판별식 $64-96<0$) ⇒ 전 구간 CU, 변곡점 없음.</p></div></details>
+<details class="ex"><summary>예제 3 · $f(x)=xe^x$</summary>
+<div class="body">
+<p><b>A</b> $\mathbb R$. <b>B</b> (0,0). <b>C</b> 없음.</p>
+<p><b>D</b> $x\to\infty$: $\infty$. $x\to-\infty$: $xe^x=\dfrac{x}{e^{-x}}\ \overset{L'H}\to\ \dfrac1{-e^{-x}}=-e^{x}\to0$ ⇒ <b>$y=0$ 수평점근선(왼쪽)</b>.</p>
+<p><b>E</b> $f'=(x+1)e^x$ ⇒ $(-1,\infty)$ 증가, $(-\infty,-1)$ 감소. <b>F</b> $f(-1)=-e^{-1}\approx-0.37$ 국소(절대)최솟값.</p>
+<p><b>G</b> $f''=(x+2)e^x$ ⇒ $x>-2$ CU, $x<-2$ CD. 변곡점 $(-2,-2e^{-2})\approx(-2,-0.27)$.</p></div></details>
+<details class="ex"><summary>예제 4 · $f(x)=\dfrac{\cos x}{2+\sin x}$ (주기함수)</summary>
+<div class="body">
+<p><b>A</b> $\mathbb R$. <b>B</b> $y$절편 $\tfrac12$, $x$절편 $x=\tfrac\pi2+n\pi$. <b>C</b> 주기 $2\pi$ → $[0,2\pi]$ 만 분석. <b>D</b> 없음.</p>
+<p><b>E</b> $f'=-\dfrac{2\sin x+1}{(2+\sin x)^2}$ ⇒ $f'>0\iff\sin x<-\tfrac12\iff\tfrac{7\pi}6<x<\tfrac{11\pi}6$ 에서 증가, $(0,\tfrac{7\pi}6)$ 과 $(\tfrac{11\pi}6,2\pi)$ 에서 감소.</p>
+<p><b>F</b> 국소최솟값 $f(\tfrac{7\pi}6)=-\tfrac1{\sqrt3}$, 국소최댓값 $f(\tfrac{11\pi}6)=\tfrac1{\sqrt3}$.</p>
+<p><b>G</b> $f''=-\dfrac{2\cos x(1-\sin x)}{(2+\sin x)^3}$ ⇒ $f''>0\iff\cos x<0\iff\tfrac\pi2<x<\tfrac{3\pi}2$ 에서 CU. 변곡점 $(\tfrac\pi2,0),(\tfrac{3\pi}2,0)$.</p></div></details>
+<details class="ex"><summary>예제 5 · $y=\ln(4-x^2)$</summary>
+<div class="body">
+<p><b>A</b> $4-x^2>0\iff|x|<2$, 즉 $(-2,2)$. <b>B</b> $y$절편 $\ln4$, $x$절편 $\pm\sqrt3$ ($4-x^2=1$). <b>C</b> 짝함수.</p>
+<p><b>D</b> $\lim_{x\to\pm2^\mp}=-\infty$ ⇒ 수직점근선 $x=\pm2$.</p>
+<p><b>E</b> $f'=\dfrac{-2x}{4-x^2}$ ⇒ $(-2,0)$ 증가, $(0,2)$ 감소. <b>F</b> $f(0)=\ln4$ 국소최댓값.</p>
+<p><b>G</b> $f''=\dfrac{-8-2x^2}{(4-x^2)^2}<0$ ⇒ 전 구간 CD, 변곡점 없음.</p></div></details>
+
+<h3 id="s45-2"><span class="sq">■</span>Slant Asymptotes (기울어진 점근선)</h3>
+<div class="box def"><b class="lab">Definition</b>
+<p>$m\neq0$ 이고 $\displaystyle\lim_{x\to\infty}\big[f(x)-(mx+b)\big]=0$ 이면 직선 $y=mx+b$ 는 <b>slant (oblique) asymptote</b>. ($x\to-\infty$ 도 마찬가지)</p></div>
+<ul>
+<li><b>유리함수</b>에서 (분자 차수) = (분모 차수) + 1 일 때 존재. <b>다항식 장제법</b>의 <u>몫</u> $=mx+b$.</li>
+<li>일반 함수: $m=\displaystyle\lim_{x\to\infty}\frac{f(x)}x$, $\ b=\displaystyle\lim_{x\to\infty}\big[f(x)-mx\big]$.</li>
+<li>차수 비교 요약: 분자 차수 < 분모 → $y=0$ / 같음 → $y=$ 최고차 계수의 비 / 분자가 1 큼 → 사선 / 2 이상 큼 → 점근선 없음(포물선 등에 접근).</li>
+</ul>
+<details class="ex"><summary>예제 6 · $f(x)=\dfrac{x^3}{x^2+1}$</summary>
+<div class="body">
+<p><b>A</b> $\mathbb R$. <b>B</b> (0,0). <b>C</b> 홀함수 → 원점 대칭. <b>D</b> 수직 없음, 수평 없음. 장제법: $f(x)=x-\dfrac{x}{x^2+1}$ ⇒ $f(x)-x=-\dfrac{x}{x^2+1}\to0$ ⇒ <b>사선점근선 $y=x$</b>.</p>
+<p><b>E</b> $f'=\dfrac{x^2(x^2+3)}{(x^2+1)^2}\ge0$ ⇒ $(-\infty,\infty)$ 에서 증가. <b>F</b> $f'(0)=0$ 이지만 부호 변화 없음 ⇒ 극값 없음.</p>
+<p><b>G</b> $f''=\dfrac{2x(3-x^2)}{(x^2+1)^3}$ ⇒ CU: $(-\infty,-\sqrt3)$, $(0,\sqrt3)$ &nbsp;/&nbsp; CD: $(-\sqrt3,0)$, $(\sqrt3,\infty)$. 변곡점 $(0,0)$, $\left(\pm\sqrt3,\pm\tfrac{3\sqrt3}4\right)$ (3개).</p></div></details>
+
+<div class="box warn"><b class="lab">시험 함정</b>
+<ul>
+<li>유리함수는 <b>공통인수 약분 후</b> 수직점근선 판별 (약분되는 점은 구멍(hole)).</li>
+<li>수직점근선은 <u>좌·우극한</u> 부호를 각각 밝혀야 개형이 정해진다.</li>
+<li>$f'$ 나 $f''$ 를 구할 때 정의역 밖의 근(예제 2의 $-\tfrac43$)은 <b>버린다</b>.</li>
+<li>사선점근선은 $x\to+\infty$ 와 $x\to-\infty$ 에서 <u>같은 직선</u>이 될 수도, 다를 수도 있다 (유리함수는 같음).</li>
+</ul></div>
+</section>
+<section class="sec practice" id="pr4">
+<h2>🧪 Chapter 4 연습문제 (4.1 – 4.5) <span class="pg">풀고 나서 정답 확인 → 채점</span></h2>
+<p class="mini">교재 연습문제(Exercises)를 바탕으로 골랐습니다. <b>먼저 종이에 풀고</b> → “정답·풀이 보기” → 채점(✔/✘). ✘ 표시한 문제는 “복습 문제만 보기”로 다시 모아 볼 수 있어요.</p>
+<div class="score" data-scope="pr4"><span class="sc">0 / 0 정답</span><button class="onlyno">✘ 복습 문제만 보기</button><button class="reset">기록 초기화</button></div>
+<h3><span class="sq">▸</span>4.1 최댓값과 최솟값</h3>
+<div class="prob" data-id="c4-1"><div class="pq"><span class="pn"></span><div>임계수를 구하시오. (a) $f(x)=3x^4+8x^3-48x^2$ (b) $g(t)=t^{3/4}-2t^{1/4}$</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">(a) $f'=12x^3+24x^2-96x=12x(x+4)(x-2)$ ⇒ $\boxed{x=-4,\,0,\,2}$.<br>(b) $g'=\frac34t^{-1/4}-\frac12t^{-3/4}=\dfrac{3\sqrt t-2}{4t^{3/4}}$. $g'=0\Rightarrow t=\frac49$; $t=0$ 에서 $g'$ 미존재(정의역에 포함) ⇒ $\boxed{t=0,\ \tfrac49}$</div></div>
+<div class="prob" data-id="c4-2"><div class="pq"><span class="pn"></span><div>$f(x)=2x^3-3x^2-12x+1$, $[-2,3]$ 에서 절대최댓값·최솟값.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f'=6(x-2)(x+1)$, 임계수 $-1,2$. $f(-1)=8,\ f(2)=-19,\ f(-2)=-3,\ f(3)=-8$.<br><b>최댓값 $8$ ($x=-1$), 최솟값 $-19$ ($x=2$)</b></div></div>
+<div class="prob" data-id="c4-3"><div class="pq"><span class="pn"></span><div>$f(x)=x+\dfrac1x$, $[0.2,\,4]$ 에서 절대최댓값·최솟값.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f'=1-x^{-2}=0\Rightarrow x=1$. $f(1)=2,\ f(0.2)=5.2,\ f(4)=4.25$.<br><b>최댓값 $5.2$, 최솟값 $2$</b></div></div>
+<div class="prob" data-id="c4-4"><div class="pq"><span class="pn"></span><div>$f(x)=xe^{x/2}$, $[-3,1]$ 에서 절대최댓값·최솟값.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f'=e^{x/2}\left(1+\frac x2\right)=0\Rightarrow x=-2$. $f(-2)=-\frac2e\approx-0.736$, $f(-3)=-3e^{-3/2}\approx-0.669$, $f(1)=\sqrt e\approx1.649$.<br><b>최댓값 $\sqrt e$, 최솟값 $-2/e$</b></div></div>
+<div class="prob" data-id="c4-5"><div class="pq"><span class="pn"></span><div>$f(t)=t-\sqrt[3]t$, $[-1,4]$ 에서 절대최댓값·최솟값. (도함수가 존재하지 않는 점 주의)</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f'=1-\frac13t^{-2/3}$. $f'=0\Rightarrow t^{2/3}=\frac13\Rightarrow t=\pm\frac1{3\sqrt3}$; $t=0$ 에서 미분불가(임계수).<br>$f(\pm\frac1{3\sqrt3})=\mp\frac{2}{3\sqrt3}$, $f(0)=0$, $f(-1)=0$, $f(4)=4-\sqrt[3]4\approx2.413$.<br><b>최댓값 $4-\sqrt[3]4$, 최솟값 $-\dfrac{2}{3\sqrt3}\approx-0.385$</b></div></div>
+<h3><span class="sq">▸</span>4.2 평균값 정리</h3>
+<div class="prob" data-id="c4-6"><div class="pq"><span class="pn"></span><div>$f(x)=x^3-2x^2-4x+2$ 가 $[-2,2]$ 에서 롤의 정리 조건을 만족함을 보이고, 결론을 만족하는 $c$ 를 모두 구하시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">다항식 → 연속·미분가능. $f(-2)=-6=f(2)$ ✓.<br>$f'=3x^2-4x-4=(3x+2)(x-2)=0\Rightarrow x=-\frac23,\ 2$. 열린구간 $(-2,2)$ 안: $\boxed{c=-\tfrac23}$</div></div>
+<div class="prob" data-id="c4-7"><div class="pq"><span class="pn"></span><div>MVT의 $c$ 를 구하시오. (a) $f=\ln x$, $[1,4]$ (b) $f=1/x$, $[1,3]$</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">(a) 평균변화율 $\frac{\ln4}{3}$, $f'(c)=\frac1c\Rightarrow c=\dfrac{3}{\ln4}\approx\boxed{2.164}$<br>(b) 평균변화율 $\frac{1/3-1}{2}=-\frac13$, $-\frac1{c^2}=-\frac13\Rightarrow c=\boxed{\sqrt3}$</div></div>
+<div class="prob" data-id="c4-8"><div class="pq"><span class="pn"></span><div>$f(x)=(x-3)^{-2}$ 일 때 $(1,4)$ 에서 $f(4)-f(1)=f'(c)(4-1)$ 인 $c$ 가 없음을 보이고, 왜 MVT와 모순이 아닌지 설명하시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f(4)-f(1)=1-\frac14=\frac34$, $f'(c)\cdot3=-\frac{6}{(c-3)^3}$. $\frac34=-\frac6{(c-3)^3}\Rightarrow(c-3)^3=-8\Rightarrow c=1\notin(1,4)$ ⇒ 해 없음.<br><b>이유</b>: $f$ 가 $x=3\in[1,4]$ 에서 <u>불연속</u>(정의되지 않음)이므로 MVT의 가정이 깨진다.</div></div>
+<div class="prob" data-id="c4-9"><div class="pq"><span class="pn"></span><div>방정식 $2x+\cos x=0$ 은 실근이 정확히 하나임을 보이시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f(x)=2x+\cos x$. <b>존재</b>: $f(0)=1>0$, $f(-\frac\pi2)=-\pi<0$, 연속 ⇒ IVT로 근 존재.<br><b>유일</b>: 근이 둘($a<b$)이면 Rolle에 의해 $f'(c)=0$ 이어야 하나 $f'(x)=2-\sin x\ge1>0$ ⇒ 모순. ∎</div></div>
+<div class="prob" data-id="c4-10"><div class="pq"><span class="pn"></span><div>(a) $f(1)=10$, $1\le x\le4$ 에서 $f'(x)\ge2$ 이면 $f(4)$ 는 최소 얼마? (b) 모든 $x$ 에서 $3\le f'(x)\le5$ 이면 $18\le f(8)-f(2)\le30$ 임을 보이시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">(a) MVT: $f(4)-f(1)=f'(c)\cdot3\ge2\cdot3=6$ ⇒ $f(4)\ge\boxed{16}$.<br>(b) $f(8)-f(2)=f'(c)(8-2)=6f'(c)$, $3\le f'(c)\le5$ ⇒ $18\le f(8)-f(2)\le30$. ∎</div></div>
+<h3><span class="sq">▸</span>4.3 도함수와 그래프의 모양</h3>
+<div class="prob" data-id="c4-11"><div class="pq"><span class="pn"></span><div>$f(x)=2x^3-15x^2+24x-5$ 의 증가·감소 구간과 국소 극값.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f'=6x^2-30x+24=6(x-1)(x-4)$.<br>증가: $(-\infty,1),\ (4,\infty)$ / 감소: $(1,4)$.<br>국소최댓값 $f(1)=\boxed6$, 국소최솟값 $f(4)=\boxed{-21}$</div></div>
+<div class="prob" data-id="c4-12"><div class="pq"><span class="pn"></span><div>$f(x)=x^{2/3}(x-3)$ 의 증가·감소 구간과 국소 극값.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f=x^{5/3}-3x^{2/3}$, $f'=\dfrac{5x-6}{3x^{1/3}}$. 임계수 $0,\ \frac65$.<br>증가: $(-\infty,0),\ (\frac65,\infty)$ / 감소: $(0,\frac65)$.<br>국소최댓값 $f(0)=0$, 국소최솟값 $f(\tfrac65)=-\frac95\left(\frac65\right)^{2/3}\approx-2.03$</div></div>
+<div class="prob" data-id="c4-13"><div class="pq"><span class="pn"></span><div>$f(x)=x^4e^{-x}$ 의 증가·감소 구간과 국소 극값.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f'=x^3e^{-x}(4-x)$. 증가: $(0,4)$ / 감소: $(-\infty,0),\ (4,\infty)$.<br>$x=0$: − → + ⇒ 국소최솟값 $f(0)=0$. $x=4$: + → − ⇒ 국소최댓값 $f(4)=256e^{-4}\approx4.69$.</div></div>
+<div class="prob" data-id="c4-14"><div class="pq"><span class="pn"></span><div>$f'(x)=(x-4)^2(x+3)^7(x-5)^8$ 일 때 $f$ 가 증가하는 구간은?</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$(x-4)^2\ge0$, $(x-5)^8\ge0$ 이므로 부호는 $(x+3)^7$ 이 결정: $x>-3$ 에서 $f'\ge0$ (0인 점 $4,5$ 는 고립점). ⇒ 증가 구간 $\boxed{(-3,\infty)}$. (4, 5 에서는 부호 변화가 없어 극값도 없다.)</div></div>
+<div class="prob" data-id="c4-15"><div class="pq"><span class="pn"></span><div>$f(x)=x^3-3x^2-9x+4$ 의 오목성 구간과 변곡점.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f''=6x-6$. CU: $(1,\infty)$, CD: $(-\infty,1)$. 변곡점 $\boxed{(1,-7)}$.</div></div>
+<div class="prob" data-id="c4-16"><div class="pq"><span class="pn"></span><div>$f(x)=\ln(x^2+5)$ 의 오목성 구간과 변곡점.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f'=\dfrac{2x}{x^2+5}$, $f''=\dfrac{2(x^2+5)-4x^2}{(x^2+5)^2}=\dfrac{2(5-x^2)}{(x^2+5)^2}$.<br>CU: $(-\sqrt5,\sqrt5)$, CD: $(-\infty,-\sqrt5),\ (\sqrt5,\infty)$. 변곡점 $\boxed{(\pm\sqrt5,\ \ln10)}$.</div></div>
+<div class="prob" data-id="c4-17"><div class="pq"><span class="pn"></span><div>$f(x)=x^4-2x^2+3$ 의 (a) 증감 (b) 극값 (c) 오목성 및 변곡점을 구하시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f'=4x(x^2-1)$, $f''=12x^2-4$.<br>(a) 감소: $(-\infty,-1),(0,1)$ / 증가: $(-1,0),(1,\infty)$.<br>(b) 국소최솟값 $f(\pm1)=2$, 국소최댓값 $f(0)=3$.<br>(c) CU: $|x|>\frac1{\sqrt3}$, CD: $|x|<\frac1{\sqrt3}$. 변곡점 $\left(\pm\frac1{\sqrt3},\ \frac{22}9\right)$.</div></div>
+<div class="prob" data-id="c4-18"><div class="pq"><span class="pn"></span><div>$f(x)=1+3x^2-2x^3$ 의 국소 극값을 1계·2계 판정법으로 각각 구하시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f'=6x(1-x)$, 임계수 $0,1$. $f''=6-12x$.<br>2계: $f''(0)=6>0$ ⇒ 국소최솟값 $f(0)=1$; $f''(1)=-6<0$ ⇒ 국소최댓값 $f(1)=2$.<br>1계: $f'$ 이 $0$ 에서 − → +, $1$ 에서 + → − 로 동일한 결론.</div></div>
+<div class="prob" data-id="c4-19"><div class="pq"><span class="pn"></span><div>$f(x)=xe^{-2x}$ 의 극값, 오목성, 변곡점.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$f'=e^{-2x}(1-2x)$ ⇒ $x=\frac12$ 에서 + → − : 국소(절대)최댓값 $f(\tfrac12)=\dfrac1{2e}$.<br>$f''=4(x-1)e^{-2x}$ ⇒ CD: $(-\infty,1)$, CU: $(1,\infty)$, 변곡점 $(1,e^{-2})$. $x\to\infty$ 에서 $f\to0$ (수평점근선 $y=0$).</div></div>
+<h3><span class="sq">▸</span>4.4 부정형과 로피탈</h3>
+<div class="prob" data-id="c4-20"><div class="pq"><span class="pn"></span><div>극한 $\displaystyle\lim_{x\to0}\frac{\tan3x}{\sin2x}$ 와 $\displaystyle\lim_{t\to0}\frac{e^{2t}-1}{\sin t}$.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">둘 다 $\frac00$. $\displaystyle\lim\frac{3\sec^23x}{2\cos2x}=\boxed{\tfrac32}$, $\ \displaystyle\lim\frac{2e^{2t}}{\cos t}=\boxed2$.</div></div>
+<div class="prob" data-id="c4-21"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0}\frac{\sinh x-x}{x^3}$</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$\frac00$ → $\frac{\cosh x-1}{3x^2}$ ($\frac00$) → $\frac{\sinh x}{6x}$ ($\frac00$) → $\frac{\cosh x}{6}\to\boxed{\tfrac16}$.</div></div>
+<div class="prob" data-id="c4-22"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0}\frac{e^x+e^{-x}-2}{e^x-x-1}$ </div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$\frac00$ → $\frac{e^x-e^{-x}}{e^x-1}$ ($\frac00$) → $\frac{e^x+e^{-x}}{e^x}\to\boxed2$.</div></div>
+<div class="prob" data-id="c4-23"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0}\frac{\sqrt{1+2x}-\sqrt{1-4x}}{x}$</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$\frac00$ → $\dfrac{\frac1{\sqrt{1+2x}}+\frac2{\sqrt{1-4x}}}{1}\to1+2=\boxed3$.</div></div>
+<div class="prob" data-id="c4-24"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0^+}\sqrt x\,\ln x$ (0·∞ 형)</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$\dfrac{\ln x}{x^{-1/2}}$ ($\frac{-\infty}\infty$) → $\dfrac{1/x}{-\frac12x^{-3/2}}=-2\sqrt x\to\boxed0$.</div></div>
+<div class="prob" data-id="c4-25"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0}\left(\csc x-\frac1x\right)$ 과 $\displaystyle\lim_{x\to0}\left(\frac1x-\frac1{e^x-1}\right)$ (∞−∞ 형)</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">(1) $\dfrac{x-\sin x}{x\sin x}$ ($\frac00$) → $\dfrac{1-\cos x}{\sin x+x\cos x}$ ($\frac00$) → $\dfrac{\sin x}{2\cos x-x\sin x}\to\boxed0$.<br>(2) $\dfrac{e^x-1-x}{x(e^x-1)}$ ($\frac00$) → $\dfrac{e^x-1}{e^x-1+xe^x}$ ($\frac00$) → $\dfrac{e^x}{2e^x+xe^x}\to\boxed{\tfrac12}$.</div></div>
+<div class="prob" data-id="c4-26"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to\infty}x\sin\frac\pi x$</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$\dfrac{\sin(\pi/x)}{1/x}$ ($\frac00$) → $\dfrac{\cos(\pi/x)\cdot(-\pi/x^2)}{-1/x^2}=\pi\cos(\pi/x)\to\boxed\pi$.</div></div>
+<div class="prob" data-id="c4-27"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0^+}(1+3x)^{1/x}$ 와 $\displaystyle\lim_{x\to1}(2-x)^{\tan(\pi x/2)}$ ($1^\infty$ 형)</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">(1) $\ln y=\frac{\ln(1+3x)}x\to3$ ⇒ $\boxed{e^3}$.<br>(2) $\ln y=\dfrac{\ln(2-x)}{\cot(\pi x/2)}$ ($\frac00$) → $\dfrac{-1/(2-x)}{-\frac\pi2\csc^2(\pi x/2)}\to\dfrac{-1}{-\pi/2}=\dfrac2\pi$ ⇒ $\boxed{e^{2/\pi}}$.</div></div>
+<div class="prob" data-id="c4-28"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0^+}(\tan2x)^x$ 와 $\displaystyle\lim_{x\to\infty}x^{1/x}$ ($0^0$, $\infty^0$ 형)</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">(1) $\ln y=x\ln\tan2x=\dfrac{\ln\tan2x}{1/x}$ ($\frac{-\infty}{\infty}$) → $\dfrac{\frac{2\sec^22x}{\tan2x}}{-1/x^2}=-\dfrac{2x^2}{\sin2x\cos2x}\to0$ ⇒ $\boxed1$.<br>(2) $\ln y=\frac{\ln x}x\to0$ ⇒ $\boxed1$.</div></div>
+<div class="prob" data-id="c4-29"><div class="pq"><span class="pn"></span><div>다음 중 로피탈을 쓰면 <b>안 되는</b> 것은? (a) $\displaystyle\lim_{x\to0}\frac{\sin x}{x+\cos x}$ (b) $\displaystyle\lim_{x\to\pi^-}\frac{\sin x}{1-\cos x}$ (c) $\displaystyle\lim_{x\to\infty}\frac{x}{e^x}$ — 그리고 각 값은?</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">(a) 분모 $\to1$ → 부정형 아님, 그냥 대입 $\frac01=\boxed0$.<br>(b) 분모 $\to2$ → 부정형 아님, $\frac02=\boxed0$.<br>(c) $\frac\infty\infty$ → 로피탈 가능: $\frac1{e^x}\to\boxed0$.<br>정답: <b>(a), (b)</b> 는 로피탈 부적용.</div></div>
+<h3><span class="sq">▸</span>4.5 곡선 그리기 (A–G 분석)</h3>
+<div class="prob" data-id="c4-30"><div class="pq"><span class="pn"></span><div>$y=x^3+3x^2$ 를 A–G 순서로 분석하시오. (절편, 증감, 극값, 오목·변곡점)</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">A: $\mathbb R$. B: $y$절편 0, $x$절편 $0,-3$. C: 없음. D: 없음.<br>E: $y'=3x(x+2)$ ⇒ 증가 $(-\infty,-2),(0,\infty)$, 감소 $(-2,0)$.<br>F: 국소최댓값 $f(-2)=4$, 국소최솟값 $f(0)=0$.<br>G: $y''=6(x+1)$ ⇒ CD $(-\infty,-1)$, CU $(-1,\infty)$, 변곡점 $(-1,2)$.</div></div>
+<div class="prob" data-id="c4-31"><div class="pq"><span class="pn"></span><div>$y=\dfrac{x}{x^2-4}$ 를 A–G 순서로 분석하시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">A: $x\ne\pm2$. B: (0,0). C: 홀함수(원점 대칭). D: 수평 $y=0$, 수직 $x=\pm2$.<br>E: $y'=-\dfrac{x^2+4}{(x^2-4)^2}<0$ ⇒ 정의역의 세 구간 모두에서 감소. F: 극값 없음.<br>G: $y''=\dfrac{2x(x^2+12)}{(x^2-4)^3}$ ⇒ CU: $(-2,0),(2,\infty)$ / CD: $(-\infty,-2),(0,2)$. 변곡점 $(0,0)$.</div></div>
+<div class="prob" data-id="c4-32"><div class="pq"><span class="pn"></span><div>$y=x+\dfrac1x$ 를 A–G 순서로 분석하시오. (사선점근선 포함)</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">A: $x\ne0$. B: 절편 없음. C: 홀함수. D: 수직 $x=0$; $y-x=\frac1x\to0$ ⇒ <b>사선점근선 $y=x$</b>.<br>E: $y'=1-\frac1{x^2}$ ⇒ 증가 $|x|>1$, 감소 $(-1,0),(0,1)$. F: 국소최댓값 $f(-1)=-2$, 국소최솟값 $f(1)=2$.<br>G: $y''=\frac2{x^3}$ ⇒ $x>0$ CU, $x<0$ CD, 변곡점 없음.</div></div>
+<div class="prob" data-id="c4-33"><div class="pq"><span class="pn"></span><div>$y=(1-x)e^x$ 를 A–G 순서로 분석하시오.</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">A: $\mathbb R$. B: $y$절편 1, $x$절편 1. C: 없음. D: $x\to-\infty$ 에서 $(1-x)e^x\to0$ ⇒ $y=0$ (왼쪽); $x\to\infty$ 에서 $-\infty$.<br>E: $y'=-xe^x$ ⇒ 증가 $(-\infty,0)$, 감소 $(0,\infty)$. F: 국소(절대)최댓값 $f(0)=1$.<br>G: $y''=-(x+1)e^x$ ⇒ CU $(-\infty,-1)$, CD $(-1,\infty)$, 변곡점 $(-1,\ 2/e)$.</div></div>
+<div class="prob" data-id="c4-34"><div class="pq"><span class="pn"></span><div>$y=x-3x^{1/3}$ 를 A–G 순서로 분석하시오. (수직접선 주의)</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">A: $\mathbb R$. B: $y=0$ ⇒ $x=0,\ \pm3\sqrt3$. C: 홀함수. D: 없음.<br>E: $y'=1-x^{-2/3}$. 임계수 $0$(미존재), $\pm1$. 증가 $(-\infty,-1),(1,\infty)$, 감소 $(-1,1)$.<br>F: 국소최댓값 $f(-1)=2$, 국소최솟값 $f(1)=-2$ ($x=0$ 은 극값 아님).<br>G: $y''=\frac23x^{-5/3}$ ⇒ CD $(-\infty,0)$, CU $(0,\infty)$, 변곡점 $(0,0)$ (수직접선).</div></div>
+<div class="prob" data-id="c4-35"><div class="pq"><span class="pn"></span><div>$y=x+\cos x$ 를 분석하시오. 극값이 존재하는가?</div></div>
+<div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
+<div class="ans">$y'=1-\sin x\ge0$ ⇒ 모든 $x$ 에서 증가 (0이 되는 점 $x=\frac\pi2+2n\pi$ 에서도 부호 변화 없음) ⇒ <b>극값 없음</b>.<br>$y''=-\cos x$ ⇒ $\cos x>0$ 구간 CD, $\cos x<0$ 구간 CU. 변곡점 $x=\frac\pi2+n\pi$. (점근선 없음, 증가하며 $y=x$ 주위를 ±1 진동)</div></div>
+</section>
+</section>
+
+<!-- ============================ CHEAT SHEET ============================ -->
+<section class="sec" id="cheat" style="border:2px solid var(--brand)">
+<h2>📌 공식 치트시트 <span class="pg">시험장 들어가기 5분 전에</span></h2>
+<div class="grid2">
+<div>
+<h4>3.10 선형근사·미분소</h4>
+$$L(x)=f(a)+f'(a)(x-a)$$
+$$dy=f'(x)dx,\quad \Delta y\approx dy,\quad \text{상대오차}\approx\frac{dy}{y}$$
+$$\sin x\approx x,\ \cos x\approx1,\ e^x\approx1+x,\ \ln(1+x)\approx x,\ (1+x)^k\approx1+kx$$
+<h4>3.11 쌍곡함수</h4>
+$$\cosh^2x-\sinh^2x=1,\quad 1-\tanh^2x=\operatorname{sech}^2x$$
+$$(\sinh)'=\cosh,\ (\cosh)'=\sinh,\ (\tanh)'=\operatorname{sech}^2$$
+$$(\operatorname{sech})'=-\operatorname{sech}\tanh,\ (\operatorname{csch})'=-\operatorname{csch}\coth,\ (\coth)'=-\operatorname{csch}^2$$
+$$(\sinh^{-1}x)'=\tfrac1{\sqrt{x^2+1}},\ (\cosh^{-1}x)'=\tfrac1{\sqrt{x^2-1}},\ (\tanh^{-1}x)'=\tfrac1{1-x^2}$$
+$$\sinh^{-1}x=\ln(x+\sqrt{x^2+1}),\quad\cosh^{-1}x=\ln(x+\sqrt{x^2-1}),\quad \tanh^{-1}x=\tfrac12\ln\tfrac{1+x}{1-x}$$
+</div>
+<div>
+<h4>4.1 – 4.2</h4>
+<ul>
+<li><b>EVT</b>: 연속 + 닫힌구간 ⇒ 절대 최댓값·최솟값 존재</li>
+<li><b>Fermat</b>: 국소 극값 & $f'(c)$ 존재 ⇒ $f'(c)=0$ (역 X)</li>
+<li>임계수: $f'(c)=0$ 또는 $f'(c)$ DNE (정의역 안에서)</li>
+<li><b>닫힌구간법</b>: 임계수 값 + 끝점 값 → 비교</li>
+<li><b>Rolle</b>: 연속·미분가능·$f(a)=f(b)$ ⇒ $\exists c: f'(c)=0$</li>
+<li><b>MVT</b>: $f'(c)=\dfrac{f(b)-f(a)}{b-a}$</li>
+<li>$f'\equiv0$ ⇒ 상수; $f'=g'$ ⇒ $f=g+C$</li>
+</ul>
+<h4>4.3 – 4.5</h4>
+<ul>
+<li>$f'>0$ ↗, $f'<0$ ↘ (I/D Test)</li>
+<li>1계 판정: $f'$ + → − ⇒ 극대, − → + ⇒ 극소</li>
+<li>$f''>0$ CU, $f''<0$ CD; 변곡점 = 오목성이 바뀌는 점</li>
+<li>2계 판정: $f'(c)=0$, $f''(c)>0$ ⇒ 극소; $f''(c)<0$ ⇒ 극대; $f''(c)=0$ ⇒ 판정불가</li>
+<li><b>로피탈</b>: $\tfrac00$, $\tfrac\infty\infty$ 일 때 $\lim\frac fg=\lim\frac{f'}{g'}$</li>
+<li>$0\cdot\infty$, $\infty-\infty$ → 몫으로 / $0^0,\infty^0,1^\infty$ → $\ln$ 취하기 → $e^L$</li>
+<li>곡선 그리기: <b>A</b>Domain <b>B</b>Intercepts <b>C</b>Symmetry <b>D</b>Asymptotes <b>E</b>$f'$ 증감 <b>F</b>극값 <b>G</b>$f''$ 오목·변곡 <b>H</b>Sketch</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- ============================ QUIZ ============================ -->
+<section class="sec" id="quiz">
+<h2>❓ 셀프 퀴즈 <span class="pg">질문을 클릭하면 답이 나옵니다</span></h2>
+<div class="qa"><button>Q1. $a$ 에서의 선형화 $L(x)$ 의 식은? 언제 과대추정인가?</button><div class="a">$L(x)=f(a)+f'(a)(x-a)$. 접선이 곡선 위에 있을 때, 즉 <b>$f''<0$(CD)</b> 일 때 과대추정. $f''>0$(CU)면 과소추정.</div></div>
+<div class="qa"><button>Q2. $\Delta y$ 와 $dy$ 의 차이는?</button><div class="a">$\Delta y$ 는 곡선의 실제 변화량, $dy=f'(x)dx$ 는 접선의 변화량. $dx$ 가 작으면 $\Delta y\approx dy$.</div></div>
+<div class="qa"><button>Q3. 구의 반지름의 상대오차가 2% 이면 부피의 상대오차는 약 몇 %?</button><div class="a">$dV/V=3\,dr/r$ ⇒ 약 <b>6%</b>.</div></div>
+<div class="qa"><button>Q4. $\cosh^2x-\sinh^2x$ 는? $\dfrac{d}{dx}\cosh x$ 는?</button><div class="a">$1$ (빼기). $\ \sinh x$ (마이너스 없음).</div></div>
+<div class="qa"><button>Q5. $\dfrac{d}{dx}\tanh^{-1}(x)$ 와 정의역은?</button><div class="a">$\dfrac1{1-x^2}$, 정의역 $(-1,1)$.</div></div>
+<div class="qa"><button>Q6. Extreme Value Theorem 의 가정 두 가지는?</button><div class="a">$f$ 가 <b>연속</b>이고 구간이 <b>닫힌구간 $[a,b]$</b>.</div></div>
+<div class="qa"><button>Q7. Fermat 정리의 역이 성립하지 않는 예 두 가지?</button><div class="a">$f=x^3$ ($f'(0)=0$ 이지만 극값 X), $f=|x|$ (극솟값이지만 $f'(0)$ 미존재).</div></div>
+<div class="qa"><button>Q8. 닫힌구간법 3단계?</button><div class="a">(1) 임계수에서의 함숫값 (2) 끝점에서의 함숫값 (3) 가장 큰 값 = 절대최댓값, 가장 작은 값 = 절대최솟값.</div></div>
+<div class="qa"><button>Q9. Rolle 정리의 세 조건과 결론은?</button><div class="a">연속 on $[a,b]$, 미분가능 on $(a,b)$, $f(a)=f(b)$ ⇒ $f'(c)=0$ 인 $c\in(a,b)$ 존재.</div></div>
+<div class="qa"><button>Q10. $f'(x)=g'(x)$ 이면 $f$ 와 $g$ 는 어떤 관계?</button><div class="a">$f(x)=g(x)+C$ (구간에서). MVT의 귀결.</div></div>
+<div class="qa"><button>Q11. 1계 판정법으로 국소최댓값은 어떻게 판정?</button><div class="a">임계수 $c$ 에서 $f'$ 이 <b>양수 → 음수</b>로 바뀔 때.</div></div>
+<div class="qa"><button>Q12. 2계 판정법이 통하지 않는 경우와 대처법은?</button><div class="a">$f''(c)=0$ 또는 미존재. → <b>1계 판정법</b> 사용.</div></div>
+<div class="qa"><button>Q13. 변곡점의 정확한 조건은?</button><div class="a">$f$ 가 그 점에서 연속이고 <b>오목성(CU/CD)이 바뀜</b> ($f''$ 의 부호 변화). $f''=0$ 만으로는 충분치 않다.</div></div>
+<div class="qa"><button>Q14. $\displaystyle\lim_{x\to0}\frac{\sin x}{x+\cos x}$ 에 로피탈을 쓰면 되는가?</button><div class="a">아니오. 분모 $\to1\ne0$ 이므로 부정형이 아니다. 그냥 $\frac01=0$.</div></div>
+<div class="qa"><button>Q15. $\lim_{x\to0^+}(1+\sin4x)^{\cot x}$ 의 값과 풀이 방법은?</button><div class="a">$1^\infty$ 형. $\ln y=\frac{\ln(1+\sin4x)}{\tan x}\to4$ ⇒ 답 $e^4$.</div></div>
+<div class="qa"><button>Q16. 곡선 그리기 체크리스트 A–H는?</button><div class="a">A Domain, B Intercepts, C Symmetry, D Asymptotes, E Increase/Decrease, F Local Max/Min, G Concavity &amp; Inflection, H Sketch.</div></div>
+<div class="qa"><button>Q17. $f(x)=\dfrac{x^2+1}{x}$ 의 사선점근선은?</button><div class="a">$f=x+\dfrac1x$ ⇒ $y=x$ (수직점근선 $x=0$ 도 있음).</div></div>
+</section>
+
+<!-- ============================ CHECKLIST ============================ -->
+<section class="sec" id="check">
+<h2>✅ 시험 직전 체크리스트 <span class="pg">체크 상태는 이 브라우저에 저장됩니다</span></h2>
+<ul class="chk" id="chklist">
+<li><input type="checkbox"><span><b>3.10</b> 선형화 공식 $L(x)$ 와 “작은 각” 근사식 6개를 즉시 쓸 수 있다.</span></li>
+<li><input type="checkbox"><span><b>3.10</b> $dy=f'(x)dx$, 상대오차/백분율오차 계산 (라디안 변환 주의).</span></li>
+<li><input type="checkbox"><span><b>3.11</b> 쌍곡함수 정의 6개, 항등식, 도함수 6개(부호 주의)를 외웠다.</span></li>
+<li><input type="checkbox"><span><b>3.11</b> 역쌍곡함수의 로그 표현 3개와 도함수, 정의역을 안다.</span></li>
+<li><input type="checkbox"><span><b>4.1</b> EVT, Fermat, 임계수 정의를 말로 설명할 수 있다.</span></li>
+<li><input type="checkbox"><span><b>4.1</b> 닫힌구간법으로 절대 최대·최소 문제를 5분 안에 푼다.</span></li>
+<li><input type="checkbox"><span><b>4.2</b> Rolle/MVT 조건 검증 → $c$ 값 찾기 문제 풀이 가능.</span></li>
+<li><input type="checkbox"><span><b>4.2</b> “근이 하나뿐”(IVT+Rolle), “항등식 증명”(도함수=0) 템플릿 숙지.</span></li>
+<li><input type="checkbox"><span><b>4.3</b> 부호표로 증감·오목 구간을 정리하고 1계/2계 판정법을 구분해서 쓴다.</span></li>
+<li><input type="checkbox"><span><b>4.3</b> 그래프 조건($f',f''$ 부호, 극한)만 주어졌을 때 개형을 그릴 수 있다.</span></li>
+<li><input type="checkbox"><span><b>4.4</b> 부정형 유형별 변환법(0·∞, ∞−∞, 0⁰/∞⁰/1^∞)을 예제 없이 말할 수 있다.</span></li>
+<li><input type="checkbox"><span><b>4.4</b> 로피탈 적용 전 조건 확인 습관 (분자·분모 극한 먼저 계산).</span></li>
+<li><input type="checkbox"><span><b>4.5</b> A–H 체크리스트 순서대로 예제 1(유리함수), 3($xe^x$), 6(사선점근선)을 혼자 그려 본다.</span></li>
+<li><input type="checkbox"><span>모든 예제의 “▶ 예제” 를 펼치기 전에 <u>먼저 스스로 풀어</u> 봤다.</span></li>
+</ul>
+<p class="mini" id="chkstat"></p>
+</section>
+
+<p class="mini" style="text-align:center;margin-top:30px">출처: Stewart, Clegg, Watson, <i>Calculus: Early Transcendentals</i>, 9th Ed. (Metric Version), §3.10–4.5 · 본 노트는 학습용 요약이며 예제 풀이는 교재 내용을 바탕으로 재구성했습니다.<br>수식 렌더링에 KaTeX(CDN)를 사용하므로 최초 열람 시 인터넷 연결이 필요합니다.</p>
+</main>
+</div>
+
+<script>
+/* ---------- utilities ---------- */
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+
+/* ---------- theme ---------- */
+(function(){
+  const t=store('theme');
+  if(t)document.documentElement.dataset.theme=t;
+  else if(matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.dataset.theme='dark';
+  $('#btnTheme').onclick=()=>{
+    const n=document.documentElement.dataset.theme==='dark'?'light':'dark';
+    document.documentElement.dataset.theme=n;store('theme',n);
+  };
+})();
+
+/* ---------- open/close all examples ---------- */
+(function(){
+  let open=false;
+  $('#btnOpen').onclick=function(){
+    open=!open;
+    $$('details.ex').forEach(d=>d.open=open);
+    this.textContent=open?'예제 모두 접기':'예제 모두 펼치기';
+  };
+})();
+
+/* ---------- quiz ---------- */
+$$('.qa>button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+
+/* ---------- checklist persistence ---------- */
+(function(){
+  const boxes=$$('#chklist input');
+  const saved=JSON.parse(store('chk')||'[]');
+  boxes.forEach((b,i)=>{b.checked=!!saved[i];b.onchange=upd});
+  function upd(){
+    store('chk',JSON.stringify(boxes.map(b=>b.checked)));
+    $('#chkstat').textContent=boxes.filter(b=>b.checked).length+' / '+boxes.length+' 완료';
+  }
+  upd();
+})();
+
+/* ---------- scrollspy + progress ---------- */
+(function(){
+  const links=$$('#nav a[href^="#"]');
+  const targets=links.map(a=>$(a.getAttribute('href')));
+  function onScroll(){
+    const y=scrollY+120;
+    let idx=0;
+    targets.forEach((t,i)=>{if(t&&t.offsetTop<=y)idx=i});
+    links.forEach((a,i)=>a.classList.toggle('on',i===idx));
+    const h=document.documentElement.scrollHeight-innerHeight;
+    $('#prog').style.width=(h>0?scrollY/h*100:0)+'%';
+  }
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+
+/* ---------- tiny SVG plotter ---------- */
+function plot(svg,{x:[x0,x1],y:[y0,y1],items=[],pts=[]}){
+  const W=440,H=280,m={l:34,r:14,t:14,b:26};
+  const X=x=>m.l+(x-x0)/(x1-x0)*(W-m.l-m.r), Y=y=>H-m.b-(y-y0)/(y1-y0)*(H-m.t-m.b);
+  let s='';
+  // axes
+  if(y0<0&&y1>0)s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(0)}" y2="${Y(0)}" stroke="#8a90a8" stroke-width="1"/>`;
+  else s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${H-m.b}" y2="${H-m.b}" stroke="#8a90a8"/>`;
+  if(x0<0&&x1>0)s+=`<line y1="${m.t}" y2="${H-m.b}" x1="${X(0)}" x2="${X(0)}" stroke="#8a90a8" stroke-width="1"/>`;
+  else s+=`<line y1="${m.t}" y2="${H-m.b}" x1="${m.l}" x2="${m.l}" stroke="#8a90a8"/>`;
+  items.forEach(it=>{
+    let d='',first=true;
+    const N=240;
+    for(let i=0;i<=N;i++){
+      const x=x0+(x1-x0)*i/N,y=it.f(x);
+      if(!isFinite(y)||y<y0-1e-9||y>y1+1e-9){first=true;continue}
+      d+=(first?'M':'L')+X(x).toFixed(1)+' '+Y(y).toFixed(1)+' ';first=false;
+    }
+    s+=`<path d="${d}" fill="none" stroke="${it.c}" stroke-width="${it.w||2.2}" ${it.dash?'stroke-dasharray="6 4"':''}/>`;
+    if(it.label)s+=`<text x="${X(it.lx)+4}" y="${Y(it.ly)-5}" style="fill:${it.c};font-weight:700">${it.label}</text>`;
+  });
+  pts.forEach(p=>{
+    s+=`<circle cx="${X(p.x)}" cy="${Y(p.y)}" r="4.2" fill="${p.c||'#3a4fd7'}"/>`;
+    if(p.label)s+=`<text x="${X(p.x)+(p.dx??6)}" y="${Y(p.y)+(p.dy??14)}">${p.label}</text>`;
+  });
+  // ticks
+  const tick=(v,axis)=>axis==='x'?`<text x="${X(v)}" y="${H-8}" text-anchor="middle">${v}</text>`:`<text x="${m.l-6}" y="${Y(v)+4}" text-anchor="end">${v}</text>`;
+  for(let v=Math.ceil(x0);v<=x1;v++)if(v!==0)s+=tick(v,'x');
+  for(let v=Math.ceil(y0);v<=y1;v++)if(v!==0)s+=tick(v,'y');
+  svg.innerHTML=s;
+}
+plot($('#figLin'),{x:[-3,6],y:[0,3],items:[
+  {f:x=>Math.sqrt(x+3),c:'#3a4fd7',lx:4.5,ly:2.65,label:'√(x+3)'},
+  {f:x=>7/4+x/4,c:'#d7503a',dash:true,lx:-2.9,ly:1.2,label:'L(x)'}],
+  pts:[{x:1,y:2,label:'(1, 2)',dx:-16,dy:20}]});
+plot($('#figHyp'),{x:[-3,3],y:[-4,4],items:[
+  {f:Math.sinh,c:'#3a4fd7',lx:1.9,ly:3.3,label:'sinh'},
+  {f:Math.cosh,c:'#d7503a',lx:-2.9,ly:3.7,label:'cosh'},
+  {f:Math.tanh,c:'#1f9d6b',lx:1.8,ly:1.0,label:'tanh'},
+  {f:x=>1,c:'#999',dash:true,w:1},{f:x=>-1,c:'#999',dash:true,w:1}]});
+(function(){
+  const f=x=>x*x*x-x, c=2/Math.sqrt(3);
+  plot($('#figMVT'),{x:[-0.3,2.3],y:[-1,7],items:[
+    {f:f,c:'#3a4fd7',lx:1.85,ly:5.2,label:'f'},
+    {f:x=>3*x,c:'#d7503a',dash:true,lx:0.4,ly:1.4,label:'secant'},
+    {f:x=>f(c)+3*(x-c),c:'#1f9d6b',lx:1.5,ly:1.4,label:'tangent at c'}],
+    pts:[{x:0,y:0,label:'A',dx:6,dy:14},{x:2,y:6,label:'B',dx:-14,dy:-6},{x:c,y:f(c),label:'c=2/√3',dx:8,dy:14,c:'#1f9d6b'}]});
+})();
+
+/* ---------- practice problems ---------- */
+(function(){
+  let st={};try{st=JSON.parse(store('prac')||'{}')}catch(e){}
+  const save=()=>store('prac',JSON.stringify(st));
+  function refresh(sec){
+    const ps=$$('.prob',sec);
+    ps.forEach(p=>{p.classList.toggle('right',st[p.dataset.id]==='ok');p.classList.toggle('wrong',st[p.dataset.id]==='no')});
+    const ok=ps.filter(p=>st[p.dataset.id]==='ok').length,no=ps.filter(p=>st[p.dataset.id]==='no').length;
+    $('.sc',sec).textContent=ok+' / '+ps.length+' 정답'+(no?' · 복습 '+no:'');
+  }
+  $$('.practice').forEach(sec=>{
+    $$('.prob',sec).forEach(p=>{
+      $('.showans',p).onclick=()=>p.classList.toggle('show');
+      $('.ok',p).onclick=()=>{st[p.dataset.id]=st[p.dataset.id]==='ok'?'':'ok';save();refresh(sec)};
+      $('.no',p).onclick=()=>{st[p.dataset.id]=st[p.dataset.id]==='no'?'':'no';p.classList.add('show');save();refresh(sec)};
+    });
+    $('.onlyno',sec).onclick=function(){const f=sec.classList.toggle('filter');this.textContent=f?'전체 보기':'✘ 복습 문제만 보기'};
+    $('.reset',sec).onclick=()=>{if(confirm('이 연습문제의 채점 기록을 지울까요?')){$$('.prob',sec).forEach(p=>{delete st[p.dataset.id];p.classList.remove('show')});save();refresh(sec)}};
+    refresh(sec);
+  });
+})();
+
+/* ---------- KaTeX ---------- */
+function renderMath(){
+  if(!window.renderMathInElement){return setTimeout(renderMath,120)}
+  renderMathInElement(document.body,{
+    delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
+    throwOnError:false,ignoredTags:['script','style','textarea']
+  });
+}
+window.addEventListener('load',renderMath);
+</script>
+</body>
+</html>
