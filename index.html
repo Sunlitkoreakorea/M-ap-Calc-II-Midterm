@@ -312,7 +312,7 @@ html{scroll-padding-top:70px}
 <div class="formula">$$\sin x\approx x,\quad \cos x\approx 1,\quad \tan x\approx x,\quad e^x\approx 1+x,\quad \ln(1+x)\approx x,\quad (1+x)^k\approx 1+kx$$</div>
 <p class="mini">예: $\ln 1.04\approx 0.04$, $\;1/9.98=(10-0.02)^{-1}\approx 0.1002$, $\;\sqrt{4.02}\approx2+\tfrac{0.02}{4}=2.005$.</p></div>
 
-<details class="ex"><summary>예제 1 · $f(x)=\sqrt{x+3}$, $a=1$ 에서 선형화 → $\sqrt{3.98},\sqrt{4.05}$ 근사</summary>
+<details class="ex"><summary>예제 1 · 함수 $f(x)=\sqrt{x+3}$ 의 $a=1$ 에서의 선형화를 구하고, 이를 이용하여 $\sqrt{3.98}$ 과 $\sqrt{4.05}$ 의 근삿값을 구하시오. 이 근삿값은 실제 값보다 큰가, 작은가?</summary>
 <div class="body">
 <p>$f'(x)=\dfrac{1}{2\sqrt{x+3}}$, $f(1)=2$, $f'(1)=\dfrac14$.</p>
 <p>$L(x)=2+\dfrac14(x-1)=\dfrac74+\dfrac x4$.</p>
@@ -353,7 +353,7 @@ $$dc=0,\quad d(cu)=c\,du,\quad d(u\pm v)=du\pm dv,\quad d(uv)=u\,dv+v\,du,\quad 
 <div class="formula">$$\text{상대오차}=\frac{\Delta y}{y}\approx\frac{dy}{y},\qquad \text{백분율 오차}=\text{상대오차}\times100\%$$</div>
 <p>멱함수 $y=x^n$ 이면 $\dfrac{dy}{y}=n\,\dfrac{dx}{x}$ : <b>상대오차는 지수 배</b>가 된다. (구의 부피 $V=\frac43\pi r^3$ → $\dfrac{dV}{V}=3\dfrac{dr}{r}$, 혈류 $F=kR^4$ → $\dfrac{dF}{F}=4\dfrac{dR}{R}$: 반지름이 5% 증가하면 혈류는 약 20% 증가.)</p></div>
 
-<details class="ex"><summary>예제 3 · $\Delta y$ 와 $dy$ 비교: $y=x^3+x^2-2x+1$, $x=2$, (a) $dx=0.05$ (b) $dx=0.01$</summary>
+<details class="ex"><summary>예제 3 · $y=f(x)=x^3+x^2-2x+1$ 에서 $x$ 가 (a) 2에서 2.05로, (b) 2에서 2.01로 변할 때 $\Delta y$ 와 $dy$ 의 값을 각각 구하고 서로 비교하시오.</summary>
 <div class="body">
 <p>$f(2)=9$, $dy=(3x^2+2x-2)\,dx=(12+4-2)\,dx=14\,dx$.</p>
 <p>(a) $\Delta y=f(2.05)-f(2)=9.717625-9=0.717625$, $\;dy=14(0.05)=0.7$.</p>
@@ -361,7 +361,7 @@ $$dc=0,\quad d(cu)=c\,du,\quad d(u\pm v)=du\pm dv,\quad d(uv)=u\,dv+v\,du,\quad 
 <p>→ $\Delta x$ 가 작아질수록 $\Delta y\approx dy$ 가 더 정확해진다.</p>
 </div></details>
 
-<details class="ex"><summary>예제 4 · 구의 반지름 $r=21$ cm, 오차 $\le0.05$ cm. 부피의 최대 오차는?</summary>
+<details class="ex"><summary>예제 4 · 구의 반지름을 측정하였더니 21 cm 이고, 측정 오차는 최대 0.05 cm 이다. 이 값으로 구의 부피를 계산할 때 생기는 최대 오차를 미분소를 이용하여 구하고, 부피의 상대오차도 구하시오.</summary>
 <div class="body">
 <p>$V=\frac43\pi r^3\Rightarrow dV=4\pi r^2\,dr=4\pi(21)^2(0.05)\approx 277\ \text{cm}^3$.</p>
 <p>상대오차: $\dfrac{dV}{V}=3\dfrac{dr}{r}=3\cdot\dfrac{0.05}{21}\approx0.007$ → 약 <b>0.7%</b> (반지름 자체의 상대오차는 약 0.24%).</p>
@@ -424,12 +424,12 @@ $$\sinh(x+y)=\sinh x\cosh y+\cosh x\sinh y\qquad \cosh(x+y)=\cosh x\cosh y+\sinh
 <li>기하적 의미: 점 $(\cosh t,\sinh t)$ 는 쌍곡선 $x^2-y^2=1$ 의 오른쪽 가지 위에 있으며, $t$ = 쌍곡선 부채꼴 넓이의 2배 (각도가 아님).</li>
 </ul></div>
 
-<details class="ex"><summary>예제 1 · 증명: (a) $\cosh^2x-\sinh^2x=1$ (b) $1-\tanh^2x=\operatorname{sech}^2x$</summary>
+<details class="ex"><summary>예제 1 · 다음 항등식을 증명하시오. (a) $\cosh^2x-\sinh^2x=1$ &nbsp;(b) $1-\tanh^2x=\operatorname{sech}^2x$</summary>
 <div class="body">
 <p>(a) $\left(\dfrac{e^x+e^{-x}}2\right)^2-\left(\dfrac{e^x-e^{-x}}2\right)^2=\dfrac{e^{2x}+2+e^{-2x}}4-\dfrac{e^{2x}-2+e^{-2x}}4=\dfrac44=1$.</p>
 <p>(b) (a)의 양변을 $\cosh^2x$ 로 나눈다: $1-\tanh^2x=\dfrac1{\cosh^2x}=\operatorname{sech}^2x$.</p>
 </div></details>
-<details class="ex"><summary>예제 2 · $y=\cosh\sqrt x$ 의 도함수 (연쇄법칙)</summary>
+<details class="ex"><summary>예제 2 · $y=\cosh\sqrt x$ 일 때 $\dfrac{dy}{dx}$ 를 구하시오.</summary>
 <div class="body">
 $$\frac{dy}{dx}=\sinh\sqrt x\cdot\frac{d}{dx}\sqrt x=\frac{\sinh\sqrt x}{2\sqrt x}$$
 </div></details>
@@ -460,18 +460,18 @@ $$\tanh^{-1}x=\tfrac12\ln\frac{1+x}{1-x}\ (-1<x<1)$$</div>
 </table>
 <p class="mini">$\tanh^{-1}$ 와 $\coth^{-1}$ 의 도함수는 식이 같지만 정의역이 다르다: $|x|<1$ vs $|x|>1$.</p></div>
 
-<details class="ex"><summary>예제 3 · $\sinh^{-1}x=\ln\!\big(x+\sqrt{x^2+1}\big)$ 증명</summary>
+<details class="ex"><summary>예제 3 · $\sinh^{-1}x=\ln\!\big(x+\sqrt{x^2+1}\big)$ 임을 보이시오.</summary>
 <div class="body">
 <p>$y=\sinh^{-1}x$ 라 하면 $x=\sinh y=\dfrac{e^y-e^{-y}}2$. 양변에 $2e^y$ 를 곱해 $e^{2y}-2xe^y-1=0$.</p>
 <p>$e^y$ 에 대한 이차방정식: $e^y=x\pm\sqrt{x^2+1}$. $e^y>0$ 이고 $x-\sqrt{x^2+1}<0$ 이므로 <b>플러스만 가능</b>.</p>
 <p>따라서 $y=\ln\!\big(x+\sqrt{x^2+1}\big)$.</p>
 </div></details>
-<details class="ex"><summary>예제 4 · $\dfrac d{dx}\sinh^{-1}x=\dfrac1{\sqrt{1+x^2}}$ 증명 (역함수/음함수 미분)</summary>
+<details class="ex"><summary>예제 4 · $\dfrac d{dx}\sinh^{-1}x=\dfrac1{\sqrt{1+x^2}}$ 임을 증명하시오.</summary>
 <div class="body">
 <p>$\sinh y=x$ 를 음함수 미분: $\cosh y\,\dfrac{dy}{dx}=1$. $\cosh y>0$ 이고 $\cosh^2y=1+\sinh^2y=1+x^2$ 이므로</p>
 $$\frac{dy}{dx}=\frac1{\cosh y}=\frac1{\sqrt{1+x^2}}.$$
 </div></details>
-<details class="ex"><summary>예제 5 · $\dfrac d{dx}\big[\tanh^{-1}(\sin x)\big]$</summary>
+<details class="ex"><summary>예제 5 · $\dfrac d{dx}\big[\tanh^{-1}(\sin x)\big]$ 를 구하시오.</summary>
 <div class="body">
 $$\frac1{1-\sin^2x}\cdot\cos x=\frac{\cos x}{\cos^2x}=\sec x$$
 </div></details>
@@ -489,41 +489,41 @@ $$\frac1{1-\sin^2x}\cdot\cos x=\frac{\cos x}{\cos^2x}=\sec x$$
 <p class="mini">교재 연습문제(Exercises)를 바탕으로 골랐습니다. <b>먼저 종이에 풀고</b> → “정답·풀이 보기” → 채점(✔/✘). ✘ 표시한 문제는 “복습 문제만 보기”로 다시 모아 볼 수 있어요.</p>
 <div class="score" data-scope="pr3"><span class="sc">0 / 0 정답</span><button class="onlyno">✘ 복습 문제만 보기</button><button class="reset">기록 초기화</button></div>
 <h3><span class="sq">▸</span>3.10 선형근사 · 미분소</h3>
-<div class="prob" data-id="c3-1"><div class="pq"><span class="pn"></span><div>$f(x)=x^3-x^2+3$ 의 $a=-2$ 에서의 선형화 $L(x)$ 를 구하시오.</div></div>
+<div class="prob" data-id="c3-1"><div class="pq"><span class="pn"></span><div>함수 $f(x)=x^3-x^2+3$ 에 대하여 $a=-2$ 에서의 선형화 $L(x)$ 를 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f(-2)=-9$, $f'(x)=3x^2-2x\Rightarrow f'(-2)=16$.<br>$L(x)=-9+16(x+2)=\boxed{16x+23}$</div></div>
-<div class="prob" data-id="c3-2"><div class="pq"><span class="pn"></span><div>$f(x)=\cos 2x$ 의 $a=\pi/6$ 에서의 선형화를 구하시오.</div></div>
+<div class="prob" data-id="c3-2"><div class="pq"><span class="pn"></span><div>함수 $f(x)=\cos2x$ 에 대하여 $a=\pi/6$ 에서의 선형화 $L(x)$ 를 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f(\pi/6)=\cos\frac\pi3=\frac12$, $f'(x)=-2\sin2x\Rightarrow f'(\pi/6)=-2\cdot\frac{\sqrt3}{2}=-\sqrt3$.<br>$L(x)=\boxed{\tfrac12-\sqrt3\left(x-\tfrac\pi6\right)}$</div></div>
-<div class="prob" data-id="c3-3"><div class="pq"><span class="pn"></span><div>선형근사(또는 미분소)로 $\sqrt[3]{1001}$ 과 $\cos29^\circ$ 를 추정하시오.</div></div>
+<div class="prob" data-id="c3-3"><div class="pq"><span class="pn"></span><div>선형근사(또는 미분소)를 이용하여 (a) $\sqrt[3]{1001}$ (b) $\cos29^\circ$ 의 값을 근사하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f=\sqrt[3]x,\ a=1000$: $f'=\frac13x^{-2/3}=\frac1{300}$ ⇒ $\sqrt[3]{1001}\approx10+\frac1{300}\approx\boxed{10.0033}$.<br>$\cos29^\circ$: $a=30^\circ=\frac\pi6$, $dx=-1^\circ=-\frac\pi{180}$. $\cos x\approx\frac{\sqrt3}2-\frac12\left(-\frac\pi{180}\right)=\frac{\sqrt3}2+\frac\pi{360}\approx\boxed{0.8748}$ (실제 0.87462)</div></div>
-<div class="prob" data-id="c3-4"><div class="pq"><span class="pn"></span><div>$y=\dfrac{1+2u}{1+3u}$ 의 미분소 $dy$ 를 구하시오.</div></div>
+<div class="prob" data-id="c3-4"><div class="pq"><span class="pn"></span><div>$y=\dfrac{1+2u}{1+3u}$ 의 미분소 $dy$ 를 $u$ 와 $du$ 로 나타내시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$\dfrac{dy}{du}=\dfrac{2(1+3u)-3(1+2u)}{(1+3u)^2}=\dfrac{-1}{(1+3u)^2}$ ⇒ $dy=\boxed{-\dfrac{du}{(1+3u)^2}}$</div></div>
-<div class="prob" data-id="c3-5"><div class="pq"><span class="pn"></span><div>정육면체의 모서리가 $30$ cm, 측정오차가 $0.1$ cm 이다. 미분소로 (a) 부피 (b) 겉넓이의 최대오차, 상대오차, 백분율오차를 추정하시오.</div></div>
+<div class="prob" data-id="c3-5"><div class="pq"><span class="pn"></span><div>정육면체의 모서리 길이를 측정하였더니 30 cm 였고, 측정 오차는 최대 0.1 cm 이다. 미분소를 이용하여 (a) 부피 (b) 겉넓이를 계산할 때 생기는 최대 오차를 추정하고, 각각의 상대오차와 백분율 오차를 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">(a) $V=x^3$, $dV=3x^2dx=3(900)(0.1)=\boxed{270\ \text{cm}^3}$, 상대오차 $\frac{dV}{V}=\frac{270}{27000}=0.01$ → <b>1%</b>.<br>(b) $S=6x^2$, $dS=12x\,dx=12(30)(0.1)=\boxed{36\ \text{cm}^2}$, 상대오차 $\frac{36}{5400}\approx0.0067$ → <b>약 0.67%</b>.<br><span class='mini'>(검산: 상대오차 = 지수 × $dx/x$ → $3\times0.33\%=1\%$, $2\times0.33\%=0.67\%$)</span></div></div>
-<div class="prob" data-id="c3-6"><div class="pq"><span class="pn"></span><div>혈류 $F=kR^4$ 에서 반지름 $R$ 이 5% 증가하면 혈류는 대략 몇 % 증가하는가?</div></div>
+<div class="prob" data-id="c3-6"><div class="pq"><span class="pn"></span><div>혈관을 흐르는 혈류량 $F$ 는 혈관 반지름 $R$ 의 4제곱에 비례한다: $F=kR^4$. 혈관 성형술로 반지름이 5% 증가하였다면, 혈류량은 대략 몇 % 증가하는지 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$dF=4kR^3dR\Rightarrow\dfrac{dF}F=4\dfrac{dR}R=4(5\%)=\boxed{\text{약 }20\%}$</div></div>
 <h3><span class="sq">▸</span>3.11 쌍곡함수</h3>
-<div class="prob" data-id="c3-7"><div class="pq"><span class="pn"></span><div>값을 구하시오: (a) $\cosh(\ln5)$ (b) $\sinh(\ln4)$ (c) $\tanh(\ln2)$</div></div>
+<div class="prob" data-id="c3-7"><div class="pq"><span class="pn"></span><div>다음 값을 각각 구하시오. (a) $\cosh(\ln5)$ &nbsp;(b) $\sinh(\ln4)$ &nbsp;(c) $\tanh(\ln2)$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$e^{\ln a}=a$, $e^{-\ln a}=1/a$.<br>(a) $\frac{5+1/5}2=\boxed{\frac{13}5}$ (b) $\frac{4-1/4}2=\boxed{\frac{15}8}$ (c) $\frac{2-1/2}{2+1/2}=\boxed{\frac35}$</div></div>
-<div class="prob" data-id="c3-8"><div class="pq"><span class="pn"></span><div>$\sinh(\ln x)$ 를 $x$ 의 유리함수로 나타내시오.</div></div>
+<div class="prob" data-id="c3-8"><div class="pq"><span class="pn"></span><div>$\sinh(\ln x)$ 를 $x$ 에 대한 유리식으로 나타내시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$\sinh(\ln x)=\dfrac{x-x^{-1}}2=\boxed{\dfrac{x^2-1}{2x}}$</div></div>
-<div class="prob" data-id="c3-9"><div class="pq"><span class="pn"></span><div>$\cosh 2x=\cosh^2x+\sinh^2x$ 임을 증명하시오.</div></div>
+<div class="prob" data-id="c3-9"><div class="pq"><span class="pn"></span><div>덧셈공식 $\cosh(x+y)=\cosh x\cosh y+\sinh x\sinh y$ 를 이용하여 $\cosh2x=\cosh^2x+\sinh^2x$ 임을 증명하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$\cosh(x+x)=\cosh x\cosh x+\sinh x\sinh x$ (덧셈공식에 $y=x$ 대입) ∎</div></div>
-<div class="prob" data-id="c3-10"><div class="pq"><span class="pn"></span><div>다음을 미분하시오. (a) $y=e^{\cosh3x}$ (b) $y=\tanh(1+e^{2x})$ (c) $y=\sinh^{-1}(\tan x)$</div></div>
+<div class="prob" data-id="c3-10"><div class="pq"><span class="pn"></span><div>다음 함수를 $x$ 에 대하여 미분하시오. (a) $y=e^{\cosh3x}$ &nbsp;(b) $y=\tanh(1+e^{2x})$ &nbsp;(c) $y=\sinh^{-1}(\tan x)$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">(a) $e^{\cosh3x}\cdot\sinh3x\cdot3=\boxed{3\sinh(3x)\,e^{\cosh3x}}$<br>(b) $\boxed{2e^{2x}\operatorname{sech}^2(1+e^{2x})}$<br>(c) $\dfrac{1}{\sqrt{1+\tan^2x}}\sec^2x=\dfrac{\sec^2x}{|\sec x|}=\boxed{|\sec x|}$</div></div>
-<div class="prob" data-id="c3-11"><div class="pq"><span class="pn"></span><div>$y=x\tanh^{-1}x+\ln\sqrt{1-x^2}$ 를 미분하시오.</div></div>
+<div class="prob" data-id="c3-11"><div class="pq"><span class="pn"></span><div>함수 $y=x\tanh^{-1}x+\ln\sqrt{1-x^2}$ 의 도함수 $y'$ 을 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$y'=\tanh^{-1}x+\dfrac{x}{1-x^2}+\dfrac12\cdot\dfrac{-2x}{1-x^2}=\boxed{\tanh^{-1}x}$ (뒤의 두 항이 상쇄)</div></div>
-<div class="prob" data-id="c3-12"><div class="pq"><span class="pn"></span><div>극한: (a) $\displaystyle\lim_{x\to\infty}\tanh x$ (b) $\displaystyle\lim_{x\to\infty}e^{-x}\cosh x$</div></div>
+<div class="prob" data-id="c3-12"><div class="pq"><span class="pn"></span><div>다음 극한값을 구하시오. (a) $\displaystyle\lim_{x\to\infty}\tanh x$ &nbsp;(b) $\displaystyle\lim_{x\to\infty}e^{-x}\cosh x$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">(a) $\boxed{1}$ &nbsp;(b) $e^{-x}\frac{e^x+e^{-x}}2=\frac{1+e^{-2x}}2\to\boxed{\frac12}$</div></div>
 </section>
@@ -565,7 +565,7 @@ $$\frac1{1-\sin^2x}\cdot\cos x=\frac{\cos x}{\cos^2x}=\sec x$$
 <li>예시 모음: $x^2$ → 최솟값 0, 최댓값 없음 / $x^3$ → 절대·국소 극값 모두 없음.</li>
 </ul>
 
-<details class="ex"><summary>예제 1 · $f(x)=3x^4-16x^3+18x^2,\ -1\le x\le4$ 의 극값 파악</summary>
+<details class="ex"><summary>예제 1 · 함수 $f(x)=3x^4-16x^3+18x^2\ \ (-1\le x\le4)$ 의 국소최댓값, 국소최솟값, 절대최댓값, 절대최솟값을 각각 모두 구하시오.</summary>
 <div class="body">
 <ul>
 <li>$f(1)=5$ : 국소 최댓값</li>
@@ -595,24 +595,24 @@ $$\frac1{1-\sin^2x}\cdot\cos x=\frac{\cos x}{\cos^2x}=\sec x$$
 <li>1, 2단계의 값 중 <b>가장 큰 것 = 절대최댓값, 가장 작은 것 = 절대최솟값</b>.</li>
 </ol></div>
 
-<details class="ex"><summary>예제 7 · 임계수 구하기: (a) $f=x^3-3x^2+1$ (b) $f=x^{3/5}(4-x)$</summary>
+<details class="ex"><summary>예제 7 · 다음 함수의 임계수(critical number)를 모두 구하시오. &nbsp;(a) $f(x)=x^3-3x^2+1$ &nbsp;(b) $f(x)=x^{3/5}(4-x)$</summary>
 <div class="body">
 <p>(a) $f'=3x^2-6x=3x(x-2)$, 모든 $x$ 에서 존재 → 임계수 $x=0,\,2$.</p>
 <p>(b) $f'=x^{3/5}(-1)+(4-x)\tfrac35x^{-2/5}=\dfrac{-5x+3(4-x)}{5x^{2/5}}=\dfrac{12-8x}{5x^{2/5}}$.<br>
 $f'=0\Rightarrow x=\tfrac32$, $f'$ 존재하지 않음 $\Rightarrow x=0$ (정의역에 속함). 임계수: $\tfrac32,\ 0$.</p>
 </div></details>
-<details class="ex"><summary>예제 8 · $f(x)=x^3-3x^2+1$, $\ -\tfrac12\le x\le4$ 의 절대 최대·최소</summary>
+<details class="ex"><summary>예제 8 · 함수 $f(x)=x^3-3x^2+1,\ \ -\tfrac12\le x\le4$ 의 절대최댓값과 절대최솟값을 구하시오.</summary>
 <div class="body">
 <p>임계수 $0,2$ 모두 구간 안. $f(0)=1,\ f(2)=-3$. 끝점: $f(-\tfrac12)=\tfrac18,\ f(4)=17$.</p>
 <p><b>절대최댓값 $f(4)=17$ (끝점), 절대최솟값 $f(2)=-3$ (임계수)</b>.</p>
 </div></details>
-<details class="ex"><summary>예제 9 · $f(x)=x-2\sin x,\ 0\le x\le2\pi$ 의 정확한 최대·최소</summary>
+<details class="ex"><summary>예제 9 · 함수 $f(x)=x-2\sin x,\ \ 0\le x\le2\pi$ 에 대하여 (a) 계산기(그래프)로 절대최댓값·최솟값을 추정하시오. (b) 미적분을 이용하여 정확한 절대최댓값과 절대최솟값을 구하시오.</summary>
 <div class="body">
 <p>$f'=1-2\cos x=0\Rightarrow \cos x=\tfrac12\Rightarrow x=\tfrac\pi3,\ \tfrac{5\pi}3$.</p>
 <p>$f(\tfrac\pi3)=\tfrac\pi3-\sqrt3\approx-0.685$, $\ f(\tfrac{5\pi}3)=\tfrac{5\pi}3+\sqrt3\approx6.968$, 끝점 $f(0)=0$, $f(2\pi)=2\pi\approx6.28$.</p>
 <p>∴ 절대최솟값 $\tfrac\pi3-\sqrt3$, 절대최댓값 $\tfrac{5\pi}3+\sqrt3$.</p>
 </div></details>
-<details class="ex"><summary>예제 10 · 허블 우주망원경: 속도함수 $v(t)$ 로부터 <u>가속도</u>의 극값</summary>
+<details class="ex"><summary>예제 10 · 허블 우주망원경을 실은 우주왕복선의 발사 후 속도(m/s)가 $v(t)=0.000397t^3-0.02752t^2+7.196t-0.9397$ ($0\le t\le126$, 단위 초)로 모델링된다. 이 모델을 이용하여 발사부터 고체 로켓 부스터 분리 시점(t=126)까지 우주왕복선 <u>가속도</u>의 절대최댓값과 절대최솟값을 추정하시오.</summary>
 <div class="body">
 <p>극값을 구할 대상은 <b>가속도 $a(t)=v'(t)$</b> 임에 주의. $v=0.000397t^3-0.02752t^2+7.196t-0.9397$ 이면
 $a(t)=0.001191t^2-0.05504t+7.196$ 을 $[0,126]$ 에서 닫힌구간법으로 최적화 (임계수 $t\approx23.1$).</p>
@@ -644,7 +644,7 @@ $a(t)=0.001191t^2-0.05504t+7.196$ 을 $[0,126]$ 에서 닫힌구간법으로 최
 </ul>
 <p><b>물리 해석</b>: 같은 위치에서 출발해 다시 돌아오면(예: 위로 던진 공) 그 사이 속도가 0인 순간이 있다.</p>
 
-<details class="ex"><summary>예제 2 · $x^3+x-1=0$ 은 <u>정확히 하나</u>의 실근을 가짐을 증명</summary>
+<details class="ex"><summary>예제 2 · 방정식 $x^3+x-1=0$ 이 <u>정확히 하나</u>의 실근을 가짐을 증명하시오.</summary>
 <div class="body">
 <p><b>존재 (IVT)</b>: $f(x)=x^3+x-1$ 은 연속, $f(0)=-1<0$, $f(1)=1>0$ ⇒ $0<c<1$ 에서 $f(c)=0$.</p>
 <p><b>유일성 (Rolle + 귀류법)</b>: 실근이 두 개 $a<b$ 라 하면 $f(a)=f(b)=0$ 이므로 Rolle에 의해 $f'(c)=0$ 인 $c$ 가 존재. 그러나 $f'(x)=3x^2+1\ge1>0$ 이므로 모순. ∎</p>
@@ -662,11 +662,11 @@ $a(t)=0.001191t^2-0.05504t+7.196$ 을 $[0,126]$ 에서 닫힌구간법으로 최
 </ul>
 <figure><svg class="fig" id="figMVT" viewBox="0 0 440 280"></svg><figcaption>$f(x)=x^3-x$ on $[0,2]$ : 시컨트(빨강)와 평행한 접선(초록)이 $c=2/\sqrt3$ 에서 접한다</figcaption></figure>
 
-<details class="ex"><summary>예제 3 · $f(x)=x^3-x$, $[0,2]$ 에서 MVT의 $c$ 찾기</summary>
+<details class="ex"><summary>예제 3 · 함수 $f(x)=x^3-x$ 가 구간 $[0,2]$ 에서 평균값 정리의 가정을 만족함을 보이고, 정리의 결론을 만족하는 수 $c$ 를 구하시오.</summary>
 <div class="body">
 <p>$\dfrac{f(2)-f(0)}{2-0}=\dfrac{6-0}2=3$. $f'(c)=3c^2-1=3\Rightarrow c^2=\tfrac43$, $c=\pm\tfrac2{\sqrt3}$. 구간 $(0,2)$ 에 속하는 것은 $c=\dfrac2{\sqrt3}$.</p>
 </div></details>
-<details class="ex"><summary>예제 5 · $f(0)=-3$, 모든 $x$ 에서 $f'(x)\le5$. $f(2)$ 의 최댓값?</summary>
+<details class="ex"><summary>예제 5 · $f(0)=-3$ 이고 모든 $x$ 에 대하여 $f'(x)\le5$ 일 때, $f(2)$ 가 가질 수 있는 가장 큰 값은 얼마인가?</summary>
 <div class="body">
 <p>MVT: $f(2)-f(0)=f'(c)(2-0)$ ⇒ $f(2)=-3+2f'(c)\le-3+2(5)=7$. <b>최댓값 7</b>.</p>
 <p class="mini">이런 문제는 "도함수의 상한/하한 → 함숫값의 상한/하한" 으로 푼다.</p>
@@ -679,7 +679,7 @@ $a(t)=0.001191t^2-0.05504t+7.196$ 을 $[0,126]$ 에서 닫힌구간법으로 최
 </ul></div>
 <div class="box warn"><b class="lab">주의 · '구간'이어야 한다</b>
 <p>$f(x)=\dfrac{x}{|x|}$ : 정의역 $\{x\neq0\}$ 에서 $f'=0$ 이지만 상수가 아님($\pm1$). 정의역이 <u>구간이 아니기</u> 때문이므로 Theorem 5와 모순 아님.</p></div>
-<details class="ex"><summary>예제 6 · 항등식 증명: $\tan^{-1}x+\cot^{-1}x=\dfrac\pi2$</summary>
+<details class="ex"><summary>예제 6 · 미적분을 이용하여 항등식 $\tan^{-1}x+\cot^{-1}x=\dfrac\pi2$ 를 증명하시오.</summary>
 <div class="body">
 <p>$f(x)=\tan^{-1}x+\cot^{-1}x$ ⇒ $f'(x)=\dfrac1{1+x^2}-\dfrac1{1+x^2}=0$ ⇒ $f\equiv C$.<br>
 $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
@@ -712,7 +712,7 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 <li>$f'=0$ 또는 $f'$ 미존재인 점(임계수)으로 정의역을 구간으로 분할.</li>
 <li>각 구간에서 $f'$ 의 각 인수 부호를 곱해 $f'$ 부호 결정.</li>
 </ol>
-<details class="ex"><summary>예제 1 · $f(x)=3x^4-4x^3-12x^2+5$ 의 증가/감소 구간</summary>
+<details class="ex"><summary>예제 1 · 함수 $f(x)=3x^4-4x^3-12x^2+5$ 가 증가하는 구간과 감소하는 구간을 각각 구하시오.</summary>
 <div class="body">
 <p>$f'(x)=12x^3-12x^2-24x=12x(x-2)(x+1)$. 임계수 $-1,0,2$.</p>
 <table>
@@ -733,11 +733,11 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 </ul>
 <p class="mini">기억법: 산봉우리 = 오르다(+)가 내리다(−), 골짜기 = 내리다(−)가 오르다(+).</p></div>
 
-<details class="ex"><summary>예제 2 · 예제 1의 함수의 국소 극값</summary>
+<details class="ex"><summary>예제 2 · 예제 1의 함수 $f(x)=3x^4-4x^3-12x^2+5$ 의 국소최댓값과 국소최솟값을 구하시오.</summary>
 <div class="body">
 <p>$f'$ 가 $x=-1$ 에서 − → +: $f(-1)=0$ <b>국소최솟값</b>. $x=0$ 에서 + → −: $f(0)=5$ <b>국소최댓값</b>. $x=2$ 에서 − → +: $f(2)=-27$ <b>국소최솟값</b>.</p>
 </div></details>
-<details class="ex"><summary>예제 3 · $g(x)=x+2\sin x,\ 0\le x\le2\pi$ 의 국소 극값</summary>
+<details class="ex"><summary>예제 3 · 함수 $g(x)=x+2\sin x,\ \ 0\le x\le2\pi$ 의 국소최댓값과 국소최솟값을 구하시오.</summary>
 <div class="body">
 <p>$g'=1+2\cos x=0\Rightarrow \cos x=-\tfrac12\Rightarrow x=\tfrac{2\pi}3,\tfrac{4\pi}3$.</p>
 <p>$g'>0$ on $(0,\tfrac{2\pi}3)$, $g'<0$ on $(\tfrac{2\pi}3,\tfrac{4\pi}3)$, $g'>0$ on $(\tfrac{4\pi}3,2\pi)$.</p>
@@ -772,9 +772,8 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 <tr><td>−</td><td>−</td><td>감소, CD (↘ 가파르게)</td></tr>
 </table></div>
 
-<details class="ex"><summary>예제 5 · 조건으로부터 그래프 개형 그리기</summary>
+<details class="ex"><summary>예제 5 · 다음 조건을 모두 만족하는 함수 $f$ 의 그래프 개형을 그리시오.<br>(i) $x<1$ 에서 $f'(x)>0$, $x>1$ 에서 $f'(x)<0$ &nbsp;(ii) $x<-2$ 또는 $x>2$ 에서 $f''(x)>0$, $-2<x<2$ 에서 $f''(x)<0$ &nbsp;(iii) $\lim_{x\to-\infty}f(x)=-2$, $\lim_{x\to\infty}f(x)=0$</summary>
 <div class="body">
-<p>조건: (i) $f'>0$ on $(-\infty,1)$, $f'<0$ on $(1,\infty)$ (ii) $f''>0$ on $(-\infty,-2)\cup(2,\infty)$, $f''<0$ on $(-2,2)$ (iii) $\lim_{x\to-\infty}f=-2,\ \lim_{x\to\infty}f=0$.</p>
 <p>해석: 수평점근선 $y=-2$(왼쪽), $y=0$(오른쪽). $x=1$ 에서 극대(최대). 변곡점 $x=-2$ 와 $x=2$. 왼쪽 끝은 $y=-2$ 에서 위로 볼록하게 올라가며 (CU→CD, $x=-2$) 정점 $x=1$ 을 지나 내려오다 $x=2$ 에서 다시 CU 로 바뀌고 $y=0$ 에 접근.</p>
 </div></details>
 
@@ -787,7 +786,7 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 </ul></div>
 <div class="box warn"><b class="lab">Inconclusive!</b>
 <p>$f''(c)=0$ 이거나 $f''(c)$ 가 존재하지 않으면 <b>판정 불가</b>(극대/극소/둘 다 아님 모두 가능) → <b>First Derivative Test</b> 로 돌아가라. 그리고 애초에 $f'(c)=0$ 인 임계수에만 적용 가능(뾰족점·수직접선인 임계수에는 X).</p></div>
-<details class="ex"><summary>예제 6 · $y=x^4-4x^3$ 의 오목성·변곡점·극값</summary>
+<details class="ex"><summary>예제 6 · 곡선 $y=x^4-4x^3$ 의 오목성(concavity), 변곡점, 국소 극값에 대하여 논하시오.</summary>
 <div class="body">
 <p>$f'=4x^3-12x^2=4x^2(x-3)$, $\ f''=12x^2-24x=12x(x-2)$. 임계수 $x=0,3$.</p>
 <ul>
@@ -798,7 +797,7 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 
 <h3 id="s43-5"><span class="sq">■</span>Curve Sketching (곡선 그리기)</h3>
 <p>$f'$, $f''$, 점근선 정보를 모아서 그래프를 그린다. (완전한 체크리스트는 4.5)</p>
-<details class="ex"><summary>예제 7 · $f(x)=x^{2/3}(6-x)^{1/3}$ 그래프 (수직접선 포함)</summary>
+<details class="ex"><summary>예제 7 · 함수 $f(x)=x^{2/3}(6-x)^{1/3}$ 의 증가·감소 구간, 국소 극값, 오목성, 변곡점을 조사하고 그래프를 그리시오.</summary>
 <div class="body">
 <p>정의역 $\mathbb R$. $f'=\dfrac{4-x}{x^{1/3}(6-x)^{2/3}}$, $\ f''=\dfrac{-8}{x^{4/3}(6-x)^{5/3}}$. 임계수: $0,\ 4,\ 6$ ($f'$ 미존재: 0, 6).</p>
 <table>
@@ -813,7 +812,7 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 <li>$f''<0$ on $(-\infty,0)$, $(0,6)$ → CD, $f''>0$ on $(6,\infty)$ → CU. 변곡점은 $(6,0)$ 하나.</li>
 <li>$|f'|\to\infty$ ($x\to0,\ x\to6$) ⇒ $(0,0)$, $(6,0)$ 에서 <b>수직접선</b>.</li>
 </ul></div></details>
-<details class="ex"><summary>예제 8 · $f(x)=e^{1/x}$ 그래프 (점근선 + 도함수)</summary>
+<details class="ex"><summary>예제 8 · 함수 $f(x)=e^{1/x}$ 의 점근선과 $f',\,f''$ 을 이용하여 그래프를 그리시오.</summary>
 <div class="body">
 <p>정의역 $x\ne0$. $\;x\to0^+$: $e^{1/x}\to\infty$ ⇒ <b>$x=0$ 수직점근선</b>. $\;x\to0^-$: $e^{1/x}\to0$. $\;x\to\pm\infty$: $e^{1/x}\to1$ ⇒ <b>$y=1$ 수평점근선</b>.</p>
 <p>$f'=-\dfrac{e^{1/x}}{x^2}<0$ ⇒ 두 구간에서 모두 <b>감소</b>, 임계수 없음 ⇒ 극값 없음.</p>
@@ -858,15 +857,15 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 <li>성장 속도 서열: $\ln x\ \ll\ x^p\ \ll\ e^x$ ($x\to\infty$). $e^x$ 는 모든 거듭제곱보다 빠르고, $\ln x$ 는 모든 거듭제곱보다 느리다.</li>
 </ul>
 
-<details class="ex"><summary>예제 1 · $\displaystyle\lim_{x\to1}\frac{\ln x}{x-1}$</summary>
+<details class="ex"><summary>예제 1 · 다음 극한을 구하시오. $\displaystyle\lim_{x\to1}\frac{\ln x}{x-1}$</summary>
 <div class="body">$\tfrac00$ 형 → $\displaystyle\lim_{x\to1}\frac{1/x}{1}=1$.</div></details>
-<details class="ex"><summary>예제 2 · $\displaystyle\lim_{x\to\infty}\frac{e^x}{x^2}$</summary>
+<details class="ex"><summary>예제 2 · 다음 극한을 구하시오. $\displaystyle\lim_{x\to\infty}\frac{e^x}{x^2}$</summary>
 <div class="body">$\tfrac\infty\infty$ → $\displaystyle\lim\frac{e^x}{2x}$ (또 $\tfrac\infty\infty$) → $\displaystyle\lim\frac{e^x}{2}=\infty$.</div></details>
-<details class="ex"><summary>예제 3 · $\displaystyle\lim_{x\to\infty}\frac{\ln x}{\sqrt x}$</summary>
+<details class="ex"><summary>예제 3 · 다음 극한을 구하시오. $\displaystyle\lim_{x\to\infty}\frac{\ln x}{\sqrt x}$</summary>
 <div class="body">$\displaystyle\lim\frac{1/x}{\frac1{2\sqrt x}}=\lim\frac{2}{\sqrt x}=0$. (두 번째 적용 없이 식 정리로 마무리)</div></details>
-<details class="ex"><summary>예제 4 · $\displaystyle\lim_{x\to0}\frac{\tan x-x}{x^3}$</summary>
+<details class="ex"><summary>예제 4 · 다음 극한을 구하시오. $\displaystyle\lim_{x\to0}\frac{\tan x-x}{x^3}$</summary>
 <div class="body">$\tfrac00$ → $\displaystyle\lim\frac{\sec^2x-1}{3x^2}$ ($\tfrac00$) → $\displaystyle\lim\frac{2\sec^2x\tan x}{6x}=\frac13\lim\sec^2x\cdot\lim\frac{\tan x}{x}=\frac13$.</div></details>
-<details class="ex"><summary>예제 5 · ⚠ 로피탈 오용: $\displaystyle\lim_{x\to\pi^-}\frac{\sin x}{1-\cos x}$</summary>
+<details class="ex"><summary>예제 5 · 다음 극한을 구하시오. (로피탈의 정리를 사용해도 되는지 먼저 판단할 것) $\displaystyle\lim_{x\to\pi^-}\frac{\sin x}{1-\cos x}$</summary>
 <div class="body">
 <p>분모 $1-\cos x\to1-(-1)=2\ne0$ 이므로 <b>부정형이 아님</b>. 그냥 대입: $\dfrac{\sin\pi}{1-\cos\pi}=\dfrac02=0$.</p>
 <p>(무턱대고 로피탈: $\dfrac{\cos x}{\sin x}\to-\infty$ — <b>틀림!</b>)</p></div></details>
@@ -875,17 +874,17 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 <p>$f\to0$, $g\to\pm\infty$ 이면 $\lim fg$ 는 부정형 $0\cdot\infty$. 곱을 <b>분수로 바꿔</b> $\tfrac00$ 또는 $\tfrac\infty\infty$ 로 만든다:</p>
 <div class="formula">$$fg=\frac{f}{1/g}\qquad\text{또는}\qquad fg=\frac{g}{1/f}$$</div>
 <p class="mini">두 방법 중 <u>더 간단한 결과</u>가 나오는 쪽을 택한다. (보통 로그·삼각함수를 분자에 두고, 다항식/지수를 분모로 내린다.)</p>
-<details class="ex"><summary>예제 6 · $\displaystyle\lim_{x\to0^+}x\ln x$</summary>
+<details class="ex"><summary>예제 6 · 다음 극한을 구하시오. $\displaystyle\lim_{x\to0^+}x\ln x$</summary>
 <div class="body">$x\ln x=\dfrac{\ln x}{1/x}$ ($\tfrac{-\infty}{\infty}$) → $\displaystyle\lim\frac{1/x}{-1/x^2}=\lim(-x)=0$. <br>
 <span class="mini">(반대로 $\frac{x}{1/\ln x}$ 로 쓰면 오히려 복잡해진다.)</span></div></details>
 
 <h3 id="s44-4"><span class="sq">■</span>Indeterminate Differences (Type ∞−∞) (부정 차)</h3>
 <p>$f\to\infty$, $g\to\infty$ 일 때 $\lim(f-g)$. <b>통분, 유리화, 공통인수 묶기</b> 등으로 몫($\tfrac00$ 또는 $\tfrac\infty\infty$)으로 바꾼다.</p>
-<details class="ex"><summary>예제 7 · $\displaystyle\lim_{x\to1^+}\left(\frac1{\ln x}-\frac1{x-1}\right)$ (통분)</summary>
+<details class="ex"><summary>예제 7 · 다음 극한을 구하시오. $\displaystyle\lim_{x\to1^+}\left(\frac1{\ln x}-\frac1{x-1}\right)$</summary>
 <div class="body">
 <p>$=\displaystyle\lim\frac{x-1-\ln x}{(x-1)\ln x}$ ($\tfrac00$) $=\displaystyle\lim\frac{1-\frac1x}{(x-1)\frac1x+\ln x}=\lim\frac{x-1}{x-1+x\ln x}$ ($\tfrac00$)</p>
 <p>$=\displaystyle\lim\frac1{1+x\cdot\frac1x+\ln x}=\lim\frac1{2+\ln x}=\frac12$.</p></div></details>
-<details class="ex"><summary>예제 8 · $\displaystyle\lim_{x\to\infty}(e^x-x)$ (공통인수)</summary>
+<details class="ex"><summary>예제 8 · 다음 극한을 구하시오. $\displaystyle\lim_{x\to\infty}(e^x-x)$</summary>
 <div class="body">$e^x-x=x\left(\dfrac{e^x}x-1\right)$. $\dfrac{e^x}{x}\to\infty$ (로피탈) 이므로 $(\infty)\cdot(\infty)=\infty$.</div></details>
 
 <h3 id="s44-5"><span class="sq">■</span>Indeterminate Powers (Types 0⁰, ∞⁰, 1^∞) (부정 거듭제곱)</h3>
@@ -900,11 +899,11 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 <p><b>방법 1</b> $y=[f]^g$ 로 두고 $\ln y=g\ln f$ 의 극한 $L$ 을 구한 뒤 $\ \lim y=e^{L}$.</p>
 <p><b>방법 2</b> $[f]^g=e^{\,g\ln f}$ 로 쓰고 지수 부분의 극한만 계산.</p>
 <p>두 경우 모두 $g\ln f$ 는 $0\cdot\infty$ 꼴 → 분수로 변환 → 로피탈.</p></div>
-<details class="ex"><summary>예제 9 · $\displaystyle\lim_{x\to0^+}(1+\sin4x)^{\cot x}$ ($1^\infty$)</summary>
+<details class="ex"><summary>예제 9 · 다음 극한을 구하시오. $\displaystyle\lim_{x\to0^+}(1+\sin4x)^{\cot x}$</summary>
 <div class="body">
 <p>$y=(1+\sin4x)^{\cot x}$, $\ln y=\dfrac{\ln(1+\sin4x)}{\tan x}$ ($\tfrac00$).</p>
 <p>로피탈: $\displaystyle\lim\frac{\frac{4\cos4x}{1+\sin4x}}{\sec^2x}=4$. 따라서 $\lim y=e^4$.</p></div></details>
-<details class="ex"><summary>예제 10 · $\displaystyle\lim_{x\to0^+}x^x$ ($0^0$)</summary>
+<details class="ex"><summary>예제 10 · 다음 극한을 구하시오. $\displaystyle\lim_{x\to0^+}x^x$</summary>
 <div class="body">$x^x=e^{x\ln x}$, $\lim_{x\to0^+}x\ln x=0$ (예제 6) ⇒ $\lim x^x=e^0=1$.</div></details>
 
 <div class="box tip"><b class="lab">부정형 요약표</b>
@@ -949,30 +948,30 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 <div class="box tip"><b class="lab">시험 답안 템플릿</b>
 <p>서술형에서는 A~G 를 <b>소제목 순서대로</b> 적고 마지막에 그래프를 그리면 부분점수를 가장 많이 받는다. 미분은 <u>반드시 식으로</u> 보여주고, 부호표를 함께 제시.</p></div>
 
-<details class="ex"><summary>예제 1 · $y=\dfrac{2x^2}{x^2-1}$</summary>
+<details class="ex"><summary>예제 1 · 곡선 지침(A–H)을 이용하여 곡선 $y=\dfrac{2x^2}{x^2-1}$ 의 그래프를 그리시오.</summary>
 <div class="body">
 <p><b>A</b> $x\ne\pm1$. &nbsp;<b>B</b> 절편 (0,0). &nbsp;<b>C</b> 짝함수 → $y$축 대칭.</p>
 <p><b>D</b> $\lim_{x\to\pm\infty}=2$ ⇒ $y=2$. 수직: $x=\pm1$ ($\lim_{x\to1^+}=+\infty,\ \lim_{x\to1^-}=-\infty,\ \lim_{x\to-1^+}=-\infty,\ \lim_{x\to-1^-}=+\infty$).</p>
 <p><b>E</b> $f'=\dfrac{-4x}{(x^2-1)^2}$ ⇒ $x<0$ 증가, $x>0$ 감소 (정의역 내). <b>F</b> $f(0)=0$ 국소최댓값.</p>
 <p><b>G</b> $f''=\dfrac{12x^2+4}{(x^2-1)^3}$ ⇒ $|x|>1$ 이면 CU, $|x|<1$ 이면 CD. 변곡점 없음(±1 은 정의역 밖).</p></div></details>
-<details class="ex"><summary>예제 2 · $f(x)=\dfrac{x^2}{\sqrt{x+1}}$</summary>
+<details class="ex"><summary>예제 2 · 곡선 지침(A–H)을 이용하여 $f(x)=\dfrac{x^2}{\sqrt{x+1}}$ 의 그래프를 그리시오.</summary>
 <div class="body">
 <p><b>A</b> $(-1,\infty)$. <b>B</b> (0,0). <b>C</b> 없음. <b>D</b> 수평점근선 없음($f\to\infty$); $x\to-1^+$ 에서 $f\to\infty$ ⇒ 수직점근선 $x=-1$.</p>
 <p><b>E</b> $f'=\dfrac{x(3x+4)}{2(x+1)^{3/2}}$ ⇒ $(-1,0)$ 감소, $(0,\infty)$ 증가. ($-\tfrac43$ 은 정의역 밖)</p>
 <p><b>F</b> $f(0)=0$ 국소(이자 절대)최솟값. <b>G</b> $f''=\dfrac{3x^2+8x+8}{4(x+1)^{5/2}}>0$ (판별식 $64-96<0$) ⇒ 전 구간 CU, 변곡점 없음.</p></div></details>
-<details class="ex"><summary>예제 3 · $f(x)=xe^x$</summary>
+<details class="ex"><summary>예제 3 · 곡선 지침(A–H)을 이용하여 $f(x)=xe^x$ 의 그래프를 그리시오.</summary>
 <div class="body">
 <p><b>A</b> $\mathbb R$. <b>B</b> (0,0). <b>C</b> 없음.</p>
 <p><b>D</b> $x\to\infty$: $\infty$. $x\to-\infty$: $xe^x=\dfrac{x}{e^{-x}}\ \overset{L'H}\to\ \dfrac1{-e^{-x}}=-e^{x}\to0$ ⇒ <b>$y=0$ 수평점근선(왼쪽)</b>.</p>
 <p><b>E</b> $f'=(x+1)e^x$ ⇒ $(-1,\infty)$ 증가, $(-\infty,-1)$ 감소. <b>F</b> $f(-1)=-e^{-1}\approx-0.37$ 국소(절대)최솟값.</p>
 <p><b>G</b> $f''=(x+2)e^x$ ⇒ $x>-2$ CU, $x<-2$ CD. 변곡점 $(-2,-2e^{-2})\approx(-2,-0.27)$.</p></div></details>
-<details class="ex"><summary>예제 4 · $f(x)=\dfrac{\cos x}{2+\sin x}$ (주기함수)</summary>
+<details class="ex"><summary>예제 4 · 곡선 지침(A–H)을 이용하여 $f(x)=\dfrac{\cos x}{2+\sin x}$ 의 그래프를 그리시오.</summary>
 <div class="body">
 <p><b>A</b> $\mathbb R$. <b>B</b> $y$절편 $\tfrac12$, $x$절편 $x=\tfrac\pi2+n\pi$. <b>C</b> 주기 $2\pi$ → $[0,2\pi]$ 만 분석. <b>D</b> 없음.</p>
 <p><b>E</b> $f'=-\dfrac{2\sin x+1}{(2+\sin x)^2}$ ⇒ $f'>0\iff\sin x<-\tfrac12\iff\tfrac{7\pi}6<x<\tfrac{11\pi}6$ 에서 증가, $(0,\tfrac{7\pi}6)$ 과 $(\tfrac{11\pi}6,2\pi)$ 에서 감소.</p>
 <p><b>F</b> 국소최솟값 $f(\tfrac{7\pi}6)=-\tfrac1{\sqrt3}$, 국소최댓값 $f(\tfrac{11\pi}6)=\tfrac1{\sqrt3}$.</p>
 <p><b>G</b> $f''=-\dfrac{2\cos x(1-\sin x)}{(2+\sin x)^3}$ ⇒ $f''>0\iff\cos x<0\iff\tfrac\pi2<x<\tfrac{3\pi}2$ 에서 CU. 변곡점 $(\tfrac\pi2,0),(\tfrac{3\pi}2,0)$.</p></div></details>
-<details class="ex"><summary>예제 5 · $y=\ln(4-x^2)$</summary>
+<details class="ex"><summary>예제 5 · 곡선 지침(A–H)을 이용하여 $y=\ln(4-x^2)$ 의 그래프를 그리시오.</summary>
 <div class="body">
 <p><b>A</b> $4-x^2>0\iff|x|<2$, 즉 $(-2,2)$. <b>B</b> $y$절편 $\ln4$, $x$절편 $\pm\sqrt3$ ($4-x^2=1$). <b>C</b> 짝함수.</p>
 <p><b>D</b> $\lim_{x\to\pm2^\mp}=-\infty$ ⇒ 수직점근선 $x=\pm2$.</p>
@@ -987,7 +986,7 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 <li>일반 함수: $m=\displaystyle\lim_{x\to\infty}\frac{f(x)}x$, $\ b=\displaystyle\lim_{x\to\infty}\big[f(x)-mx\big]$.</li>
 <li>차수 비교 요약: 분자 차수 < 분모 → $y=0$ / 같음 → $y=$ 최고차 계수의 비 / 분자가 1 큼 → 사선 / 2 이상 큼 → 점근선 없음(포물선 등에 접근).</li>
 </ul>
-<details class="ex"><summary>예제 6 · $f(x)=\dfrac{x^3}{x^2+1}$</summary>
+<details class="ex"><summary>예제 6 · 곡선 지침(A–H)을 이용하여 $f(x)=\dfrac{x^3}{x^2+1}$ 의 그래프를 그리시오. (기울어진 점근선에 유의)</summary>
 <div class="body">
 <p><b>A</b> $\mathbb R$. <b>B</b> (0,0). <b>C</b> 홀함수 → 원점 대칭. <b>D</b> 수직 없음, 수평 없음. 장제법: $f(x)=x-\dfrac{x}{x^2+1}$ ⇒ $f(x)-x=-\dfrac{x}{x^2+1}\to0$ ⇒ <b>사선점근선 $y=x$</b>.</p>
 <p><b>E</b> $f'=\dfrac{x^2(x^2+3)}{(x^2+1)^2}\ge0$ ⇒ $(-\infty,\infty)$ 에서 증가. <b>F</b> $f'(0)=0$ 이지만 부호 변화 없음 ⇒ 극값 없음.</p>
@@ -1006,113 +1005,113 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 <p class="mini">교재 연습문제(Exercises)를 바탕으로 골랐습니다. <b>먼저 종이에 풀고</b> → “정답·풀이 보기” → 채점(✔/✘). ✘ 표시한 문제는 “복습 문제만 보기”로 다시 모아 볼 수 있어요.</p>
 <div class="score" data-scope="pr4"><span class="sc">0 / 0 정답</span><button class="onlyno">✘ 복습 문제만 보기</button><button class="reset">기록 초기화</button></div>
 <h3><span class="sq">▸</span>4.1 최댓값과 최솟값</h3>
-<div class="prob" data-id="c4-1"><div class="pq"><span class="pn"></span><div>임계수를 구하시오. (a) $f(x)=3x^4+8x^3-48x^2$ (b) $g(t)=t^{3/4}-2t^{1/4}$</div></div>
+<div class="prob" data-id="c4-1"><div class="pq"><span class="pn"></span><div>다음 함수의 임계수를 모두 구하시오. (a) $f(x)=3x^4+8x^3-48x^2$ &nbsp;(b) $g(t)=t^{3/4}-2t^{1/4}$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">(a) $f'=12x^3+24x^2-96x=12x(x+4)(x-2)$ ⇒ $\boxed{x=-4,\,0,\,2}$.<br>(b) $g'=\frac34t^{-1/4}-\frac12t^{-3/4}=\dfrac{3\sqrt t-2}{4t^{3/4}}$. $g'=0\Rightarrow t=\frac49$; $t=0$ 에서 $g'$ 미존재(정의역에 포함) ⇒ $\boxed{t=0,\ \tfrac49}$</div></div>
-<div class="prob" data-id="c4-2"><div class="pq"><span class="pn"></span><div>$f(x)=2x^3-3x^2-12x+1$, $[-2,3]$ 에서 절대최댓값·최솟값.</div></div>
+<div class="prob" data-id="c4-2"><div class="pq"><span class="pn"></span><div>함수 $f(x)=2x^3-3x^2-12x+1$ 의 구간 $[-2,3]$ 에서의 절대최댓값과 절대최솟값을 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f'=6(x-2)(x+1)$, 임계수 $-1,2$. $f(-1)=8,\ f(2)=-19,\ f(-2)=-3,\ f(3)=-8$.<br><b>최댓값 $8$ ($x=-1$), 최솟값 $-19$ ($x=2$)</b></div></div>
-<div class="prob" data-id="c4-3"><div class="pq"><span class="pn"></span><div>$f(x)=x+\dfrac1x$, $[0.2,\,4]$ 에서 절대최댓값·최솟값.</div></div>
+<div class="prob" data-id="c4-3"><div class="pq"><span class="pn"></span><div>함수 $f(x)=x+\dfrac1x$ 의 구간 $[0.2,\,4]$ 에서의 절대최댓값과 절대최솟값을 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f'=1-x^{-2}=0\Rightarrow x=1$. $f(1)=2,\ f(0.2)=5.2,\ f(4)=4.25$.<br><b>최댓값 $5.2$, 최솟값 $2$</b></div></div>
-<div class="prob" data-id="c4-4"><div class="pq"><span class="pn"></span><div>$f(x)=xe^{x/2}$, $[-3,1]$ 에서 절대최댓값·최솟값.</div></div>
+<div class="prob" data-id="c4-4"><div class="pq"><span class="pn"></span><div>함수 $f(x)=xe^{x/2}$ 의 구간 $[-3,1]$ 에서의 절대최댓값과 절대최솟값을 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f'=e^{x/2}\left(1+\frac x2\right)=0\Rightarrow x=-2$. $f(-2)=-\frac2e\approx-0.736$, $f(-3)=-3e^{-3/2}\approx-0.669$, $f(1)=\sqrt e\approx1.649$.<br><b>최댓값 $\sqrt e$, 최솟값 $-2/e$</b></div></div>
-<div class="prob" data-id="c4-5"><div class="pq"><span class="pn"></span><div>$f(t)=t-\sqrt[3]t$, $[-1,4]$ 에서 절대최댓값·최솟값. (도함수가 존재하지 않는 점 주의)</div></div>
+<div class="prob" data-id="c4-5"><div class="pq"><span class="pn"></span><div>함수 $f(t)=t-\sqrt[3]t$ 의 구간 $[-1,4]$ 에서의 절대최댓값과 절대최솟값을 구하시오. (도함수가 존재하지 않는 점에 주의)</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f'=1-\frac13t^{-2/3}$. $f'=0\Rightarrow t^{2/3}=\frac13\Rightarrow t=\pm\frac1{3\sqrt3}$; $t=0$ 에서 미분불가(임계수).<br>$f(\pm\frac1{3\sqrt3})=\mp\frac{2}{3\sqrt3}$, $f(0)=0$, $f(-1)=0$, $f(4)=4-\sqrt[3]4\approx2.413$.<br><b>최댓값 $4-\sqrt[3]4$, 최솟값 $-\dfrac{2}{3\sqrt3}\approx-0.385$</b></div></div>
 <h3><span class="sq">▸</span>4.2 평균값 정리</h3>
-<div class="prob" data-id="c4-6"><div class="pq"><span class="pn"></span><div>$f(x)=x^3-2x^2-4x+2$ 가 $[-2,2]$ 에서 롤의 정리 조건을 만족함을 보이고, 결론을 만족하는 $c$ 를 모두 구하시오.</div></div>
+<div class="prob" data-id="c4-6"><div class="pq"><span class="pn"></span><div>함수 $f(x)=x^3-2x^2-4x+2$ 가 구간 $[-2,2]$ 에서 롤의 정리의 세 가정을 모두 만족함을 보이고, 롤의 정리의 결론을 만족하는 수 $c$ 를 모두 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">다항식 → 연속·미분가능. $f(-2)=-6=f(2)$ ✓.<br>$f'=3x^2-4x-4=(3x+2)(x-2)=0\Rightarrow x=-\frac23,\ 2$. 열린구간 $(-2,2)$ 안: $\boxed{c=-\tfrac23}$</div></div>
-<div class="prob" data-id="c4-7"><div class="pq"><span class="pn"></span><div>MVT의 $c$ 를 구하시오. (a) $f=\ln x$, $[1,4]$ (b) $f=1/x$, $[1,3]$</div></div>
+<div class="prob" data-id="c4-7"><div class="pq"><span class="pn"></span><div>다음 함수가 주어진 구간에서 평균값 정리의 가정을 만족함을 확인하고, 정리의 결론을 만족하는 수 $c$ 를 구하시오. (a) $f(x)=\ln x$, $[1,4]$ &nbsp;(b) $f(x)=1/x$, $[1,3]$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">(a) 평균변화율 $\frac{\ln4}{3}$, $f'(c)=\frac1c\Rightarrow c=\dfrac{3}{\ln4}\approx\boxed{2.164}$<br>(b) 평균변화율 $\frac{1/3-1}{2}=-\frac13$, $-\frac1{c^2}=-\frac13\Rightarrow c=\boxed{\sqrt3}$</div></div>
-<div class="prob" data-id="c4-8"><div class="pq"><span class="pn"></span><div>$f(x)=(x-3)^{-2}$ 일 때 $(1,4)$ 에서 $f(4)-f(1)=f'(c)(4-1)$ 인 $c$ 가 없음을 보이고, 왜 MVT와 모순이 아닌지 설명하시오.</div></div>
+<div class="prob" data-id="c4-8"><div class="pq"><span class="pn"></span><div>함수 $f(x)=(x-3)^{-2}$ 에 대하여 $f(4)-f(1)=f'(c)(4-1)$ 을 만족하는 수 $c\in(1,4)$ 가 존재하지 않음을 보이시오. 또, 이것이 평균값 정리와 모순되지 않는 이유를 설명하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f(4)-f(1)=1-\frac14=\frac34$, $f'(c)\cdot3=-\frac{6}{(c-3)^3}$. $\frac34=-\frac6{(c-3)^3}\Rightarrow(c-3)^3=-8\Rightarrow c=1\notin(1,4)$ ⇒ 해 없음.<br><b>이유</b>: $f$ 가 $x=3\in[1,4]$ 에서 <u>불연속</u>(정의되지 않음)이므로 MVT의 가정이 깨진다.</div></div>
-<div class="prob" data-id="c4-9"><div class="pq"><span class="pn"></span><div>방정식 $2x+\cos x=0$ 은 실근이 정확히 하나임을 보이시오.</div></div>
+<div class="prob" data-id="c4-9"><div class="pq"><span class="pn"></span><div>방정식 $2x+\cos x=0$ 이 정확히 하나의 실근을 가짐을 보이시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f(x)=2x+\cos x$. <b>존재</b>: $f(0)=1>0$, $f(-\frac\pi2)=-\pi<0$, 연속 ⇒ IVT로 근 존재.<br><b>유일</b>: 근이 둘($a<b$)이면 Rolle에 의해 $f'(c)=0$ 이어야 하나 $f'(x)=2-\sin x\ge1>0$ ⇒ 모순. ∎</div></div>
-<div class="prob" data-id="c4-10"><div class="pq"><span class="pn"></span><div>(a) $f(1)=10$, $1\le x\le4$ 에서 $f'(x)\ge2$ 이면 $f(4)$ 는 최소 얼마? (b) 모든 $x$ 에서 $3\le f'(x)\le5$ 이면 $18\le f(8)-f(2)\le30$ 임을 보이시오.</div></div>
+<div class="prob" data-id="c4-10"><div class="pq"><span class="pn"></span><div>(a) $f(1)=10$ 이고 $1\le x\le4$ 에서 $f'(x)\ge2$ 일 때, $f(4)$ 가 가질 수 있는 가장 작은 값을 구하시오. &nbsp;(b) 모든 $x$ 에서 $3\le f'(x)\le5$ 일 때, $18\le f(8)-f(2)\le30$ 임을 보이시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">(a) MVT: $f(4)-f(1)=f'(c)\cdot3\ge2\cdot3=6$ ⇒ $f(4)\ge\boxed{16}$.<br>(b) $f(8)-f(2)=f'(c)(8-2)=6f'(c)$, $3\le f'(c)\le5$ ⇒ $18\le f(8)-f(2)\le30$. ∎</div></div>
 <h3><span class="sq">▸</span>4.3 도함수와 그래프의 모양</h3>
-<div class="prob" data-id="c4-11"><div class="pq"><span class="pn"></span><div>$f(x)=2x^3-15x^2+24x-5$ 의 증가·감소 구간과 국소 극값.</div></div>
+<div class="prob" data-id="c4-11"><div class="pq"><span class="pn"></span><div>함수 $f(x)=2x^3-15x^2+24x-5$ 가 증가하는 구간과 감소하는 구간을 각각 구하고, 국소최댓값과 국소최솟값을 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f'=6x^2-30x+24=6(x-1)(x-4)$.<br>증가: $(-\infty,1),\ (4,\infty)$ / 감소: $(1,4)$.<br>국소최댓값 $f(1)=\boxed6$, 국소최솟값 $f(4)=\boxed{-21}$</div></div>
-<div class="prob" data-id="c4-12"><div class="pq"><span class="pn"></span><div>$f(x)=x^{2/3}(x-3)$ 의 증가·감소 구간과 국소 극값.</div></div>
+<div class="prob" data-id="c4-12"><div class="pq"><span class="pn"></span><div>함수 $f(x)=x^{2/3}(x-3)$ 가 증가하는 구간과 감소하는 구간을 각각 구하고, 국소최댓값과 국소최솟값을 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f=x^{5/3}-3x^{2/3}$, $f'=\dfrac{5x-6}{3x^{1/3}}$. 임계수 $0,\ \frac65$.<br>증가: $(-\infty,0),\ (\frac65,\infty)$ / 감소: $(0,\frac65)$.<br>국소최댓값 $f(0)=0$, 국소최솟값 $f(\tfrac65)=-\frac95\left(\frac65\right)^{2/3}\approx-2.03$</div></div>
-<div class="prob" data-id="c4-13"><div class="pq"><span class="pn"></span><div>$f(x)=x^4e^{-x}$ 의 증가·감소 구간과 국소 극값.</div></div>
+<div class="prob" data-id="c4-13"><div class="pq"><span class="pn"></span><div>함수 $f(x)=x^4e^{-x}$ 가 증가하는 구간과 감소하는 구간을 각각 구하고, 국소최댓값과 국소최솟값을 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f'=x^3e^{-x}(4-x)$. 증가: $(0,4)$ / 감소: $(-\infty,0),\ (4,\infty)$.<br>$x=0$: − → + ⇒ 국소최솟값 $f(0)=0$. $x=4$: + → − ⇒ 국소최댓값 $f(4)=256e^{-4}\approx4.69$.</div></div>
-<div class="prob" data-id="c4-14"><div class="pq"><span class="pn"></span><div>$f'(x)=(x-4)^2(x+3)^7(x-5)^8$ 일 때 $f$ 가 증가하는 구간은?</div></div>
+<div class="prob" data-id="c4-14"><div class="pq"><span class="pn"></span><div>함수 $f$ 의 도함수가 $f'(x)=(x-4)^2(x+3)^7(x-5)^8$ 로 주어질 때, $f$ 가 증가하는 구간을 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$(x-4)^2\ge0$, $(x-5)^8\ge0$ 이므로 부호는 $(x+3)^7$ 이 결정: $x>-3$ 에서 $f'\ge0$ (0인 점 $4,5$ 는 고립점). ⇒ 증가 구간 $\boxed{(-3,\infty)}$. (4, 5 에서는 부호 변화가 없어 극값도 없다.)</div></div>
-<div class="prob" data-id="c4-15"><div class="pq"><span class="pn"></span><div>$f(x)=x^3-3x^2-9x+4$ 의 오목성 구간과 변곡점.</div></div>
+<div class="prob" data-id="c4-15"><div class="pq"><span class="pn"></span><div>함수 $f(x)=x^3-3x^2-9x+4$ 의 그래프가 위로 오목(concave upward)인 구간과 아래로 오목(concave downward)인 구간, 그리고 변곡점의 좌표를 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f''=6x-6$. CU: $(1,\infty)$, CD: $(-\infty,1)$. 변곡점 $\boxed{(1,-7)}$.</div></div>
-<div class="prob" data-id="c4-16"><div class="pq"><span class="pn"></span><div>$f(x)=\ln(x^2+5)$ 의 오목성 구간과 변곡점.</div></div>
+<div class="prob" data-id="c4-16"><div class="pq"><span class="pn"></span><div>함수 $f(x)=\ln(x^2+5)$ 의 그래프가 위로 오목인 구간과 아래로 오목인 구간, 그리고 변곡점의 좌표를 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f'=\dfrac{2x}{x^2+5}$, $f''=\dfrac{2(x^2+5)-4x^2}{(x^2+5)^2}=\dfrac{2(5-x^2)}{(x^2+5)^2}$.<br>CU: $(-\sqrt5,\sqrt5)$, CD: $(-\infty,-\sqrt5),\ (\sqrt5,\infty)$. 변곡점 $\boxed{(\pm\sqrt5,\ \ln10)}$.</div></div>
-<div class="prob" data-id="c4-17"><div class="pq"><span class="pn"></span><div>$f(x)=x^4-2x^2+3$ 의 (a) 증감 (b) 극값 (c) 오목성 및 변곡점을 구하시오.</div></div>
+<div class="prob" data-id="c4-17"><div class="pq"><span class="pn"></span><div>함수 $f(x)=x^4-2x^2+3$ 에 대하여 (a) 증가·감소 구간 (b) 국소최댓값·국소최솟값 (c) 오목성 구간과 변곡점을 각각 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f'=4x(x^2-1)$, $f''=12x^2-4$.<br>(a) 감소: $(-\infty,-1),(0,1)$ / 증가: $(-1,0),(1,\infty)$.<br>(b) 국소최솟값 $f(\pm1)=2$, 국소최댓값 $f(0)=3$.<br>(c) CU: $|x|>\frac1{\sqrt3}$, CD: $|x|<\frac1{\sqrt3}$. 변곡점 $\left(\pm\frac1{\sqrt3},\ \frac{22}9\right)$.</div></div>
-<div class="prob" data-id="c4-18"><div class="pq"><span class="pn"></span><div>$f(x)=1+3x^2-2x^3$ 의 국소 극값을 1계·2계 판정법으로 각각 구하시오.</div></div>
+<div class="prob" data-id="c4-18"><div class="pq"><span class="pn"></span><div>함수 $f(x)=1+3x^2-2x^3$ 의 국소최댓값과 국소최솟값을 1계 도함수 판정법과 2계 도함수 판정법을 각각 사용하여 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f'=6x(1-x)$, 임계수 $0,1$. $f''=6-12x$.<br>2계: $f''(0)=6>0$ ⇒ 국소최솟값 $f(0)=1$; $f''(1)=-6<0$ ⇒ 국소최댓값 $f(1)=2$.<br>1계: $f'$ 이 $0$ 에서 − → +, $1$ 에서 + → − 로 동일한 결론.</div></div>
-<div class="prob" data-id="c4-19"><div class="pq"><span class="pn"></span><div>$f(x)=xe^{-2x}$ 의 극값, 오목성, 변곡점.</div></div>
+<div class="prob" data-id="c4-19"><div class="pq"><span class="pn"></span><div>함수 $f(x)=xe^{-2x}$ 에 대하여 (a) 증가·감소 구간과 국소 극값 (b) 오목성 구간과 변곡점을 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f'=e^{-2x}(1-2x)$ ⇒ $x=\frac12$ 에서 + → − : 국소(절대)최댓값 $f(\tfrac12)=\dfrac1{2e}$.<br>$f''=4(x-1)e^{-2x}$ ⇒ CD: $(-\infty,1)$, CU: $(1,\infty)$, 변곡점 $(1,e^{-2})$. $x\to\infty$ 에서 $f\to0$ (수평점근선 $y=0$).</div></div>
 <h3><span class="sq">▸</span>4.4 부정형과 로피탈</h3>
-<div class="prob" data-id="c4-20"><div class="pq"><span class="pn"></span><div>극한 $\displaystyle\lim_{x\to0}\frac{\tan3x}{\sin2x}$ 와 $\displaystyle\lim_{t\to0}\frac{e^{2t}-1}{\sin t}$.</div></div>
+<div class="prob" data-id="c4-20"><div class="pq"><span class="pn"></span><div>다음 극한을 구하시오. (a) $\displaystyle\lim_{x\to0}\frac{\tan3x}{\sin2x}$ &nbsp;(b) $\displaystyle\lim_{t\to0}\frac{e^{2t}-1}{\sin t}$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">둘 다 $\frac00$. $\displaystyle\lim\frac{3\sec^23x}{2\cos2x}=\boxed{\tfrac32}$, $\ \displaystyle\lim\frac{2e^{2t}}{\cos t}=\boxed2$.</div></div>
-<div class="prob" data-id="c4-21"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0}\frac{\sinh x-x}{x^3}$</div></div>
+<div class="prob" data-id="c4-21"><div class="pq"><span class="pn"></span><div>다음 극한을 구하시오. $\displaystyle\lim_{x\to0}\frac{\sinh x-x}{x^3}$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$\frac00$ → $\frac{\cosh x-1}{3x^2}$ ($\frac00$) → $\frac{\sinh x}{6x}$ ($\frac00$) → $\frac{\cosh x}{6}\to\boxed{\tfrac16}$.</div></div>
-<div class="prob" data-id="c4-22"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0}\frac{e^x+e^{-x}-2}{e^x-x-1}$ </div></div>
+<div class="prob" data-id="c4-22"><div class="pq"><span class="pn"></span><div>다음 극한을 구하시오. $\displaystyle\lim_{x\to0}\frac{e^x+e^{-x}-2}{e^x-x-1}$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$\frac00$ → $\frac{e^x-e^{-x}}{e^x-1}$ ($\frac00$) → $\frac{e^x+e^{-x}}{e^x}\to\boxed2$.</div></div>
-<div class="prob" data-id="c4-23"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0}\frac{\sqrt{1+2x}-\sqrt{1-4x}}{x}$</div></div>
+<div class="prob" data-id="c4-23"><div class="pq"><span class="pn"></span><div>다음 극한을 구하시오. $\displaystyle\lim_{x\to0}\frac{\sqrt{1+2x}-\sqrt{1-4x}}{x}$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$\frac00$ → $\dfrac{\frac1{\sqrt{1+2x}}+\frac2{\sqrt{1-4x}}}{1}\to1+2=\boxed3$.</div></div>
-<div class="prob" data-id="c4-24"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0^+}\sqrt x\,\ln x$ (0·∞ 형)</div></div>
+<div class="prob" data-id="c4-24"><div class="pq"><span class="pn"></span><div>다음 극한을 구하시오. $\displaystyle\lim_{x\to0^+}\sqrt x\,\ln x$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$\dfrac{\ln x}{x^{-1/2}}$ ($\frac{-\infty}\infty$) → $\dfrac{1/x}{-\frac12x^{-3/2}}=-2\sqrt x\to\boxed0$.</div></div>
-<div class="prob" data-id="c4-25"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0}\left(\csc x-\frac1x\right)$ 과 $\displaystyle\lim_{x\to0}\left(\frac1x-\frac1{e^x-1}\right)$ (∞−∞ 형)</div></div>
+<div class="prob" data-id="c4-25"><div class="pq"><span class="pn"></span><div>다음 극한을 구하시오. (a) $\displaystyle\lim_{x\to0}\left(\csc x-\frac1x\right)$ &nbsp;(b) $\displaystyle\lim_{x\to0}\left(\frac1x-\frac1{e^x-1}\right)$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">(1) $\dfrac{x-\sin x}{x\sin x}$ ($\frac00$) → $\dfrac{1-\cos x}{\sin x+x\cos x}$ ($\frac00$) → $\dfrac{\sin x}{2\cos x-x\sin x}\to\boxed0$.<br>(2) $\dfrac{e^x-1-x}{x(e^x-1)}$ ($\frac00$) → $\dfrac{e^x-1}{e^x-1+xe^x}$ ($\frac00$) → $\dfrac{e^x}{2e^x+xe^x}\to\boxed{\tfrac12}$.</div></div>
-<div class="prob" data-id="c4-26"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to\infty}x\sin\frac\pi x$</div></div>
+<div class="prob" data-id="c4-26"><div class="pq"><span class="pn"></span><div>다음 극한을 구하시오. $\displaystyle\lim_{x\to\infty}x\sin\frac\pi x$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$\dfrac{\sin(\pi/x)}{1/x}$ ($\frac00$) → $\dfrac{\cos(\pi/x)\cdot(-\pi/x^2)}{-1/x^2}=\pi\cos(\pi/x)\to\boxed\pi$.</div></div>
-<div class="prob" data-id="c4-27"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0^+}(1+3x)^{1/x}$ 와 $\displaystyle\lim_{x\to1}(2-x)^{\tan(\pi x/2)}$ ($1^\infty$ 형)</div></div>
+<div class="prob" data-id="c4-27"><div class="pq"><span class="pn"></span><div>다음 극한을 구하시오. (a) $\displaystyle\lim_{x\to0^+}(1+3x)^{1/x}$ &nbsp;(b) $\displaystyle\lim_{x\to1}(2-x)^{\tan(\pi x/2)}$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">(1) $\ln y=\frac{\ln(1+3x)}x\to3$ ⇒ $\boxed{e^3}$.<br>(2) $\ln y=\dfrac{\ln(2-x)}{\cot(\pi x/2)}$ ($\frac00$) → $\dfrac{-1/(2-x)}{-\frac\pi2\csc^2(\pi x/2)}\to\dfrac{-1}{-\pi/2}=\dfrac2\pi$ ⇒ $\boxed{e^{2/\pi}}$.</div></div>
-<div class="prob" data-id="c4-28"><div class="pq"><span class="pn"></span><div>$\displaystyle\lim_{x\to0^+}(\tan2x)^x$ 와 $\displaystyle\lim_{x\to\infty}x^{1/x}$ ($0^0$, $\infty^0$ 형)</div></div>
+<div class="prob" data-id="c4-28"><div class="pq"><span class="pn"></span><div>다음 극한을 구하시오. (a) $\displaystyle\lim_{x\to0^+}(\tan2x)^x$ &nbsp;(b) $\displaystyle\lim_{x\to\infty}x^{1/x}$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">(1) $\ln y=x\ln\tan2x=\dfrac{\ln\tan2x}{1/x}$ ($\frac{-\infty}{\infty}$) → $\dfrac{\frac{2\sec^22x}{\tan2x}}{-1/x^2}=-\dfrac{2x^2}{\sin2x\cos2x}\to0$ ⇒ $\boxed1$.<br>(2) $\ln y=\frac{\ln x}x\to0$ ⇒ $\boxed1$.</div></div>
-<div class="prob" data-id="c4-29"><div class="pq"><span class="pn"></span><div>다음 중 로피탈을 쓰면 <b>안 되는</b> 것은? (a) $\displaystyle\lim_{x\to0}\frac{\sin x}{x+\cos x}$ (b) $\displaystyle\lim_{x\to\pi^-}\frac{\sin x}{1-\cos x}$ (c) $\displaystyle\lim_{x\to\infty}\frac{x}{e^x}$ — 그리고 각 값은?</div></div>
+<div class="prob" data-id="c4-29"><div class="pq"><span class="pn"></span><div>다음 세 극한 중 로피탈의 정리를 사용하면 <b>안 되는</b> 것을 모두 고르고, 세 극한의 값을 각각 구하시오. (a) $\displaystyle\lim_{x\to0}\frac{\sin x}{x+\cos x}$ &nbsp;(b) $\displaystyle\lim_{x\to\pi^-}\frac{\sin x}{1-\cos x}$ &nbsp;(c) $\displaystyle\lim_{x\to\infty}\frac{x}{e^x}$</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">(a) 분모 $\to1$ → 부정형 아님, 그냥 대입 $\frac01=\boxed0$.<br>(b) 분모 $\to2$ → 부정형 아님, $\frac02=\boxed0$.<br>(c) $\frac\infty\infty$ → 로피탈 가능: $\frac1{e^x}\to\boxed0$.<br>정답: <b>(a), (b)</b> 는 로피탈 부적용.</div></div>
 <h3><span class="sq">▸</span>4.5 곡선 그리기 (A–G 분석)</h3>
-<div class="prob" data-id="c4-30"><div class="pq"><span class="pn"></span><div>$y=x^3+3x^2$ 를 A–G 순서로 분석하시오. (절편, 증감, 극값, 오목·변곡점)</div></div>
+<div class="prob" data-id="c4-30"><div class="pq"><span class="pn"></span><div>곡선 지침(A–G)에 따라 함수 $y=x^3+3x^2$ 의 정의역, 절편, 증가·감소 구간, 국소 극값, 오목성 구간, 변곡점을 조사하고 그래프를 그리시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">A: $\mathbb R$. B: $y$절편 0, $x$절편 $0,-3$. C: 없음. D: 없음.<br>E: $y'=3x(x+2)$ ⇒ 증가 $(-\infty,-2),(0,\infty)$, 감소 $(-2,0)$.<br>F: 국소최댓값 $f(-2)=4$, 국소최솟값 $f(0)=0$.<br>G: $y''=6(x+1)$ ⇒ CD $(-\infty,-1)$, CU $(-1,\infty)$, 변곡점 $(-1,2)$.</div></div>
-<div class="prob" data-id="c4-31"><div class="pq"><span class="pn"></span><div>$y=\dfrac{x}{x^2-4}$ 를 A–G 순서로 분석하시오.</div></div>
+<div class="prob" data-id="c4-31"><div class="pq"><span class="pn"></span><div>곡선 지침(A–G)에 따라 함수 $y=\dfrac{x}{x^2-4}$ 의 정의역, 절편, 대칭성, 점근선, 증가·감소 구간, 극값, 오목성, 변곡점을 조사하고 그래프를 그리시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">A: $x\ne\pm2$. B: (0,0). C: 홀함수(원점 대칭). D: 수평 $y=0$, 수직 $x=\pm2$.<br>E: $y'=-\dfrac{x^2+4}{(x^2-4)^2}<0$ ⇒ 정의역의 세 구간 모두에서 감소. F: 극값 없음.<br>G: $y''=\dfrac{2x(x^2+12)}{(x^2-4)^3}$ ⇒ CU: $(-2,0),(2,\infty)$ / CD: $(-\infty,-2),(0,2)$. 변곡점 $(0,0)$.</div></div>
-<div class="prob" data-id="c4-32"><div class="pq"><span class="pn"></span><div>$y=x+\dfrac1x$ 를 A–G 순서로 분석하시오. (사선점근선 포함)</div></div>
+<div class="prob" data-id="c4-32"><div class="pq"><span class="pn"></span><div>곡선 지침(A–G)에 따라 함수 $y=x+\dfrac1x$ 의 정의역, 대칭성, 점근선(기울어진 점근선 포함), 증가·감소 구간, 극값, 오목성을 조사하고 그래프를 그리시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">A: $x\ne0$. B: 절편 없음. C: 홀함수. D: 수직 $x=0$; $y-x=\frac1x\to0$ ⇒ <b>사선점근선 $y=x$</b>.<br>E: $y'=1-\frac1{x^2}$ ⇒ 증가 $|x|>1$, 감소 $(-1,0),(0,1)$. F: 국소최댓값 $f(-1)=-2$, 국소최솟값 $f(1)=2$.<br>G: $y''=\frac2{x^3}$ ⇒ $x>0$ CU, $x<0$ CD, 변곡점 없음.</div></div>
-<div class="prob" data-id="c4-33"><div class="pq"><span class="pn"></span><div>$y=(1-x)e^x$ 를 A–G 순서로 분석하시오.</div></div>
+<div class="prob" data-id="c4-33"><div class="pq"><span class="pn"></span><div>곡선 지침(A–G)에 따라 함수 $y=(1-x)e^x$ 의 정의역, 절편, 점근선, 증가·감소 구간, 극값, 오목성, 변곡점을 조사하고 그래프를 그리시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">A: $\mathbb R$. B: $y$절편 1, $x$절편 1. C: 없음. D: $x\to-\infty$ 에서 $(1-x)e^x\to0$ ⇒ $y=0$ (왼쪽); $x\to\infty$ 에서 $-\infty$.<br>E: $y'=-xe^x$ ⇒ 증가 $(-\infty,0)$, 감소 $(0,\infty)$. F: 국소(절대)최댓값 $f(0)=1$.<br>G: $y''=-(x+1)e^x$ ⇒ CU $(-\infty,-1)$, CD $(-1,\infty)$, 변곡점 $(-1,\ 2/e)$.</div></div>
-<div class="prob" data-id="c4-34"><div class="pq"><span class="pn"></span><div>$y=x-3x^{1/3}$ 를 A–G 순서로 분석하시오. (수직접선 주의)</div></div>
+<div class="prob" data-id="c4-34"><div class="pq"><span class="pn"></span><div>곡선 지침(A–G)에 따라 함수 $y=x-3x^{1/3}$ 의 정의역, 절편, 대칭성, 증가·감소 구간, 극값, 오목성, 변곡점(수직접선 여부 포함)을 조사하고 그래프를 그리시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">A: $\mathbb R$. B: $y=0$ ⇒ $x=0,\ \pm3\sqrt3$. C: 홀함수. D: 없음.<br>E: $y'=1-x^{-2/3}$. 임계수 $0$(미존재), $\pm1$. 증가 $(-\infty,-1),(1,\infty)$, 감소 $(-1,1)$.<br>F: 국소최댓값 $f(-1)=2$, 국소최솟값 $f(1)=-2$ ($x=0$ 은 극값 아님).<br>G: $y''=\frac23x^{-5/3}$ ⇒ CD $(-\infty,0)$, CU $(0,\infty)$, 변곡점 $(0,0)$ (수직접선).</div></div>
-<div class="prob" data-id="c4-35"><div class="pq"><span class="pn"></span><div>$y=x+\cos x$ 를 분석하시오. 극값이 존재하는가?</div></div>
+<div class="prob" data-id="c4-35"><div class="pq"><span class="pn"></span><div>함수 $y=x+\cos x$ 의 증가·감소 구간, 극값, 오목성, 변곡점을 조사하시오. 이 함수는 극값을 갖는가?</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$y'=1-\sin x\ge0$ ⇒ 모든 $x$ 에서 증가 (0이 되는 점 $x=\frac\pi2+2n\pi$ 에서도 부호 변화 없음) ⇒ <b>극값 없음</b>.<br>$y''=-\cos x$ ⇒ $\cos x>0$ 구간 CD, $\cos x<0$ 구간 CU. 변곡점 $x=\frac\pi2+n\pi$. (점근선 없음, 증가하며 $y=x$ 주위를 ±1 진동)</div></div>
 </section>
