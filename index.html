@@ -304,8 +304,8 @@ html{scroll-padding-top:70px}
 <ul>
 <li>$L(x)$ = 점 $(a,f(a))$에서의 <b>접선의 방정식</b> 그 자체.</li>
 <li>$a$에서 멀어질수록 오차가 커진다 (예: $\sqrt{x+3}$의 선형화는 $x=1$ 근처에서만 정확).</li>
-<li><b>과대/과소 추정 판정</b>: 접선이 곡선 <u>위</u>에 있으면 과대추정(overestimate) → $f''<0$(위로 볼록·CD)일 때. 접선이 곡선 <u>아래</u>이면 과소추정 → $f''>0$(CU)일 때.</li>
-<li><b>오차 범위 문제</b> ("accurate to within 0.1"): $|f(x)-L(x)|<0.1$, 즉 $L(x)-0.1<f(x)<L(x)+0.1$을 만족하는 $x$ 구간을 그래프의 교점으로 찾는다.</li>
+<li><b>과대/과소 추정 판정</b>: 접선이 곡선 <u>위</u>에 있으면 과대추정(overestimate) → $f''&lt;0$(위로 볼록·CD)일 때. 접선이 곡선 <u>아래</u>이면 과소추정 → $f''>0$(CU)일 때.</li>
+<li><b>오차 범위 문제</b> ("accurate to within 0.1"): $|f(x)-L(x)|&lt;0.1$, 즉 $L(x)-0.1&lt;f(x)&lt;L(x)+0.1$을 만족하는 $x$ 구간을 그래프의 교점으로 찾는다.</li>
 </ul>
 
 <div class="box tip"><b class="lab">외워둘 것 · $x=0$에서의 선형화</b>
@@ -449,8 +449,9 @@ $$y=\sinh^{-1}x\iff\sinh y=x\qquad y=\cosh^{-1}x\iff \cosh y=x\ \text{and}\ y\ge
 </table></div>
 
 <div class="box thm"><b class="lab">로그 표현 (Logarithmic forms)</b>
-$$\sinh^{-1}x=\ln\!\left(x+\sqrt{x^2+1}\right)\ (x\in\mathbb R)\qquad \cosh^{-1}x=\ln\!\left(x+\sqrt{x^2-1}\right)\ (x\ge1)$$
-$$\tanh^{-1}x=\tfrac12\ln\frac{1+x}{1-x}\ (-1<x<1)$$</div>
+$$\sinh^{-1}x=\ln\!\left(x+\sqrt{x^2+1}\right)\quad (x\in\mathbb R)$$
+$$\cosh^{-1}x=\ln\!\left(x+\sqrt{x^2-1}\right)\quad (x\ge1)$$
+$$\tanh^{-1}x=\tfrac12\ln\frac{1+x}{1-x}\ (-1&lt;x&lt;1)$$</div>
 
 <div class="box thm"><b class="lab">Derivatives of Inverse Hyperbolic Functions</b>
 <table>
@@ -458,12 +459,12 @@ $$\tanh^{-1}x=\tfrac12\ln\frac{1+x}{1-x}\ (-1<x<1)$$</div>
 <tr><th>$\dfrac{d}{dx}\cosh^{-1}x=\dfrac1{\sqrt{x^2-1}}$</th><th>$\dfrac{d}{dx}\operatorname{sech}^{-1}x=-\dfrac1{x\sqrt{1-x^2}}$</th></tr>
 <tr><th>$\dfrac{d}{dx}\tanh^{-1}x=\dfrac1{1-x^2}$</th><th>$\dfrac{d}{dx}\coth^{-1}x=\dfrac1{1-x^2}$</th></tr>
 </table>
-<p class="mini">$\tanh^{-1}$ 와 $\coth^{-1}$ 의 도함수는 식이 같지만 정의역이 다르다: $|x|<1$ vs $|x|>1$.</p></div>
+<p class="mini">$\tanh^{-1}$ 와 $\coth^{-1}$ 의 도함수는 식이 같지만 정의역이 다르다: $|x|&lt;1$ vs $|x|>1$.</p></div>
 
 <details class="ex"><summary>예제 3 · $\sinh^{-1}x=\ln\!\big(x+\sqrt{x^2+1}\big)$ 임을 보이시오.</summary>
 <div class="body">
 <p>$y=\sinh^{-1}x$ 라 하면 $x=\sinh y=\dfrac{e^y-e^{-y}}2$. 양변에 $2e^y$ 를 곱해 $e^{2y}-2xe^y-1=0$.</p>
-<p>$e^y$ 에 대한 이차방정식: $e^y=x\pm\sqrt{x^2+1}$. $e^y>0$ 이고 $x-\sqrt{x^2+1}<0$ 이므로 <b>플러스만 가능</b>.</p>
+<p>$e^y$ 에 대한 이차방정식: $e^y=x\pm\sqrt{x^2+1}$. $e^y>0$ 이고 $x-\sqrt{x^2+1}&lt;0$ 이므로 <b>플러스만 가능</b>.</p>
 <p>따라서 $y=\ln\!\big(x+\sqrt{x^2+1}\big)$.</p>
 </div></details>
 <details class="ex"><summary>예제 4 · $\dfrac d{dx}\sinh^{-1}x=\dfrac1{\sqrt{1+x^2}}$ 임을 증명하시오.</summary>
@@ -480,7 +481,7 @@ $$\frac1{1-\sin^2x}\cdot\cos x=\frac{\cos x}{\cos^2x}=\sec x$$
 <ul>
 <li>$\cosh^2x-\sinh^2x=1$ (빼기). $\cos^2+\sin^2=1$ 과 헷갈리지 말 것.</li>
 <li>$\dfrac d{dx}\cosh x=+\sinh x$ (마이너스 없음).</li>
-<li>$\cosh^{-1}$ 의 정의역은 $x\ge1$, $\tanh^{-1}$ 는 $|x|<1$ — 로그 표현식의 근호/분모가 정의되는 범위와 같다.</li>
+<li>$\cosh^{-1}$ 의 정의역은 $x\ge1$, $\tanh^{-1}$ 는 $|x|&lt;1$ — 로그 표현식의 근호/분모가 정의되는 범위와 같다.</li>
 <li>역쌍곡함수의 도함수는 <u>삼각 역함수와 비슷하지만</u> $\sinh^{-1}$ : $\sqrt{1+x^2}$, $\cosh^{-1}$ : $\sqrt{x^2-1}$ (부호 주의).</li>
 </ul></div>
 </section>
@@ -640,14 +641,14 @@ $a(t)=0.001191t^2-0.05504t+7.196$ 을 $[0,126]$ 에서 닫힌구간법으로 최
 <ul>
 <li><b>Case I</b>: $f$ 가 상수 → $f'\equiv0$.</li>
 <li><b>Case II</b>: 어떤 $x$ 에서 $f(x)>f(a)$ → EVT로 최댓값 존재, $f(a)=f(b)$ 이므로 최댓값은 <u>내부점 $c$</u>에서 → Fermat 정리로 $f'(c)=0$.</li>
-<li><b>Case III</b>: $f(x)<f(a)$ 인 $x$ 존재 → 같은 논리로 최솟값 사용.</li>
+<li><b>Case III</b>: $f(x)&lt;f(a)$ 인 $x$ 존재 → 같은 논리로 최솟값 사용.</li>
 </ul>
 <p><b>물리 해석</b>: 같은 위치에서 출발해 다시 돌아오면(예: 위로 던진 공) 그 사이 속도가 0인 순간이 있다.</p>
 
 <details class="ex"><summary>예제 2 · 방정식 $x^3+x-1=0$ 이 <u>정확히 하나</u>의 실근을 가짐을 증명하시오.</summary>
 <div class="body">
-<p><b>존재 (IVT)</b>: $f(x)=x^3+x-1$ 은 연속, $f(0)=-1<0$, $f(1)=1>0$ ⇒ $0<c<1$ 에서 $f(c)=0$.</p>
-<p><b>유일성 (Rolle + 귀류법)</b>: 실근이 두 개 $a<b$ 라 하면 $f(a)=f(b)=0$ 이므로 Rolle에 의해 $f'(c)=0$ 인 $c$ 가 존재. 그러나 $f'(x)=3x^2+1\ge1>0$ 이므로 모순. ∎</p>
+<p><b>존재 (IVT)</b>: $f(x)=x^3+x-1$ 은 연속, $f(0)=-1&lt;0$, $f(1)=1>0$ ⇒ $0&lt;c&lt;1$ 에서 $f(c)=0$.</p>
+<p><b>유일성 (Rolle + 귀류법)</b>: 실근이 두 개 $a&lt;b$ 라 하면 $f(a)=f(b)=0$ 이므로 Rolle에 의해 $f'(c)=0$ 인 $c$ 가 존재. 그러나 $f'(x)=3x^2+1\ge1>0$ 이므로 모순. ∎</p>
 <p class="mini">※ 교재 예제 2는 $x^3+x-1=0$ 형태 (근이 정확히 1개). "근의 개수 상한" 문제의 표준 풀이: IVT(존재) + Rolle(유일).</p>
 </div></details>
 
@@ -703,9 +704,9 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 <div class="box thm"><b class="lab">Increasing/Decreasing Test (I/D Test)</b>
 <ul>
 <li>(a) 구간에서 $f'(x)>0$ ⇒ $f$ 는 그 구간에서 <b>증가(increasing)</b></li>
-<li>(b) 구간에서 $f'(x)<0$ ⇒ $f$ 는 그 구간에서 <b>감소(decreasing)</b></li>
+<li>(b) 구간에서 $f'(x)&lt;0$ ⇒ $f$ 는 그 구간에서 <b>감소(decreasing)</b></li>
 </ul>
-<p class="mini">증명: MVT. $x_1<x_2$ 일 때 $f(x_2)-f(x_1)=f'(c)(x_2-x_1)$ 의 부호 = $f'(c)$ 의 부호.</p></div>
+<p class="mini">증명: MVT. $x_1&lt;x_2$ 일 때 $f(x_2)-f(x_1)=f'(c)(x_2-x_1)$ 의 부호 = $f'(c)$ 의 부호.</p></div>
 <h4>풀이 절차 (부호표)</h4>
 <ol>
 <li>$f'(x)$ 를 구하고 <b>인수분해</b>.</li>
@@ -717,9 +718,9 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 <p>$f'(x)=12x^3-12x^2-24x=12x(x-2)(x+1)$. 임계수 $-1,0,2$.</p>
 <table>
 <tr><th>구간</th><th>$12x$</th><th>$x-2$</th><th>$x+1$</th><th>$f'$</th><th>$f$</th></tr>
-<tr><td>$x<-1$</td><td>−</td><td>−</td><td>−</td><td>−</td><td>감소</td></tr>
-<tr><td>$-1<x<0$</td><td>−</td><td>−</td><td>+</td><td>+</td><td>증가</td></tr>
-<tr><td>$0<x<2$</td><td>+</td><td>−</td><td>+</td><td>−</td><td>감소</td></tr>
+<tr><td>$x&lt;-1$</td><td>−</td><td>−</td><td>−</td><td>−</td><td>감소</td></tr>
+<tr><td>$-1&lt;x&lt;0$</td><td>−</td><td>−</td><td>+</td><td>+</td><td>증가</td></tr>
+<tr><td>$0&lt;x&lt;2$</td><td>+</td><td>−</td><td>+</td><td>−</td><td>감소</td></tr>
 <tr><td>$x>2$</td><td>+</td><td>+</td><td>+</td><td>+</td><td>증가</td></tr>
 </table></div></details>
 
@@ -740,7 +741,7 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 <details class="ex"><summary>예제 3 · 함수 $g(x)=x+2\sin x,\ \ 0\le x\le2\pi$ 의 국소최댓값과 국소최솟값을 구하시오.</summary>
 <div class="body">
 <p>$g'=1+2\cos x=0\Rightarrow \cos x=-\tfrac12\Rightarrow x=\tfrac{2\pi}3,\tfrac{4\pi}3$.</p>
-<p>$g'>0$ on $(0,\tfrac{2\pi}3)$, $g'<0$ on $(\tfrac{2\pi}3,\tfrac{4\pi}3)$, $g'>0$ on $(\tfrac{4\pi}3,2\pi)$.</p>
+<p>$g'>0$ on $(0,\tfrac{2\pi}3)$, $g'&lt;0$ on $(\tfrac{2\pi}3,\tfrac{4\pi}3)$, $g'>0$ on $(\tfrac{4\pi}3,2\pi)$.</p>
 <p>국소최댓값 $g(\tfrac{2\pi}3)=\tfrac{2\pi}3+\sqrt3\approx3.83$, 국소최솟값 $g(\tfrac{4\pi}3)=\tfrac{4\pi}3-\sqrt3\approx2.46$.</p>
 </div></details>
 
@@ -753,7 +754,7 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 <div class="box thm"><b class="lab">Concavity Test</b>
 <ul>
 <li>(a) $I$ 에서 $f''(x)>0$ ⇒ 그래프는 $I$ 에서 <b>CU</b> (기울기 $f'$ 가 증가)</li>
-<li>(b) $I$ 에서 $f''(x)<0$ ⇒ 그래프는 $I$ 에서 <b>CD</b> (기울기 $f'$ 가 감소)</li>
+<li>(b) $I$ 에서 $f''(x)&lt;0$ ⇒ 그래프는 $I$ 에서 <b>CD</b> (기울기 $f'$ 가 감소)</li>
 </ul></div>
 <div class="box def"><b class="lab">Inflection Point (변곡점)</b>
 <p>$f$ 가 연속인 곡선 위의 점 $P$ 에서 <b>오목성이 바뀌는</b> 점 (CU ↔ CD).</p>
@@ -772,7 +773,7 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 <tr><td>−</td><td>−</td><td>감소, CD (↘ 가파르게)</td></tr>
 </table></div>
 
-<details class="ex"><summary>예제 5 · 다음 조건을 모두 만족하는 함수 $f$ 의 그래프 개형을 그리시오.<br>(i) $x<1$ 에서 $f'(x)>0$, $x>1$ 에서 $f'(x)<0$ &nbsp;(ii) $x<-2$ 또는 $x>2$ 에서 $f''(x)>0$, $-2<x<2$ 에서 $f''(x)<0$ &nbsp;(iii) $\lim_{x\to-\infty}f(x)=-2$, $\lim_{x\to\infty}f(x)=0$</summary>
+<details class="ex"><summary>예제 5 · 다음 조건을 모두 만족하는 함수 $f$ 의 그래프 개형을 그리시오.<br>(i) $x&lt;1$ 에서 $f'(x)>0$, $x>1$ 에서 $f'(x)&lt;0$ &nbsp;(ii) $x&lt;-2$ 또는 $x>2$ 에서 $f''(x)>0$, $-2&lt;x&lt;2$ 에서 $f''(x)&lt;0$ &nbsp;(iii) $\lim_{x\to-\infty}f(x)=-2$, $\lim_{x\to\infty}f(x)=0$</summary>
 <div class="body">
 <p>해석: 수평점근선 $y=-2$(왼쪽), $y=0$(오른쪽). $x=1$ 에서 극대(최대). 변곡점 $x=-2$ 와 $x=2$. 왼쪽 끝은 $y=-2$ 에서 위로 볼록하게 올라가며 (CU→CD, $x=-2$) 정점 $x=1$ 을 지나 내려오다 $x=2$ 에서 다시 CU 로 바뀌고 $y=0$ 에 접근.</p>
 </div></details>
@@ -782,7 +783,7 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 <p>$f''$ 가 $c$ 근처에서 연속이라 하자.</p>
 <ul>
 <li>(a) $f'(c)=0$ 이고 $f''(c)>0$ ⇒ $f(c)$ 는 <b>국소최솟값</b></li>
-<li>(b) $f'(c)=0$ 이고 $f''(c)<0$ ⇒ $f(c)$ 는 <b>국소최댓값</b></li>
+<li>(b) $f'(c)=0$ 이고 $f''(c)&lt;0$ ⇒ $f(c)$ 는 <b>국소최댓값</b></li>
 </ul></div>
 <div class="box warn"><b class="lab">Inconclusive!</b>
 <p>$f''(c)=0$ 이거나 $f''(c)$ 가 존재하지 않으면 <b>판정 불가</b>(극대/극소/둘 다 아님 모두 가능) → <b>First Derivative Test</b> 로 돌아가라. 그리고 애초에 $f'(c)=0$ 인 임계수에만 적용 가능(뾰족점·수직접선인 임계수에는 X).</p></div>
@@ -791,8 +792,8 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 <p>$f'=4x^3-12x^2=4x^2(x-3)$, $\ f''=12x^2-24x=12x(x-2)$. 임계수 $x=0,3$.</p>
 <ul>
 <li>$f''(3)=36>0$ ⇒ $f(3)=-27$ <b>국소최솟값</b> (2계 판정).</li>
-<li>$f''(0)=0$ ⇒ 판정 불가. $f'<0$ 이 $x<0$ 과 $0<x<3$ 모두에서 성립 → 부호 변화 없음 → $x=0$ 에서 <b>극값 없음</b> (1계 판정).</li>
-<li>$f''$ 부호: $x<0$ : + (CU), $0<x<2$ : − (CD), $x>2$ : + (CU). ⇒ 변곡점 $(0,0)$, $(2,-16)$.</li>
+<li>$f''(0)=0$ ⇒ 판정 불가. $f'&lt;0$ 이 $x&lt;0$ 과 $0&lt;x&lt;3$ 모두에서 성립 → 부호 변화 없음 → $x=0$ 에서 <b>극값 없음</b> (1계 판정).</li>
+<li>$f''$ 부호: $x&lt;0$ : + (CU), $0&lt;x&lt;2$ : − (CD), $x>2$ : + (CU). ⇒ 변곡점 $(0,0)$, $(2,-16)$.</li>
 </ul></div></details>
 
 <h3 id="s43-5"><span class="sq">■</span>Curve Sketching (곡선 그리기)</h3>
@@ -802,21 +803,21 @@ $x=1$ 대입: $C=\tfrac\pi4+\tfrac\pi4=\tfrac\pi2$. ∎</p>
 <p>정의역 $\mathbb R$. $f'=\dfrac{4-x}{x^{1/3}(6-x)^{2/3}}$, $\ f''=\dfrac{-8}{x^{4/3}(6-x)^{5/3}}$. 임계수: $0,\ 4,\ 6$ ($f'$ 미존재: 0, 6).</p>
 <table>
 <tr><th>구간</th><th>$f'$</th><th>$f$</th></tr>
-<tr><td>$x<0$</td><td>−</td><td>감소</td></tr>
-<tr><td>$0<x<4$</td><td>+</td><td>증가</td></tr>
-<tr><td>$4<x<6$</td><td>−</td><td>감소</td></tr>
+<tr><td>$x&lt;0$</td><td>−</td><td>감소</td></tr>
+<tr><td>$0&lt;x&lt;4$</td><td>+</td><td>증가</td></tr>
+<tr><td>$4&lt;x&lt;6$</td><td>−</td><td>감소</td></tr>
 <tr><td>$x>6$</td><td>−</td><td>감소</td></tr>
 </table>
 <ul>
 <li>$x=0$ : − → + ⇒ $f(0)=0$ 국소최솟값. $x=4$ : + → − ⇒ $f(4)=2^{5/3}\approx3.17$ 국소최댓값. $x=6$ : 부호 변화 없음 → 극값 아님.</li>
-<li>$f''<0$ on $(-\infty,0)$, $(0,6)$ → CD, $f''>0$ on $(6,\infty)$ → CU. 변곡점은 $(6,0)$ 하나.</li>
+<li>$f''&lt;0$ on $(-\infty,0)$, $(0,6)$ → CD, $f''>0$ on $(6,\infty)$ → CU. 변곡점은 $(6,0)$ 하나.</li>
 <li>$|f'|\to\infty$ ($x\to0,\ x\to6$) ⇒ $(0,0)$, $(6,0)$ 에서 <b>수직접선</b>.</li>
 </ul></div></details>
 <details class="ex"><summary>예제 8 · 함수 $f(x)=e^{1/x}$ 의 점근선과 $f',\,f''$ 을 이용하여 그래프를 그리시오.</summary>
 <div class="body">
 <p>정의역 $x\ne0$. $\;x\to0^+$: $e^{1/x}\to\infty$ ⇒ <b>$x=0$ 수직점근선</b>. $\;x\to0^-$: $e^{1/x}\to0$. $\;x\to\pm\infty$: $e^{1/x}\to1$ ⇒ <b>$y=1$ 수평점근선</b>.</p>
-<p>$f'=-\dfrac{e^{1/x}}{x^2}<0$ ⇒ 두 구간에서 모두 <b>감소</b>, 임계수 없음 ⇒ 극값 없음.</p>
-<p>$f''=\dfrac{e^{1/x}(2x+1)}{x^4}$ ⇒ $x<-\tfrac12$ 에서 CD, $x>-\tfrac12\,(x\ne0)$ 에서 CU. 변곡점 $\left(-\tfrac12,\ e^{-2}\right)$.</p>
+<p>$f'=-\dfrac{e^{1/x}}{x^2}&lt;0$ ⇒ 두 구간에서 모두 <b>감소</b>, 임계수 없음 ⇒ 극값 없음.</p>
+<p>$f''=\dfrac{e^{1/x}(2x+1)}{x^4}$ ⇒ $x&lt;-\tfrac12$ 에서 CD, $x>-\tfrac12\,(x\ne0)$ 에서 CU. 변곡점 $\left(-\tfrac12,\ e^{-2}\right)$.</p>
 </div></details>
 
 <div class="box warn"><b class="lab">시험 함정</b>
@@ -952,31 +953,31 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 <div class="body">
 <p><b>A</b> $x\ne\pm1$. &nbsp;<b>B</b> 절편 (0,0). &nbsp;<b>C</b> 짝함수 → $y$축 대칭.</p>
 <p><b>D</b> $\lim_{x\to\pm\infty}=2$ ⇒ $y=2$. 수직: $x=\pm1$ ($\lim_{x\to1^+}=+\infty,\ \lim_{x\to1^-}=-\infty,\ \lim_{x\to-1^+}=-\infty,\ \lim_{x\to-1^-}=+\infty$).</p>
-<p><b>E</b> $f'=\dfrac{-4x}{(x^2-1)^2}$ ⇒ $x<0$ 증가, $x>0$ 감소 (정의역 내). <b>F</b> $f(0)=0$ 국소최댓값.</p>
-<p><b>G</b> $f''=\dfrac{12x^2+4}{(x^2-1)^3}$ ⇒ $|x|>1$ 이면 CU, $|x|<1$ 이면 CD. 변곡점 없음(±1 은 정의역 밖).</p></div></details>
+<p><b>E</b> $f'=\dfrac{-4x}{(x^2-1)^2}$ ⇒ $x&lt;0$ 증가, $x>0$ 감소 (정의역 내). <b>F</b> $f(0)=0$ 국소최댓값.</p>
+<p><b>G</b> $f''=\dfrac{12x^2+4}{(x^2-1)^3}$ ⇒ $|x|>1$ 이면 CU, $|x|&lt;1$ 이면 CD. 변곡점 없음(±1 은 정의역 밖).</p></div></details>
 <details class="ex"><summary>예제 2 · 곡선 지침(A–H)을 이용하여 $f(x)=\dfrac{x^2}{\sqrt{x+1}}$ 의 그래프를 그리시오.</summary>
 <div class="body">
 <p><b>A</b> $(-1,\infty)$. <b>B</b> (0,0). <b>C</b> 없음. <b>D</b> 수평점근선 없음($f\to\infty$); $x\to-1^+$ 에서 $f\to\infty$ ⇒ 수직점근선 $x=-1$.</p>
 <p><b>E</b> $f'=\dfrac{x(3x+4)}{2(x+1)^{3/2}}$ ⇒ $(-1,0)$ 감소, $(0,\infty)$ 증가. ($-\tfrac43$ 은 정의역 밖)</p>
-<p><b>F</b> $f(0)=0$ 국소(이자 절대)최솟값. <b>G</b> $f''=\dfrac{3x^2+8x+8}{4(x+1)^{5/2}}>0$ (판별식 $64-96<0$) ⇒ 전 구간 CU, 변곡점 없음.</p></div></details>
+<p><b>F</b> $f(0)=0$ 국소(이자 절대)최솟값. <b>G</b> $f''=\dfrac{3x^2+8x+8}{4(x+1)^{5/2}}>0$ (판별식 $64-96&lt;0$) ⇒ 전 구간 CU, 변곡점 없음.</p></div></details>
 <details class="ex"><summary>예제 3 · 곡선 지침(A–H)을 이용하여 $f(x)=xe^x$ 의 그래프를 그리시오.</summary>
 <div class="body">
 <p><b>A</b> $\mathbb R$. <b>B</b> (0,0). <b>C</b> 없음.</p>
 <p><b>D</b> $x\to\infty$: $\infty$. $x\to-\infty$: $xe^x=\dfrac{x}{e^{-x}}\ \overset{L'H}\to\ \dfrac1{-e^{-x}}=-e^{x}\to0$ ⇒ <b>$y=0$ 수평점근선(왼쪽)</b>.</p>
 <p><b>E</b> $f'=(x+1)e^x$ ⇒ $(-1,\infty)$ 증가, $(-\infty,-1)$ 감소. <b>F</b> $f(-1)=-e^{-1}\approx-0.37$ 국소(절대)최솟값.</p>
-<p><b>G</b> $f''=(x+2)e^x$ ⇒ $x>-2$ CU, $x<-2$ CD. 변곡점 $(-2,-2e^{-2})\approx(-2,-0.27)$.</p></div></details>
+<p><b>G</b> $f''=(x+2)e^x$ ⇒ $x>-2$ CU, $x&lt;-2$ CD. 변곡점 $(-2,-2e^{-2})\approx(-2,-0.27)$.</p></div></details>
 <details class="ex"><summary>예제 4 · 곡선 지침(A–H)을 이용하여 $f(x)=\dfrac{\cos x}{2+\sin x}$ 의 그래프를 그리시오.</summary>
 <div class="body">
 <p><b>A</b> $\mathbb R$. <b>B</b> $y$절편 $\tfrac12$, $x$절편 $x=\tfrac\pi2+n\pi$. <b>C</b> 주기 $2\pi$ → $[0,2\pi]$ 만 분석. <b>D</b> 없음.</p>
-<p><b>E</b> $f'=-\dfrac{2\sin x+1}{(2+\sin x)^2}$ ⇒ $f'>0\iff\sin x<-\tfrac12\iff\tfrac{7\pi}6<x<\tfrac{11\pi}6$ 에서 증가, $(0,\tfrac{7\pi}6)$ 과 $(\tfrac{11\pi}6,2\pi)$ 에서 감소.</p>
+<p><b>E</b> $f'=-\dfrac{2\sin x+1}{(2+\sin x)^2}$ ⇒ $f'>0\iff\sin x&lt;-\tfrac12\iff\tfrac{7\pi}6&lt;x&lt;\tfrac{11\pi}6$ 에서 증가, $(0,\tfrac{7\pi}6)$ 과 $(\tfrac{11\pi}6,2\pi)$ 에서 감소.</p>
 <p><b>F</b> 국소최솟값 $f(\tfrac{7\pi}6)=-\tfrac1{\sqrt3}$, 국소최댓값 $f(\tfrac{11\pi}6)=\tfrac1{\sqrt3}$.</p>
-<p><b>G</b> $f''=-\dfrac{2\cos x(1-\sin x)}{(2+\sin x)^3}$ ⇒ $f''>0\iff\cos x<0\iff\tfrac\pi2<x<\tfrac{3\pi}2$ 에서 CU. 변곡점 $(\tfrac\pi2,0),(\tfrac{3\pi}2,0)$.</p></div></details>
+<p><b>G</b> $f''=-\dfrac{2\cos x(1-\sin x)}{(2+\sin x)^3}$ ⇒ $f''>0\iff\cos x&lt;0\iff\tfrac\pi2&lt;x&lt;\tfrac{3\pi}2$ 에서 CU. 변곡점 $(\tfrac\pi2,0),(\tfrac{3\pi}2,0)$.</p></div></details>
 <details class="ex"><summary>예제 5 · 곡선 지침(A–H)을 이용하여 $y=\ln(4-x^2)$ 의 그래프를 그리시오.</summary>
 <div class="body">
-<p><b>A</b> $4-x^2>0\iff|x|<2$, 즉 $(-2,2)$. <b>B</b> $y$절편 $\ln4$, $x$절편 $\pm\sqrt3$ ($4-x^2=1$). <b>C</b> 짝함수.</p>
+<p><b>A</b> $4-x^2>0\iff|x|&lt;2$, 즉 $(-2,2)$. <b>B</b> $y$절편 $\ln4$, $x$절편 $\pm\sqrt3$ ($4-x^2=1$). <b>C</b> 짝함수.</p>
 <p><b>D</b> $\lim_{x\to\pm2^\mp}=-\infty$ ⇒ 수직점근선 $x=\pm2$.</p>
 <p><b>E</b> $f'=\dfrac{-2x}{4-x^2}$ ⇒ $(-2,0)$ 증가, $(0,2)$ 감소. <b>F</b> $f(0)=\ln4$ 국소최댓값.</p>
-<p><b>G</b> $f''=\dfrac{-8-2x^2}{(4-x^2)^2}<0$ ⇒ 전 구간 CD, 변곡점 없음.</p></div></details>
+<p><b>G</b> $f''=\dfrac{-8-2x^2}{(4-x^2)^2}&lt;0$ ⇒ 전 구간 CD, 변곡점 없음.</p></div></details>
 
 <h3 id="s45-2"><span class="sq">■</span>Slant Asymptotes (기울어진 점근선)</h3>
 <div class="box def"><b class="lab">Definition</b>
@@ -984,7 +985,7 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 <ul>
 <li><b>유리함수</b>에서 (분자 차수) = (분모 차수) + 1 일 때 존재. <b>다항식 장제법</b>의 <u>몫</u> $=mx+b$.</li>
 <li>일반 함수: $m=\displaystyle\lim_{x\to\infty}\frac{f(x)}x$, $\ b=\displaystyle\lim_{x\to\infty}\big[f(x)-mx\big]$.</li>
-<li>차수 비교 요약: 분자 차수 < 분모 → $y=0$ / 같음 → $y=$ 최고차 계수의 비 / 분자가 1 큼 → 사선 / 2 이상 큼 → 점근선 없음(포물선 등에 접근).</li>
+<li>차수 비교 요약: 분자 차수 &lt; 분모 → $y=0$ / 같음 → $y=$ 최고차 계수의 비 / 분자가 1 큼 → 사선 / 2 이상 큼 → 점근선 없음(포물선 등에 접근).</li>
 </ul>
 <details class="ex"><summary>예제 6 · 곡선 지침(A–H)을 이용하여 $f(x)=\dfrac{x^3}{x^2+1}$ 의 그래프를 그리시오. (기울어진 점근선에 유의)</summary>
 <div class="body">
@@ -1032,7 +1033,7 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 <div class="ans">$f(4)-f(1)=1-\frac14=\frac34$, $f'(c)\cdot3=-\frac{6}{(c-3)^3}$. $\frac34=-\frac6{(c-3)^3}\Rightarrow(c-3)^3=-8\Rightarrow c=1\notin(1,4)$ ⇒ 해 없음.<br><b>이유</b>: $f$ 가 $x=3\in[1,4]$ 에서 <u>불연속</u>(정의되지 않음)이므로 MVT의 가정이 깨진다.</div></div>
 <div class="prob" data-id="c4-9"><div class="pq"><span class="pn"></span><div>방정식 $2x+\cos x=0$ 이 정확히 하나의 실근을 가짐을 보이시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
-<div class="ans">$f(x)=2x+\cos x$. <b>존재</b>: $f(0)=1>0$, $f(-\frac\pi2)=-\pi<0$, 연속 ⇒ IVT로 근 존재.<br><b>유일</b>: 근이 둘($a<b$)이면 Rolle에 의해 $f'(c)=0$ 이어야 하나 $f'(x)=2-\sin x\ge1>0$ ⇒ 모순. ∎</div></div>
+<div class="ans">$f(x)=2x+\cos x$. <b>존재</b>: $f(0)=1>0$, $f(-\frac\pi2)=-\pi&lt;0$, 연속 ⇒ IVT로 근 존재.<br><b>유일</b>: 근이 둘($a&lt;b$)이면 Rolle에 의해 $f'(c)=0$ 이어야 하나 $f'(x)=2-\sin x\ge1>0$ ⇒ 모순. ∎</div></div>
 <div class="prob" data-id="c4-10"><div class="pq"><span class="pn"></span><div>(a) $f(1)=10$ 이고 $1\le x\le4$ 에서 $f'(x)\ge2$ 일 때, $f(4)$ 가 가질 수 있는 가장 작은 값을 구하시오. &nbsp;(b) 모든 $x$ 에서 $3\le f'(x)\le5$ 일 때, $18\le f(8)-f(2)\le30$ 임을 보이시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">(a) MVT: $f(4)-f(1)=f'(c)\cdot3\ge2\cdot3=6$ ⇒ $f(4)\ge\boxed{16}$.<br>(b) $f(8)-f(2)=f'(c)(8-2)=6f'(c)$, $3\le f'(c)\le5$ ⇒ $18\le f(8)-f(2)\le30$. ∎</div></div>
@@ -1057,10 +1058,10 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 <div class="ans">$f'=\dfrac{2x}{x^2+5}$, $f''=\dfrac{2(x^2+5)-4x^2}{(x^2+5)^2}=\dfrac{2(5-x^2)}{(x^2+5)^2}$.<br>CU: $(-\sqrt5,\sqrt5)$, CD: $(-\infty,-\sqrt5),\ (\sqrt5,\infty)$. 변곡점 $\boxed{(\pm\sqrt5,\ \ln10)}$.</div></div>
 <div class="prob" data-id="c4-17"><div class="pq"><span class="pn"></span><div>함수 $f(x)=x^4-2x^2+3$ 에 대하여 (a) 증가·감소 구간 (b) 국소최댓값·국소최솟값 (c) 오목성 구간과 변곡점을 각각 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
-<div class="ans">$f'=4x(x^2-1)$, $f''=12x^2-4$.<br>(a) 감소: $(-\infty,-1),(0,1)$ / 증가: $(-1,0),(1,\infty)$.<br>(b) 국소최솟값 $f(\pm1)=2$, 국소최댓값 $f(0)=3$.<br>(c) CU: $|x|>\frac1{\sqrt3}$, CD: $|x|<\frac1{\sqrt3}$. 변곡점 $\left(\pm\frac1{\sqrt3},\ \frac{22}9\right)$.</div></div>
+<div class="ans">$f'=4x(x^2-1)$, $f''=12x^2-4$.<br>(a) 감소: $(-\infty,-1),(0,1)$ / 증가: $(-1,0),(1,\infty)$.<br>(b) 국소최솟값 $f(\pm1)=2$, 국소최댓값 $f(0)=3$.<br>(c) CU: $|x|>\frac1{\sqrt3}$, CD: $|x|&lt;\frac1{\sqrt3}$. 변곡점 $\left(\pm\frac1{\sqrt3},\ \frac{22}9\right)$.</div></div>
 <div class="prob" data-id="c4-18"><div class="pq"><span class="pn"></span><div>함수 $f(x)=1+3x^2-2x^3$ 의 국소최댓값과 국소최솟값을 1계 도함수 판정법과 2계 도함수 판정법을 각각 사용하여 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
-<div class="ans">$f'=6x(1-x)$, 임계수 $0,1$. $f''=6-12x$.<br>2계: $f''(0)=6>0$ ⇒ 국소최솟값 $f(0)=1$; $f''(1)=-6<0$ ⇒ 국소최댓값 $f(1)=2$.<br>1계: $f'$ 이 $0$ 에서 − → +, $1$ 에서 + → − 로 동일한 결론.</div></div>
+<div class="ans">$f'=6x(1-x)$, 임계수 $0,1$. $f''=6-12x$.<br>2계: $f''(0)=6>0$ ⇒ 국소최솟값 $f(0)=1$; $f''(1)=-6&lt;0$ ⇒ 국소최댓값 $f(1)=2$.<br>1계: $f'$ 이 $0$ 에서 − → +, $1$ 에서 + → − 로 동일한 결론.</div></div>
 <div class="prob" data-id="c4-19"><div class="pq"><span class="pn"></span><div>함수 $f(x)=xe^{-2x}$ 에 대하여 (a) 증가·감소 구간과 국소 극값 (b) 오목성 구간과 변곡점을 구하시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">$f'=e^{-2x}(1-2x)$ ⇒ $x=\frac12$ 에서 + → − : 국소(절대)최댓값 $f(\tfrac12)=\dfrac1{2e}$.<br>$f''=4(x-1)e^{-2x}$ ⇒ CD: $(-\infty,1)$, CU: $(1,\infty)$, 변곡점 $(1,e^{-2})$. $x\to\infty$ 에서 $f\to0$ (수평점근선 $y=0$).</div></div>
@@ -1101,10 +1102,10 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 <div class="ans">A: $\mathbb R$. B: $y$절편 0, $x$절편 $0,-3$. C: 없음. D: 없음.<br>E: $y'=3x(x+2)$ ⇒ 증가 $(-\infty,-2),(0,\infty)$, 감소 $(-2,0)$.<br>F: 국소최댓값 $f(-2)=4$, 국소최솟값 $f(0)=0$.<br>G: $y''=6(x+1)$ ⇒ CD $(-\infty,-1)$, CU $(-1,\infty)$, 변곡점 $(-1,2)$.</div></div>
 <div class="prob" data-id="c4-31"><div class="pq"><span class="pn"></span><div>곡선 지침(A–G)에 따라 함수 $y=\dfrac{x}{x^2-4}$ 의 정의역, 절편, 대칭성, 점근선, 증가·감소 구간, 극값, 오목성, 변곡점을 조사하고 그래프를 그리시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
-<div class="ans">A: $x\ne\pm2$. B: (0,0). C: 홀함수(원점 대칭). D: 수평 $y=0$, 수직 $x=\pm2$.<br>E: $y'=-\dfrac{x^2+4}{(x^2-4)^2}<0$ ⇒ 정의역의 세 구간 모두에서 감소. F: 극값 없음.<br>G: $y''=\dfrac{2x(x^2+12)}{(x^2-4)^3}$ ⇒ CU: $(-2,0),(2,\infty)$ / CD: $(-\infty,-2),(0,2)$. 변곡점 $(0,0)$.</div></div>
+<div class="ans">A: $x\ne\pm2$. B: (0,0). C: 홀함수(원점 대칭). D: 수평 $y=0$, 수직 $x=\pm2$.<br>E: $y'=-\dfrac{x^2+4}{(x^2-4)^2}&lt;0$ ⇒ 정의역의 세 구간 모두에서 감소. F: 극값 없음.<br>G: $y''=\dfrac{2x(x^2+12)}{(x^2-4)^3}$ ⇒ CU: $(-2,0),(2,\infty)$ / CD: $(-\infty,-2),(0,2)$. 변곡점 $(0,0)$.</div></div>
 <div class="prob" data-id="c4-32"><div class="pq"><span class="pn"></span><div>곡선 지침(A–G)에 따라 함수 $y=x+\dfrac1x$ 의 정의역, 대칭성, 점근선(기울어진 점근선 포함), 증가·감소 구간, 극값, 오목성을 조사하고 그래프를 그리시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
-<div class="ans">A: $x\ne0$. B: 절편 없음. C: 홀함수. D: 수직 $x=0$; $y-x=\frac1x\to0$ ⇒ <b>사선점근선 $y=x$</b>.<br>E: $y'=1-\frac1{x^2}$ ⇒ 증가 $|x|>1$, 감소 $(-1,0),(0,1)$. F: 국소최댓값 $f(-1)=-2$, 국소최솟값 $f(1)=2$.<br>G: $y''=\frac2{x^3}$ ⇒ $x>0$ CU, $x<0$ CD, 변곡점 없음.</div></div>
+<div class="ans">A: $x\ne0$. B: 절편 없음. C: 홀함수. D: 수직 $x=0$; $y-x=\frac1x\to0$ ⇒ <b>사선점근선 $y=x$</b>.<br>E: $y'=1-\frac1{x^2}$ ⇒ 증가 $|x|>1$, 감소 $(-1,0),(0,1)$. F: 국소최댓값 $f(-1)=-2$, 국소최솟값 $f(1)=2$.<br>G: $y''=\frac2{x^3}$ ⇒ $x>0$ CU, $x&lt;0$ CD, 변곡점 없음.</div></div>
 <div class="prob" data-id="c4-33"><div class="pq"><span class="pn"></span><div>곡선 지침(A–G)에 따라 함수 $y=(1-x)e^x$ 의 정의역, 절편, 점근선, 증가·감소 구간, 극값, 오목성, 변곡점을 조사하고 그래프를 그리시오.</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
 <div class="ans">A: $\mathbb R$. B: $y$절편 1, $x$절편 1. C: 없음. D: $x\to-\infty$ 에서 $(1-x)e^x\to0$ ⇒ $y=0$ (왼쪽); $x\to\infty$ 에서 $-\infty$.<br>E: $y'=-xe^x$ ⇒ 증가 $(-\infty,0)$, 감소 $(0,\infty)$. F: 국소(절대)최댓값 $f(0)=1$.<br>G: $y''=-(x+1)e^x$ ⇒ CU $(-\infty,-1)$, CD $(-1,\infty)$, 변곡점 $(-1,\ 2/e)$.</div></div>
@@ -1113,7 +1114,7 @@ $$\lim_{x\to a}f(x)=0=\lim_{x\to a}g(x)\quad\text{또는}\quad\lim_{x\to a}f(x)=
 <div class="ans">A: $\mathbb R$. B: $y=0$ ⇒ $x=0,\ \pm3\sqrt3$. C: 홀함수. D: 없음.<br>E: $y'=1-x^{-2/3}$. 임계수 $0$(미존재), $\pm1$. 증가 $(-\infty,-1),(1,\infty)$, 감소 $(-1,1)$.<br>F: 국소최댓값 $f(-1)=2$, 국소최솟값 $f(1)=-2$ ($x=0$ 은 극값 아님).<br>G: $y''=\frac23x^{-5/3}$ ⇒ CD $(-\infty,0)$, CU $(0,\infty)$, 변곡점 $(0,0)$ (수직접선).</div></div>
 <div class="prob" data-id="c4-35"><div class="pq"><span class="pn"></span><div>함수 $y=x+\cos x$ 의 증가·감소 구간, 극값, 오목성, 변곡점을 조사하시오. 이 함수는 극값을 갖는가?</div></div>
 <div class="pbtns"><button class="showans">정답·풀이 보기</button><button class="ok">✔ 맞음</button><button class="no">✘ 복습</button></div>
-<div class="ans">$y'=1-\sin x\ge0$ ⇒ 모든 $x$ 에서 증가 (0이 되는 점 $x=\frac\pi2+2n\pi$ 에서도 부호 변화 없음) ⇒ <b>극값 없음</b>.<br>$y''=-\cos x$ ⇒ $\cos x>0$ 구간 CD, $\cos x<0$ 구간 CU. 변곡점 $x=\frac\pi2+n\pi$. (점근선 없음, 증가하며 $y=x$ 주위를 ±1 진동)</div></div>
+<div class="ans">$y'=1-\sin x\ge0$ ⇒ 모든 $x$ 에서 증가 (0이 되는 점 $x=\frac\pi2+2n\pi$ 에서도 부호 변화 없음) ⇒ <b>극값 없음</b>.<br>$y''=-\cos x$ ⇒ $\cos x>0$ 구간 CD, $\cos x&lt;0$ 구간 CU. 변곡점 $x=\frac\pi2+n\pi$. (점근선 없음, 증가하며 $y=x$ 주위를 ±1 진동)</div></div>
 </section>
 </section>
 
@@ -1146,10 +1147,10 @@ $$\sinh^{-1}x=\ln(x+\sqrt{x^2+1}),\quad\cosh^{-1}x=\ln(x+\sqrt{x^2-1}),\quad \ta
 </ul>
 <h4>4.3 – 4.5</h4>
 <ul>
-<li>$f'>0$ ↗, $f'<0$ ↘ (I/D Test)</li>
+<li>$f'>0$ ↗, $f'&lt;0$ ↘ (I/D Test)</li>
 <li>1계 판정: $f'$ + → − ⇒ 극대, − → + ⇒ 극소</li>
-<li>$f''>0$ CU, $f''<0$ CD; 변곡점 = 오목성이 바뀌는 점</li>
-<li>2계 판정: $f'(c)=0$, $f''(c)>0$ ⇒ 극소; $f''(c)<0$ ⇒ 극대; $f''(c)=0$ ⇒ 판정불가</li>
+<li>$f''>0$ CU, $f''&lt;0$ CD; 변곡점 = 오목성이 바뀌는 점</li>
+<li>2계 판정: $f'(c)=0$, $f''(c)>0$ ⇒ 극소; $f''(c)&lt;0$ ⇒ 극대; $f''(c)=0$ ⇒ 판정불가</li>
 <li><b>로피탈</b>: $\tfrac00$, $\tfrac\infty\infty$ 일 때 $\lim\frac fg=\lim\frac{f'}{g'}$</li>
 <li>$0\cdot\infty$, $\infty-\infty$ → 몫으로 / $0^0,\infty^0,1^\infty$ → $\ln$ 취하기 → $e^L$</li>
 <li>곡선 그리기: <b>A</b>Domain <b>B</b>Intercepts <b>C</b>Symmetry <b>D</b>Asymptotes <b>E</b>$f'$ 증감 <b>F</b>극값 <b>G</b>$f''$ 오목·변곡 <b>H</b>Sketch</li>
@@ -1161,7 +1162,7 @@ $$\sinh^{-1}x=\ln(x+\sqrt{x^2+1}),\quad\cosh^{-1}x=\ln(x+\sqrt{x^2-1}),\quad \ta
 <!-- ============================ QUIZ ============================ -->
 <section class="sec" id="quiz">
 <h2>❓ 셀프 퀴즈 <span class="pg">질문을 클릭하면 답이 나옵니다</span></h2>
-<div class="qa"><button>Q1. $a$ 에서의 선형화 $L(x)$ 의 식은? 언제 과대추정인가?</button><div class="a">$L(x)=f(a)+f'(a)(x-a)$. 접선이 곡선 위에 있을 때, 즉 <b>$f''<0$(CD)</b> 일 때 과대추정. $f''>0$(CU)면 과소추정.</div></div>
+<div class="qa"><button>Q1. $a$ 에서의 선형화 $L(x)$ 의 식은? 언제 과대추정인가?</button><div class="a">$L(x)=f(a)+f'(a)(x-a)$. 접선이 곡선 위에 있을 때, 즉 <b>$f''&lt;0$(CD)</b> 일 때 과대추정. $f''>0$(CU)면 과소추정.</div></div>
 <div class="qa"><button>Q2. $\Delta y$ 와 $dy$ 의 차이는?</button><div class="a">$\Delta y$ 는 곡선의 실제 변화량, $dy=f'(x)dx$ 는 접선의 변화량. $dx$ 가 작으면 $\Delta y\approx dy$.</div></div>
 <div class="qa"><button>Q3. 구의 반지름의 상대오차가 2% 이면 부피의 상대오차는 약 몇 %?</button><div class="a">$dV/V=3\,dr/r$ ⇒ 약 <b>6%</b>.</div></div>
 <div class="qa"><button>Q4. $\cosh^2x-\sinh^2x$ 는? $\dfrac{d}{dx}\cosh x$ 는?</button><div class="a">$1$ (빼기). $\ \sinh x$ (마이너스 없음).</div></div>
