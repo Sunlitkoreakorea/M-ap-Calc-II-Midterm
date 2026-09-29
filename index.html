@@ -163,6 +163,34 @@ body.fcopen{overflow:hidden}
 .fc-cnt{font-weight:700;min-width:90px;text-align:center}
 .fc-face .katex-display{overflow-x:auto}
 @media(max-width:600px){.fc-face{padding:18px 16px}.fc-front .q{font-size:17px}.fc-stage{padding:10px}}
+
+/* ---------- paged (book) mode ---------- */
+.tabs{position:sticky;top:0;z-index:30;display:flex;gap:6px;align-items:center;background:var(--bg);padding:8px 0;margin:0 0 10px;border-bottom:1px solid var(--line)}
+.tabs .tl{display:flex;gap:6px;overflow-x:auto;flex:1;scrollbar-width:none}
+.tabs .tl::-webkit-scrollbar{display:none}
+.tabs button{font:inherit;font-size:14px;white-space:nowrap;padding:7px 14px;border-radius:99px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+.tabs button:hover{border-color:var(--brand)}
+.tabs .tl button.on{background:var(--brand);color:#fff;border-color:var(--brand);font-weight:700}
+.tabs .arr{flex:none;font-weight:700}
+.tabs .sep{flex:none;width:1px;height:20px;background:var(--line)}
+.paged section.sec{display:none}
+.paged section.sec.active{display:block;animation:pgin .25s ease}
+@keyframes pgin{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+.paged .chap-h{display:none}
+.paged .chap-h.show{display:flex}
+.paged .hero{display:none}
+.paged .hero.show{display:block}
+body:not(.paged) .tabs .tl,body:not(.paged) .tabs .arr,body:not(.paged) .tabs .sep,body:not(.paged) #pager{display:none}
+.paged nav.side a.sm:not(.vis){display:none}
+.pager{display:none;justify-content:space-between;gap:12px;margin:24px 0 0}
+.paged .pager{display:flex}
+.pager button{flex:1;font:inherit;padding:14px 18px;border-radius:14px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;text-align:left;box-shadow:var(--shadow)}
+.pager button:last-child{text-align:right;background:var(--brand);color:#fff;border-color:var(--brand)}
+.pager button small{display:block;font-size:12px;opacity:.75}
+.pager button:disabled{opacity:.35;cursor:default}
+html{scroll-padding-top:70px}
+.score{top:56px !important}
+@media print{.paged section.sec{display:block !important}.tabs,.pager{display:none}}
 </style>
 </head>
 <body>
@@ -248,6 +276,7 @@ body.fcopen{overflow:hidden}
 
 <!-- ===================== MAIN ===================== -->
 <main>
+<div class="tabs" id="tabs"><button class="arr" id="tPrev" aria-label="이전 페이지">‹</button><div class="tl" id="tabList"></div><button class="arr" id="tNext" aria-label="다음 페이지">›</button><span class="sep"></span><button id="tMode" title="페이지 넘기기 / 전체 스크롤 전환">📖 전체 보기</button></div>
 <div class="hero">
   <h1>3.10 – 4.5 시험 직전 학습 노트</h1>
   <p>단원 → 소제목(교재 ■ 표시) → 개념 순서로 정리했습니다. 정의·정리는 색 박스, 예제는 클릭해서 풀이를 펼쳐 보세요.</p>
@@ -1174,6 +1203,8 @@ $$\sinh^{-1}x=\ln(x+\sqrt{x^2+1}),\quad\cosh^{-1}x=\ln(x+\sqrt{x^2-1}),\quad \ta
 <p class="mini" id="chkstat"></p>
 </section>
 
+<div class="pager" id="pager"><button id="pgPrev"></button><button id="pgNext"></button></div>
+
 <p class="mini" style="text-align:center;margin-top:30px">출처: Stewart, Clegg, Watson, <i>Calculus: Early Transcendentals</i>, 9th Ed. (Metric Version), §3.10–4.5 · 본 노트는 학습용 요약이며 예제 풀이는 교재 내용을 바탕으로 재구성했습니다.<br>수식 렌더링에 KaTeX(CDN)를 사용하므로 최초 열람 시 인터넷 연결이 필요합니다.</p>
 </main>
 </div>
@@ -1219,19 +1250,78 @@ $$('.qa>button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open
   upd();
 })();
 
-/* ---------- scrollspy + progress ---------- */
+/* ---------- paged (book) mode ---------- */
 (function(){
+  const pages=$$('main section.sec');
+  const short={s310:'3.10',s311:'3.11',pr3:'Ch3 연습문제',s41:'4.1',s42:'4.2',s43:'4.3',s44:'4.4',s45:'4.5',pr4:'Ch4 연습문제',cheat:'📌 치트시트',quiz:'❓ 퀴즈',check:'✅ 체크리스트'};
+  const full={s310:'3.10 선형근사·미분소',s311:'3.11 쌍곡함수',pr3:'Chapter 3 연습문제',s41:'4.1 최댓값·최솟값',s42:'4.2 평균값 정리',s43:'4.3 그래프의 모양',s44:'4.4 로피탈',s45:'4.5 곡선 그리기',pr4:'Chapter 4 연습문제',cheat:'공식 치트시트',quiz:'셀프 퀴즈',check:'시험 직전 체크리스트'};
+  let cur=0;
+  const tl=$('#tabList');
+  pages.forEach((p,i)=>{const b=document.createElement('button');b.textContent=short[p.id]||p.id;b.dataset.i=i;b.onclick=()=>show(i,true);tl.appendChild(b)});
   const links=$$('#nav a[href^="#"]');
-  const targets=links.map(a=>$(a.getAttribute('href')));
-  function onScroll(){
-    const y=scrollY+120;
-    let idx=0;
-    targets.forEach((t,i)=>{if(t&&t.offsetTop<=y)idx=i});
-    links.forEach((a,i)=>a.classList.toggle('on',i===idx));
-    const h=document.documentElement.scrollHeight-innerHeight;
-    $('#prog').style.width=(h>0?scrollY/h*100:0)+'%';
+  const pageOf=el=>el?el.closest('section.sec'):null;
+  links.forEach(a=>{const t=$(a.getAttribute('href'));const pg=pageOf(t);a.dataset.page=pg?pg.id:''});
+  const firstInChap=new Set($$('section.chap').map(c=>c.querySelector('section.sec')));
+  function show(i,scrollTop){
+    cur=Math.max(0,Math.min(pages.length-1,i));
+    pages.forEach((p,k)=>p.classList.toggle('active',k===cur));
+    $$('#tabList button').forEach((b,k)=>{b.classList.toggle('on',k===cur);if(k===cur)b.scrollIntoView({inline:'center',block:'nearest'})});
+    $$('.chap-h').forEach(c=>c.classList.remove('show'));
+    if(firstInChap.has(pages[cur]))pages[cur].closest('section.chap').querySelector('.chap-h').classList.add('show');
+    $('.hero').classList.toggle('show',cur===0);
+    const id=pages[cur].id;
+    links.forEach(a=>{if(a.classList.contains('sm'))a.classList.toggle('vis',a.dataset.page===id)});
+    $('#tPrev').disabled=cur===0;$('#tNext').disabled=cur===pages.length-1;
+    const pv=pages[cur-1],nx=pages[cur+1];
+    $('#pgPrev').innerHTML=pv?'<small>← 이전</small>'+full[pv.id]:'<small>처음입니다</small>';$('#pgPrev').disabled=!pv;
+    $('#pgNext').innerHTML=nx?'<small>다음 →</small>'+full[nx.id]:'<small>마지막입니다</small>';$('#pgNext').disabled=!nx;
+    store('page',id);
+    if(scrollTop){window.scrollTo({top:0,behavior:'instant'});if(location.hash!=='#'+id)history.replaceState(null,'','#'+id)}
+    spy();
   }
-  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  function isPaged(){return document.body.classList.contains('paged')}
+  function route(){
+    if(!isPaged())return;
+    const hash=decodeURIComponent(location.hash.slice(1));
+    let t=hash?document.getElementById(hash):null;
+    const pg=pageOf(t);
+    if(pg){show(pages.indexOf(pg),false);if(t!==pg)setTimeout(()=>t.scrollIntoView({block:'start'}),30);else window.scrollTo(0,0)}
+    else{const s=store('page');const k=pages.findIndex(p=>p.id===s);show(k>=0?k:0,false)}
+  }
+  window.addEventListener('hashchange',route);
+  links.forEach(a=>a.addEventListener('click',e=>{
+    if(!isPaged())return;
+    e.preventDefault();history.pushState(null,'',a.getAttribute('href'));route();
+  }));
+  $('#tPrev').onclick=()=>show(cur-1,true);$('#tNext').onclick=()=>show(cur+1,true);
+  $('#pgPrev').onclick=()=>show(cur-1,true);$('#pgNext').onclick=()=>show(cur+1,true);
+  addEventListener('keydown',e=>{
+    if(!isPaged()||$('#fc').classList.contains('on')||e.altKey||e.ctrlKey||e.metaKey)return;
+    if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;
+    if(e.key==='ArrowRight'){show(cur+1,true)}else if(e.key==='ArrowLeft'){show(cur-1,true)}
+  });
+  function setMode(paged){
+    document.body.classList.toggle('paged',paged);
+    $('#tMode').textContent=paged?'📖 전체 보기':'📄 페이지로 보기';
+    store('paged',paged?'1':'0');
+    if(paged)route();else{links.forEach(a=>a.classList.remove('vis'));spy()}
+  }
+  $('#tMode').onclick=()=>setMode(!isPaged());
+
+  /* scrollspy + progress (paged-aware) */
+  function spy(){
+    const y=120;let last=-1;
+    const vis=links.map(a=>{const t=$(a.getAttribute('href'));return t&&t.offsetParent!==null?t:null});
+    vis.forEach((t,i)=>{if(t&&t.getBoundingClientRect().top<=y)last=i});
+    if(isPaged()){
+      const id=pages[cur].id;
+      links.forEach((a,i)=>a.classList.toggle('on',a.getAttribute('href')==='#'+id||(a.classList.contains('sm')&&i===last&&a.dataset.page===id)));
+    }else links.forEach((a,i)=>a.classList.toggle('on',i===last));
+    const hgt=document.documentElement.scrollHeight-innerHeight;
+    $('#prog').style.width=(hgt>0?scrollY/hgt*100:0)+'%';
+  }
+  addEventListener('scroll',spy,{passive:true});
+  setMode(store('paged')!=='0');
 })();
 
 /* ---------- tiny SVG plotter ---------- */
